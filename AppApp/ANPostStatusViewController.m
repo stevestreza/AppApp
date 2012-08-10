@@ -11,7 +11,7 @@
 
 @interface ANPostStatusViewController ()
 
--(void) updateCharCountLabel:(NSNotification *) notification;
+-(void) updateCharCountLabel: (NSNotification *)notification;
 -(void) registerForNotifications;
 -(void) unregisterForNotifications;
 @end
