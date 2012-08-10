@@ -68,13 +68,12 @@
     [self readTokenFromDefaults];
     
     NSString *streamString = [NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/posts/stream/global?access_token=%@", accessToken];
-    
-    NSLog(@"%@", streamString);
-    
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:streamString]];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        
-        [delegate globalStreamDidReturnData: JSON ];
+    
+        if(JSON) {
+            [delegate globalStreamDidReturnData: JSON ];
+        }
  
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *err, id JSON) {
         NSLog(@"%@", [err localizedDescription]);

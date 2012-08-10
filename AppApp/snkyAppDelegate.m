@@ -10,8 +10,6 @@
 #import "AuthViewController.h"
 #import "snkyViewController.h"
 
-#import "ANGlobalViewController.h"
-
 @implementation snkyAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

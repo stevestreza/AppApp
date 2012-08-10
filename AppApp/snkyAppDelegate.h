@@ -7,15 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class ANGlobalViewController;
+#import "ANGlobalViewController.h"
 
 @interface snkyAppDelegate : UIResponder <UIApplicationDelegate> {
     
 }
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) ANGlobalViewController *viewController;
 
 @end
