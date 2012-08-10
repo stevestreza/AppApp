@@ -80,8 +80,13 @@
         cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:11.0f];
     }
     
-    cell.textLabel.text = [[streamData objectAtIndex: [indexPath row]] objectForKey:@"text"];
     
+    
+    if([[streamData objectAtIndex: [indexPath row]] objectForKey:@"text"]) {
+        cell.textLabel.text = [[streamData objectAtIndex: [indexPath row]] objectForKey:@"text"];
+    } else {
+        cell.textLabel.text = @"BROKEN"; // not sure why.
+    }
     return cell;
 }
 
