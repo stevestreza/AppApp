@@ -10,6 +10,9 @@
 #import "AFJSONRequestOperation.h"
 #import "AFHTTPClient.h"
 
+#import "AuthViewController.h"
+#import "ANPostStatusViewController.h"
+
 @interface snkyViewController ()
 -(void)readTokenFromDefaults;
 @end
@@ -30,7 +33,12 @@
 
 //you only have to auth once, or if you change your password. 
 -(IBAction)authenticatePress:(id)sender {
-    // this uses a working clientID, but you should probably get your own
+    
+    AuthViewController *authView = [[AuthViewController alloc] init];
+    [self presentModalViewController:authView animated:YES];
+    
+    
+    /*// this uses a working clientID, but you should probably get your own
     // https://alpha.app.net/developer/apps/
     //
     NSString *clientID = @"RG2Brqye96rLZQtjwRenVZsBrMtpYXYP";
@@ -42,7 +50,7 @@
     BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:authURL];
     if (canOpenURL){
         [[UIApplication sharedApplication] openURL:authURL];
-    }
+    }*/
 }
 
 -(IBAction)globalStreamPress:(id)sender {
@@ -65,9 +73,13 @@
     [self getUserMentions];
 }
 
--(IBAction)enterTheMatrix:(id)sender {
-    [self readTokenFromDefaults];
-    [self makePostWithText:@"I smell bad and I can't read good!!! #AppApp"];
+-(IBAction)enterTheMatrix:(id)sender
+{
+    ANPostStatusViewController *postViewController = [[ANPostStatusViewController alloc] init];
+    [self presentModalViewController:postViewController animated:YES];
+    
+    //[self readTokenFromDefaults];
+    //[self makePostWithText:@"I smell bad and I can't read good!!! #AppApp"];
 }
 
 -(void)getGlobalStream {

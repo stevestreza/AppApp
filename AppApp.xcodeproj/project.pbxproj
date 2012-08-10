@@ -25,6 +25,11 @@
 		00B4746815D397D600F767CE /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B4745C15D397D600F767CE /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00B4746915D397D600F767CE /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B4745E15D397D600F767CE /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00B4746A15D397D600F767CE /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B4746015D397D600F767CE /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		922F80C915D58F6C0049F194 /* ANAPICall.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80C815D58F6C0049F194 /* ANAPICall.m */; };
+		922F80CD15D590400049F194 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80CC15D590400049F194 /* AuthViewController.m */; };
+		922F80CF15D595510049F194 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F80CE15D595510049F194 /* AuthViewController.xib */; };
+		922F80D415D5A0890049F194 /* ANPostStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80D215D5A0890049F194 /* ANPostStatusViewController.m */; };
+		922F80D515D5A0890049F194 /* ANPostStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +67,14 @@
 		00B4745E15D397D600F767CE /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		00B4745F15D397D600F767CE /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		00B4746015D397D600F767CE /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		922F80C715D58F6C0049F194 /* ANAPICall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICall.h; sourceTree = "<group>"; };
+		922F80C815D58F6C0049F194 /* ANAPICall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICall.m; sourceTree = "<group>"; };
+		922F80CB15D590400049F194 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		922F80CC15D590400049F194 /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		922F80CE15D595510049F194 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		922F80D115D5A0890049F194 /* ANPostStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPostStatusViewController.h; sourceTree = "<group>"; };
+		922F80D215D5A0890049F194 /* ANPostStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPostStatusViewController.m; sourceTree = "<group>"; };
+		922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPostStatusViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +94,7 @@
 		00B473FF15D38E3C00F767CE = {
 			isa = PBXGroup;
 			children = (
+				922F80C015D58F360049F194 /* API */,
 				00B4744B15D397D600F767CE /* AFNetworking */,
 				00B4741415D38E3C00F767CE /* AppApp */,
 				00B4740D15D38E3C00F767CE /* Frameworks */,
@@ -109,6 +123,8 @@
 		00B4741415D38E3C00F767CE /* AppApp */ = {
 			isa = PBXGroup;
 			children = (
+				922F80D015D5A0680049F194 /* Post Status */,
+				922F80CA15D590220049F194 /* Authentication */,
 				00B4741D15D38E3C00F767CE /* snkyAppDelegate.h */,
 				00B4741E15D38E3C00F767CE /* snkyAppDelegate.m */,
 				00B4742015D38E3C00F767CE /* snkyViewController.h */,
@@ -156,6 +172,35 @@
 				00B4746015D397D600F767CE /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		922F80C015D58F360049F194 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				922F80C715D58F6C0049F194 /* ANAPICall.h */,
+				922F80C815D58F6C0049F194 /* ANAPICall.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		922F80CA15D590220049F194 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				922F80CB15D590400049F194 /* AuthViewController.h */,
+				922F80CC15D590400049F194 /* AuthViewController.m */,
+				922F80CE15D595510049F194 /* AuthViewController.xib */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		922F80D015D5A0680049F194 /* Post Status */ = {
+			isa = PBXGroup;
+			children = (
+				922F80D115D5A0890049F194 /* ANPostStatusViewController.h */,
+				922F80D215D5A0890049F194 /* ANPostStatusViewController.m */,
+				922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */,
+			);
+			name = "Post Status";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +257,8 @@
 			files = (
 				00B4741915D38E3C00F767CE /* InfoPlist.strings in Resources */,
 				00B4742515D38E3C00F767CE /* snkyViewController.xib in Resources */,
+				922F80CF15D595510049F194 /* AuthViewController.xib in Resources */,
+				922F80D515D5A0890049F194 /* ANPostStatusViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +282,9 @@
 				00B4746815D397D600F767CE /* AFURLConnectionOperation.m in Sources */,
 				00B4746915D397D600F767CE /* AFXMLRequestOperation.m in Sources */,
 				00B4746A15D397D600F767CE /* UIImageView+AFNetworking.m in Sources */,
+				922F80C915D58F6C0049F194 /* ANAPICall.m in Sources */,
+				922F80CD15D590400049F194 /* AuthViewController.m in Sources */,
+				922F80D415D5A0890049F194 /* ANPostStatusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

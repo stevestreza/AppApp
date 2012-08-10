@@ -7,7 +7,7 @@
 //
 
 #import "snkyAppDelegate.h"
-
+#import "AuthViewController.h"
 #import "snkyViewController.h"
 
 @implementation snkyAppDelegate
@@ -24,6 +24,14 @@
         NSLog(@"bacon");
     }
     
+    // if we don't have an access token - display auth.
+    // probably should move back to calling Safari.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(![defaults objectForKey:@"access_token"]) {
+        AuthViewController *authView = [[AuthViewController alloc] init];
+        [self.viewController presentModalViewController:authView animated:YES];
+    }
+    
     return YES;
 }
 
@@ -32,7 +40,7 @@
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     // Display text
     
-    NSString *fragment = [url fragment];
+    /*NSString *fragment = [url fragment];
     NSArray *components = [fragment componentsSeparatedByString:@"&"];
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     for (NSString *component in components) {
@@ -46,7 +54,7 @@
     [defaults setObject:token forKey:@"access_token"];
     [defaults synchronize];
     NSLog(@"access_token saved to defaults");
-    
+    */
     return YES;
 }
 
