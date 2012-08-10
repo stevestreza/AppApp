@@ -20,6 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 -(IBAction)authenticatePress:(id)sender {
@@ -28,9 +29,9 @@
     //
     NSString *clientID = @"RG2Brqye96rLZQtjwRenVZsBrMtpYXYP";
     NSString *redirectURI = @"appapp://callmemaybe";
-    NSString *scopes = @"stream";
+    NSString *scopes = @"stream write_post";
     NSString *authURLstring = [NSString stringWithFormat:@"https://alpha.app.net/oauth/authenticate?client_id=%@&response_type=token&redirect_uri=%@&scope=%@",clientID, redirectURI, scopes];
-    NSURL *authURL = [NSURL URLWithString:authURLstring];
+    NSURL *authURL = [NSURL URLWithString:[authURLstring stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
     BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:authURL];
     if (canOpenURL){
@@ -52,6 +53,10 @@
 
 -(IBAction)userMentionsPress:(id)sender {
     [self getUserMentions];
+}
+
+-(IBAction)enterTheMatrix:(id)sender {
+        [self makePostWithText:@"I smell bad and I can't read good!!!! #AppApp"];
 }
 
 -(void)getGlobalStream {
@@ -137,6 +142,27 @@
     }];
     
     [operation start];
+}
+
+-(void)makePostWithText:(NSString*)text {
+    snkyAppNetAPIClient *apiClient = [snkyAppNetAPIClient sharedClient];
+    
+    NSString *postsString = [NSString stringWithFormat:@"stream/0/posts"];
+    
+    NSLog(@"%@", postsString);
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: text, @"text", [apiClient accessToken], @"access_token", nil];
+    
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:
+                            [NSURL URLWithString:@"https://alpha-api.app.net/"]];
+    
+    [client postPath:postsString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *text = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"Response: %@", text);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }];
+
 }
 
 - (void)viewDidUnload

@@ -14,6 +14,7 @@
     IBOutlet UIButton *userStreamButton;
     IBOutlet UIButton *userPostsButton;
     IBOutlet UIButton *userMentionsButton;
+    IBOutlet UIButton *matrixButton;
 }
 
 -(IBAction)authenticatePress:(id)sender;
@@ -21,11 +22,13 @@
 -(IBAction)userStreamPress:(id)sender;
 -(IBAction)userPostsPress:(id)sender;
 -(IBAction)userMentionsPress:(id)sender;
+-(IBAction)enterTheMatrix:(id)sender;
 
 -(void)getGlobalStream;
 -(void)getUserStream;
 -(void)getUserPosts;
 -(void)getUserMentions;
+-(void)makePostWithText:(NSString*)text;
 
 @property (nonatomic) IBOutlet UIButton *authenticateButton;
 
