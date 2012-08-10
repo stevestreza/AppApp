@@ -11,18 +11,19 @@
 
 @interface ANPostStatusViewController ()
 
--(void) updateCharCountLabel;
-
+-(void) updateCharCountLabel:(NSNotification *) notification;
+-(void) registerForNotifications;
+-(void) unregisterForNotifications;
 @end
 
 @implementation ANPostStatusViewController
-@synthesize postTextView, characterCountLabel;
+@synthesize postTextView, characterCountLabel, postButton;
 
 - (id)init
 {
     self = [super initWithNibName:@"ANPostStatusViewController" bundle:nil];
     if (self) {
-        [postTextView becomeFirstResponder];
+        
     }
     return self;
 }
@@ -30,20 +31,50 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self registerForNotifications];
     [postTextView becomeFirstResponder];
 }
 
--(void) updateCharCountLabel
+
+-(void) dealloc
 {
-    int textLength = 256 - [postTextView.text length];
+    [self unregisterForNotifications];
+}
+
+
+-(void) registerForNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCharCountLabel:) name:UITextViewTextDidChangeNotification object:nil];
+}
+
+-(void) unregisterForNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextViewTextDidChangeNotification object:nil];
+}
+
+
+
+
+
+-(void) updateCharCountLabel: (NSNotification *) notification
+{
+    NSInteger textLength = 256 - [postTextView.text length];
+    
+    // unblock / block post button
+    if(textLength > 0 && textLength < 256) {
+        postButton.enabled = YES;
+    } else {
+        postButton.enabled = NO;
+    }
+    
     characterCountLabel.text = [NSString stringWithFormat:@"%i", textLength];
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+- (void)textViewDidEndEditing:(UITextView *)textView
 {
-    [self updateCharCountLabel];
-    return YES;
+    postTextView.text = textView.text;
 }
+
 
 -(IBAction)dismissPostStatusViewController:(id)sender
 {

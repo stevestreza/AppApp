@@ -10,6 +10,7 @@
 
 @interface ANPostStatusViewController : UIViewController
 
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *postButton;
 @property (nonatomic, retain) IBOutlet UILabel *characterCountLabel;
 @property (nonatomic, retain) IBOutlet UITextView *postTextView;
 
