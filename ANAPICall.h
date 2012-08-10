@@ -14,5 +14,9 @@
 
 + (ANAPICall *)sharedAppAPI;
 -(void) makePostWithText:(NSString*)text;
+-(void)getGlobalStreamWithDelegate:(id) delegate;
+@end
 
+@protocol ANAPIDelegate <NSObject>
+-(void) globalStreamDidReturnData:(NSArray *) data;
 @end

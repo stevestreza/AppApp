@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class snkyViewController;
+@class ANGlobalViewController;
 
 @interface snkyAppDelegate : UIResponder <UIApplicationDelegate> {
     
@@ -16,6 +16,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) snkyViewController *viewController;
+@property (strong, nonatomic) ANGlobalViewController *viewController;
 
 @end
