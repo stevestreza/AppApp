@@ -38,7 +38,7 @@
 
 -(void) refreshStream
 {
-    [[ANAPICall sharedAppAPI] getGlobalStreamWithDelegate:self]; Ig8p
+    [[ANAPICall sharedAppAPI] getGlobalStreamWithDelegate:self];
 }
 
 -(void) globalStreamDidReturnData:(NSArray *)data
