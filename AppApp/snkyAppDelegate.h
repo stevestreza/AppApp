@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "snkyAppNetAPIClient.h"
 
 @class snkyViewController;
 
 @interface snkyAppDelegate : UIResponder <UIApplicationDelegate> {
-    snkyAppNetAPIClient *apiClient;
+    
 }
 
 @property (strong, nonatomic) UIWindow *window;

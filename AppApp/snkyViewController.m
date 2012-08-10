@@ -7,11 +7,11 @@
 //
 
 #import "snkyViewController.h"
-#import "snkyAppNetAPIClient.h"
 #import "AFJSONRequestOperation.h"
+#import "AFHTTPClient.h"
 
 @interface snkyViewController ()
-
+-(void)readTokenFromDefaults;
 @end
 
 @implementation snkyViewController
@@ -20,9 +20,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
 }
 
+-(void)readTokenFromDefaults {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token = [defaults objectForKey:@"access_token"];
+    accessToken = token;
+}
+
+//you only have to auth once, or if you change your password. 
 -(IBAction)authenticatePress:(id)sender {
     // this uses a working clientID, but you should probably get your own
     // https://alpha.app.net/developer/apps/
@@ -40,29 +46,33 @@
 }
 
 -(IBAction)globalStreamPress:(id)sender {
+    [self readTokenFromDefaults];
     [self getGlobalStream];
 }
 
 -(IBAction)userStreamPress:(id)sender {
+    [self readTokenFromDefaults];
     [self getUserStream];
 }
 
 -(IBAction)userPostsPress:(id)sender {
+    [self readTokenFromDefaults];
     [self getUserPosts];
 }
 
 -(IBAction)userMentionsPress:(id)sender {
+    [self readTokenFromDefaults];
     [self getUserMentions];
 }
 
 -(IBAction)enterTheMatrix:(id)sender {
-        [self makePostWithText:@"I smell bad and I can't read good!!!! #AppApp"];
+    [self readTokenFromDefaults];
+    [self makePostWithText:@"I smell bad and I can't read good!!! #AppApp"];
 }
 
 -(void)getGlobalStream {
-    snkyAppNetAPIClient *apiClient = [snkyAppNetAPIClient sharedClient];
     
-    NSString *streamString = [NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/posts/stream/global?access_token=%@", [apiClient accessToken]];
+    NSString *streamString = [NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/posts/stream/global?access_token=%@", accessToken];
     
     NSLog(@"%@", streamString);
 
@@ -81,9 +91,8 @@
 }
 
 -(void)getUserStream {
-    snkyAppNetAPIClient *apiClient = [snkyAppNetAPIClient sharedClient];
     
-    NSString *streamString = [NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/posts/stream?access_token=%@", [apiClient accessToken]];
+    NSString *streamString = [NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/posts/stream?access_token=%@", accessToken];
     
     NSLog(@"%@", streamString);
     
@@ -102,9 +111,8 @@
 }
 
 -(void)getUserPosts {
-    snkyAppNetAPIClient *apiClient = [snkyAppNetAPIClient sharedClient];
     
-    NSString *postsString = [NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/users/me/posts?access_token=%@", [apiClient accessToken]];
+    NSString *postsString = [NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/users/me/posts?access_token=%@", accessToken];
     
     NSLog(@"%@", postsString);
     
@@ -123,9 +131,8 @@
 }
 
 -(void)getUserMentions {
-    snkyAppNetAPIClient *apiClient = [snkyAppNetAPIClient sharedClient];
     
-    NSString *mentionsString = [NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/users/me/mentions?access_token=%@", [apiClient accessToken]];
+    NSString *mentionsString = [NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/users/me/mentions?access_token=%@", accessToken];
     
     NSLog(@"%@", mentionsString);
     
@@ -145,13 +152,12 @@
 }
 
 -(void)makePostWithText:(NSString*)text {
-    snkyAppNetAPIClient *apiClient = [snkyAppNetAPIClient sharedClient];
     
     NSString *postsString = [NSString stringWithFormat:@"stream/0/posts"];
     
     NSLog(@"%@", postsString);
     
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: text, @"text", [apiClient accessToken], @"access_token", nil];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: text, @"text", accessToken, @"access_token", nil];
     
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:
                             [NSURL URLWithString:@"https://alpha-api.app.net/"]];

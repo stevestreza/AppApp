@@ -15,6 +15,7 @@
     IBOutlet UIButton *userPostsButton;
     IBOutlet UIButton *userMentionsButton;
     IBOutlet UIButton *matrixButton;
+    NSString *accessToken;
 }
 
 -(IBAction)authenticatePress:(id)sender;
@@ -31,5 +32,6 @@
 -(void)makePostWithText:(NSString*)text;
 
 @property (nonatomic) IBOutlet UIButton *authenticateButton;
+@property (nonatomic) NSString *accessToken;
 
 @end

@@ -9,7 +9,6 @@
 #import "snkyAppDelegate.h"
 
 #import "snkyViewController.h"
-#import "snkyAppNetAPIClient.h"
 
 @implementation snkyAppDelegate
 
@@ -20,8 +19,6 @@
     self.viewController = [[snkyViewController alloc] initWithNibName:@"snkyViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-    
-    apiClient = [snkyAppNetAPIClient sharedClient];
     
     if ([launchOptions objectForKey:UIApplicationLaunchOptionsURLKey]) {
         NSLog(@"bacon");
@@ -44,7 +41,11 @@
     
     NSLog(@"%@",parameters);
     
-    [apiClient setAccessToken:[parameters objectForKey:@"access_token"]];
+    NSString *token = [parameters objectForKey:@"access_token"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:token forKey:@"access_token"];
+    [defaults synchronize];
+    NSLog(@"access_token saved to defaults");
     
     return YES;
 }
