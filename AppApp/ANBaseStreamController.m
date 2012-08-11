@@ -28,7 +28,9 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
+                                                                                           target:self
+                                                                                           action:@selector(newPostAction:)];
     
     // setup refresh/load more
     
@@ -64,6 +66,11 @@
     [self presentModalViewController:postView animated:YES];
 }
 
+- (IBAction)newPostAction:(id)sender
+{
+    ANPostStatusViewController *postView = [[ANPostStatusViewController alloc] init];
+    [self presentModalViewController:postView animated:YES];
+}
 
 #pragma mark - Table view data source
 
