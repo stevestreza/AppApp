@@ -32,6 +32,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // add gestures
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToDetails:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [self.tableView addGestureRecognizer:recognizer];
+    
     [self refreshStream];
 }
 
@@ -52,8 +58,8 @@
 
 -(IBAction)composeStatus:(id)sender
 {
-    ANPostStatusViewController *authView = [[ANPostStatusViewController alloc] init];
-    [self presentModalViewController:authView animated:YES];
+    ANPostStatusViewController *postView = [[ANPostStatusViewController alloc] init];
+    [self presentModalViewController:postView animated:YES];
 }
 
 -(IBAction) refreshGlobalStream:(id)sender
@@ -99,6 +105,14 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"SELECT");
+}
+
+- (void)swipeToDetails:(UISwipeGestureRecognizer *)gestureRecognizer
+{
+    CGPoint swipeLocation = [gestureRecognizer locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:swipeLocation];
+    
+    NSLog(@"SWIPE TO DETAILS %@!", [streamData objectAtIndex: [indexPath row]]);
 }
 
 @end
