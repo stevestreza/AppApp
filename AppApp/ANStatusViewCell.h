@@ -10,7 +10,8 @@
 
 @interface ANStatusViewCell : UITableViewCell
 
-@property (nonatomic, copy) NSString *username;
-@property (nonatomic, copy) NSString *status;
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *status;
+@property (nonatomic, strong) UIImage  *avatar;
 
 @end

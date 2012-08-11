@@ -9,18 +9,19 @@
 #import "ANStatusViewCell.h"
 
 @interface ANStatusViewCell()
+{
+    UIImageView *avatarView;
+    UILabel *statusTextLabel;
+    UILabel *usernameTextLabel;
 
-@property (nonatomic, strong) UIView *avatarView;
-@property (nonatomic, strong) UILabel *statusTextLabel;
-@property (nonatomic, strong) UILabel *usernameTextLabel;
-
+}
 - (void)registerObservers;
 - (void)unregisterObservers;
 
 @end
 
 @implementation ANStatusViewCell
-@synthesize status;
+@synthesize status, avatar, username;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -28,21 +29,21 @@
     if (self)
     {
         // future avatar
-        self.avatarView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
-        self.avatarView.backgroundColor = [UIColor grayColor];
-        [self.contentView addSubview:self.avatarView];
+        avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
+        avatarView.backgroundColor = [UIColor grayColor];
+        [self.contentView addSubview: avatarView];
         
         // username
-        self.usernameTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 10, 240, 15)];
-        self.usernameTextLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0f];
-        [self.contentView addSubview:self.usernameTextLabel];
+        usernameTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 10, 240, 15)];
+        usernameTextLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0f];
+        [self.contentView addSubview: usernameTextLabel];
         
         // status label
-        self.statusTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 27, 240, 100)];
-        self.statusTextLabel.lineBreakMode = UILineBreakModeWordWrap;
-        self.statusTextLabel.numberOfLines = 0;
-        self.statusTextLabel.font = [UIFont fontWithName:@"Helvetica" size:12.0f];
-        [self.contentView addSubview:self.statusTextLabel];
+        statusTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 27, 240, 100)];
+        statusTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+        statusTextLabel.numberOfLines = 0;
+        statusTextLabel.font = [UIFont fontWithName:@"Helvetica" size:12.0f];
+        [self.contentView addSubview: statusTextLabel];
         
         // register observers
         [self registerObservers];
@@ -71,20 +72,26 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if([keyPath isEqualToString:@"status"]) {
-        [self.statusTextLabel setText: self.status];
+        [statusTextLabel setText: self.status];
         
         // handle frame resize
         CGSize maxStatusLabelSize = CGSizeMake(240,100);
-        CGSize statusLabelSize = [self.status sizeWithFont:self.statusTextLabel.font
+        CGSize statusLabelSize = [self.status sizeWithFont: statusTextLabel.font
                                               constrainedToSize:maxStatusLabelSize
-                                              lineBreakMode:self.statusTextLabel.lineBreakMode];
+                                              lineBreakMode: statusTextLabel.lineBreakMode];
     
-        CGRect statusLabelNewFrame = self.statusTextLabel.frame;
+        CGRect statusLabelNewFrame = statusTextLabel.frame;
         statusLabelNewFrame.size.height = statusLabelSize.height;
-        self.statusTextLabel.frame = statusLabelNewFrame;
+        statusTextLabel.frame = statusLabelNewFrame;
     } else if([keyPath isEqualToString:@"username"]) {
-        [self.usernameTextLabel setText: self.username];
+        [usernameTextLabel setText: self.username];
+    } else if([keyPath isEqualToString:@"avatar"]) 
+{
+    if(self.avatar) {
+        avatarView.image = self.avatar;
+        avatarView.backgroundColor = [UIColor clearColor];
     }
+}
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

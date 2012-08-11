@@ -15,8 +15,6 @@
 {
     NSMutableArray *streamData;
 }
-
-
 @end
 
 @implementation ANGlobalViewController
@@ -70,7 +68,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 130; //TODO: Dynamic based on cell content.
+    // TODO: clean this up.
+    NSString *statusText =[[streamData objectAtIndex: [indexPath row]] objectForKey:@"text"];
+    if(statusText == (id)[NSNull null] || statusText.length == 0 ) { statusText = @"null"; }
+    
+    CGSize maxStatusLabelSize = CGSizeMake(240,200);
+    CGSize statusLabelSize = [statusText sizeWithFont: [UIFont fontWithName:@"Helvetica" size:12.0f]
+                                     constrainedToSize:maxStatusLabelSize
+                                         lineBreakMode: UILineBreakModeWordWrap];
+
+    CGFloat height = MAX(statusLabelSize.height, 60.0f);
+    return height + 37;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,7 +90,6 @@
     NSString *statusText =[[streamData objectAtIndex: [indexPath row]] objectForKey:@"text"];
     
     if(statusText == (id)[NSNull null] || statusText.length == 0 ) { statusText = @"null"; }
-    
     cell.username = [[[streamData objectAtIndex: [indexPath row]] objectForKey:@"user"] objectForKey:@"username"];
     cell.status = statusText;
 
