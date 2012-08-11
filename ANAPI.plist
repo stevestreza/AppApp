@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>baseURL</key>
+	<string>https://alpha-api.app.net/</string>
+	<key>requests</key>
+	<dict>
+		<key>postToStream</key>
+		<dict>
+			<key>method</key>
+			<string>POST</string>
+			<key>routeFormat</key>
+			<string>stream/0/posts</string>
+			<key>postFormat</key>
+			<string>text={text}&amp;access_token={accessToken}</string>
+		</dict>
+		<key>getGlobalStream</key>
+		<dict>
+			<key>routeFormat</key>
+			<string>stream/0/posts/stream/global?access_token={accessToken}</string>
+			<key>method</key>
+			<string>GET</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

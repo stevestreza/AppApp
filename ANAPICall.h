@@ -7,16 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFJSONRequestOperation.h"
-#import "AFHTTPClient.h"
+#import "SDWebService.h"
 
-@interface ANAPICall : NSObject
+@interface ANAPICall : SDWebService
 
 + (ANAPICall *)sharedAppAPI;
--(void) makePostWithText:(NSString*)text;
--(void)getGlobalStreamWithDelegate:(id) delegate;
+
+- (void)makePostWithText:(NSString*)text uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+- (void)getGlobalStream:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+
 @end
 
 @protocol ANAPIDelegate <NSObject>
--(void) globalStreamDidReturnData:(NSArray *) data;
+// ...
 @end

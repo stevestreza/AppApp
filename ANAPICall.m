@@ -23,64 +23,53 @@
 
 + (ANAPICall *)sharedAppAPI
 {
-    static ANAPICall *appAPI = nil;
-    
-    if(!appAPI) {
-        appAPI = [[ANAPICall alloc] init];
-    }
-    
-    return appAPI;
+    static dispatch_once_t oncePred;
+    static ANAPICall *sharedInstance = nil;
+    dispatch_once(&oncePred, ^{
+        sharedInstance = [[[self class] alloc] initWithSpecification:@"ANAPI"];
+    });
+    return sharedInstance;
 }
 
--(void)readTokenFromDefaults
+- (void)readTokenFromDefaults
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"access_token"];
     accessToken = token;
 }
 
--(void)makePostWithText:(NSString*)text
+- (SDWebServiceDataCompletionBlock)defaultJSONProcessingBlock
 {
-        
-    [self readTokenFromDefaults];
+    // refactor SDWebService so error's are passed around properly. -- BKS
     
-    NSString *postsString = [NSString stringWithFormat:@"stream/0/posts"];
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: text, @"text", accessToken, @"access_token", nil];
-    
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:
-                            [NSURL URLWithString:@"https://alpha-api.app.net/"]];
-    
-    [client postPath:postsString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:0];
-        
-        NSLog(@"Response: %@", dictionary);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@", [error localizedDescription]);
-    }];
-    
+    SDWebServiceDataCompletionBlock result = ^(int responseCode, NSString *response, NSError *error) {
+        NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *jsonError = nil;
+        id dataObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        return dataObject;
+    };
+    return result;
 }
 
--(void)getGlobalStreamWithDelegate:(id) delegate
+- (void)makePostWithText:(NSString*)text uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock
 {
-    
     [self readTokenFromDefaults];
     
-    NSString *streamString = [NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/posts/stream/global?access_token=%@", accessToken];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:streamString]];
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    // App.net guys (? Alex K. and Mathew Phillips) say we should put accessToken in the headers, like so:
+    // "Authorization: Bearer " + access_token
     
-        if(JSON) {
-            [delegate globalStreamDidReturnData: JSON ];
-        }
- 
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *err, id JSON) {
-        NSLog(@"%@", [err localizedDescription]);
-        // handle error
-    }];
+    NSDictionary *replacements = @{ @"accessToken" : accessToken, @"text" : text };
     
-    [operation start];
+    [self performRequestWithMethod:@"postToStream" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
+}
+
+- (void)getGlobalStream:(SDWebServiceUICompletionBlock)uiCompletionBlock
+{
+    [self readTokenFromDefaults];
+
+    NSDictionary *replacements = @{ @"accessToken" : accessToken };
+    
+    [self performRequestWithMethod:@"getGlobalStream" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
 }
 
 
