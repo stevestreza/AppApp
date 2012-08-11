@@ -10,7 +10,7 @@
 
 @interface ANStatusViewCell()
 {
-    UIImageView *avatarView;
+    SDImageView *avatarView;
     UILabel *statusTextLabel;
     UILabel *usernameTextLabel;
 
@@ -21,7 +21,7 @@
 @end
 
 @implementation ANStatusViewCell
-@synthesize status, avatar, username;
+@synthesize status, avatar, username, avatarView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -29,7 +29,7 @@
     if (self)
     {
         // future avatar
-        avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
+        avatarView = [[SDImageView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
         avatarView.backgroundColor = [UIColor grayColor];
         [self.contentView addSubview: avatarView];
         

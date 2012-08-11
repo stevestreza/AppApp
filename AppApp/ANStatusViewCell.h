@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDImageView.h"
 
 @interface ANStatusViewCell : UITableViewCell
 
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *status;
 @property (nonatomic, strong) UIImage  *avatar;
+
+@property (nonatomic, readonly) SDImageView *avatarView;
 
 @end
