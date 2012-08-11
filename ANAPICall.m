@@ -10,7 +10,9 @@
 
 @interface ANAPICall()
 {
+    id delegate;
     NSString *accessToken;
+    
 }
 -(void)readTokenFromDefaults;
 
@@ -49,13 +51,39 @@
                             [NSURL URLWithString:@"https://alpha-api.app.net/"]];
     
     [client postPath:postsString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSString *text = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"Response: %@", text);
+        
+        
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:0];
+        
+        NSLog(@"Response: %@", dictionary);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", [error localizedDescription]);
     }];
     
 }
+
+-(void)getGlobalStreamWithDelegate:(id) delegate
+{
+    
+    [self readTokenFromDefaults];
+    
+    NSString *streamString = [NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/posts/stream/global?access_token=%@", accessToken];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:streamString]];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    
+        if(JSON) {
+            [delegate globalStreamDidReturnData: JSON ];
+        }
+ 
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *err, id JSON) {
+        NSLog(@"%@", [err localizedDescription]);
+        // handle error
+    }];
+    
+    [operation start];
+}
+
+
 
 
 
