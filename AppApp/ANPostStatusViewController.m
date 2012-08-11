@@ -90,7 +90,10 @@
         // TODO: Activity Indicator.
         
         // TODO: Add delegate to API, make sure to dismiss *only* when post goes through.
-        [[ANAPICall sharedAppAPI] makePostWithText: postTextView.text];
+        //       ... and add the post to the status listing -- BKS.
+        [[ANAPICall sharedAppAPI] makePostWithText:postTextView.text uiCompletionBlock:^(id dataObject, NSError *error) {
+            SDLog(@"post response = %@", dataObject);
+        }];
         [self dismissPostStatusViewController:nil];
     }
 }

@@ -43,17 +43,10 @@
 
 -(void) refreshStream
 {
-    [[ANAPICall sharedAppAPI] getGlobalStreamWithDelegate:self];
-}
-
--(void) globalStreamDidReturnData:(NSArray *)data
-{
-    if(streamData) {
-        streamData = nil;
-    }
-    
-    streamData = [[NSMutableArray alloc] initWithArray:data];
-    [tableView reloadData];
+    [[ANAPICall sharedAppAPI] getGlobalStream:^(id dataObject, NSError *error) {
+        streamData = [NSMutableArray arrayWithArray:dataObject];
+        [tableView reloadData];
+    }];
 }
 
 -(IBAction)composeStatus:(id)sender
@@ -93,11 +86,14 @@
     ANStatusViewCell *cell = [[ANStatusViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         
     //TODO: move data into objects.
-    NSString *statusText =[[streamData objectAtIndex: [indexPath row]] objectForKey:@"text"];
+    NSDictionary *statusDict = [streamData objectAtIndex:[indexPath row]];
+    NSString *statusText = [statusDict objectForKey:@"text"];
+    NSString *avatarURL = [[[statusDict objectForKey:@"user" ] objectForKey:@"avatar_image"] objectForKey:@"url"];
     
     if(statusText == (id)[NSNull null] || statusText.length == 0 ) { statusText = @"null"; }
     cell.username = [[[streamData objectAtIndex: [indexPath row]] objectForKey:@"user"] objectForKey:@"username"];
     cell.status = statusText;
+    cell.avatarView.imageURL = avatarURL;
 
     return cell;
 }
