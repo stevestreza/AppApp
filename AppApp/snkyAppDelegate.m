@@ -8,7 +8,6 @@
 
 #import "snkyAppDelegate.h"
 #import "AuthViewController.h"
-#import "snkyViewController.h"
 
 @implementation snkyAppDelegate
 
