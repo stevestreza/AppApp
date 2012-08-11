@@ -13,31 +13,37 @@
 		00B4741915D38E3C00F767CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00B4741715D38E3C00F767CE /* InfoPlist.strings */; };
 		00B4741B15D38E3C00F767CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B4741A15D38E3C00F767CE /* main.m */; };
 		00B4741F15D38E3C00F767CE /* snkyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B4741E15D38E3C00F767CE /* snkyAppDelegate.m */; };
-		9229761E15D5BF440096B5D8 /* ANGlobalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9229761C15D5BF440096B5D8 /* ANGlobalViewController.m */; };
-		9229761F15D5BF440096B5D8 /* ANGlobalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9229761D15D5BF440096B5D8 /* ANGlobalViewController.xib */; };
 		922F80C915D58F6C0049F194 /* ANAPICall.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80C815D58F6C0049F194 /* ANAPICall.m */; };
 		922F80CD15D590400049F194 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80CC15D590400049F194 /* AuthViewController.m */; };
 		922F80CF15D595510049F194 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F80CE15D595510049F194 /* AuthViewController.xib */; };
 		922F80D415D5A0890049F194 /* ANPostStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80D215D5A0890049F194 /* ANPostStatusViewController.m */; };
 		922F80D515D5A0890049F194 /* ANPostStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */; };
 		9253EBD515D624F90047C153 /* ANStatusViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9253EBD415D624F90047C153 /* ANStatusViewCell.m */; };
-		CAD8D8A015D6E39E007FC765 /* NSCachedURLResponse+LeakFix.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D89515D6E39E007FC765 /* NSCachedURLResponse+LeakFix.m */; };
-		CAD8D8A215D6E39E007FC765 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D89915D6E39E007FC765 /* Reachability.m */; };
-		CAD8D8A415D6E39E007FC765 /* SDURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D89D15D6E39E007FC765 /* SDURLConnection.m */; };
-		CAD8D8A515D6E39E007FC765 /* SDWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D89F15D6E39E007FC765 /* SDWebService.m */; };
 		CAD8D8AB15D6E59F007FC765 /* ANAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAD8D8AA15D6E59F007FC765 /* ANAPI.plist */; };
-		CAD8D8B915D6E928007FC765 /* NSArray+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8AE15D6E928007FC765 /* NSArray+SDExtensions.m */; };
-		CAD8D8BA15D6E928007FC765 /* NSDate+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8B015D6E928007FC765 /* NSDate+SDExtensions.m */; };
-		CAD8D8BB15D6E928007FC765 /* NSDictionary+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8B215D6E928007FC765 /* NSDictionary+SDExtensions.m */; };
-		CAD8D8BC15D6E928007FC765 /* NSString+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8B415D6E928007FC765 /* NSString+SDExtensions.m */; };
-		CAD8D8BD15D6E928007FC765 /* NSUserDefaults+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8B615D6E928007FC765 /* NSUserDefaults+SDExtensions.m */; };
-		CAD8D8BE15D6E928007FC765 /* SDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8B815D6E928007FC765 /* SDTimer.m */; };
-		CAD8D8C215D6E935007FC765 /* SDKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8C115D6E935007FC765 /* SDKeychain.m */; };
-		CAD8D8C515D6E974007FC765 /* NSURLCache+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8C415D6E974007FC765 /* NSURLCache+SDExtensions.m */; };
 		CAD8D8C915D6E9F2007FC765 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD8D8C815D6E9F2007FC765 /* SystemConfiguration.framework */; };
 		CAD8D8CB15D6EA05007FC765 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD8D8CA15D6EA05007FC765 /* Security.framework */; };
-		CAD8D8CF15D6FD84007FC765 /* NSObject+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8CE15D6FD84007FC765 /* NSObject+SDExtensions.m */; };
-		CAD8D8D215D6FDCE007FC765 /* SDImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8D115D6FDCE007FC765 /* SDImageView.m */; };
+		CAD8D90715D706E7007FC765 /* NSArray+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8E415D706E7007FC765 /* NSArray+SDExtensions.m */; };
+		CAD8D90815D706E7007FC765 /* NSDate+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8E615D706E7007FC765 /* NSDate+SDExtensions.m */; };
+		CAD8D90915D706E7007FC765 /* NSDictionary+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8E815D706E7007FC765 /* NSDictionary+SDExtensions.m */; };
+		CAD8D90A15D706E7007FC765 /* NSString+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8EA15D706E7007FC765 /* NSString+SDExtensions.m */; };
+		CAD8D90B15D706E7007FC765 /* NSUserDefaults+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8EC15D706E7007FC765 /* NSUserDefaults+SDExtensions.m */; };
+		CAD8D90C15D706E7007FC765 /* SDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8EE15D706E7007FC765 /* SDTimer.m */; };
+		CAD8D90D15D706E7007FC765 /* SDKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8F315D706E7007FC765 /* SDKeychain.m */; };
+		CAD8D90E15D706E7007FC765 /* NSObject+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8F615D706E7007FC765 /* NSObject+SDExtensions.m */; };
+		CAD8D90F15D706E7007FC765 /* SDImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8F815D706E7007FC765 /* SDImageView.m */; };
+		CAD8D91015D706E7007FC765 /* NSCachedURLResponse+LeakFix.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8FB15D706E7007FC765 /* NSCachedURLResponse+LeakFix.m */; };
+		CAD8D91115D706E7007FC765 /* NSURLCache+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8FD15D706E7007FC765 /* NSURLCache+SDExtensions.m */; };
+		CAD8D91215D706E7007FC765 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D8FF15D706E7007FC765 /* Reachability.m */; };
+		CAD8D91315D706E7007FC765 /* SDURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D90115D706E7007FC765 /* SDURLConnection.m */; };
+		CAD8D91415D706E7007FC765 /* SDWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D90315D706E7007FC765 /* SDWebService.m */; };
+		CAD8D91515D706E7007FC765 /* STableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D90615D706E7007FC765 /* STableViewController.m */; };
+		CAD8D95815D71063007FC765 /* ANBaseStreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D95615D71063007FC765 /* ANBaseStreamController.m */; };
+		CAD8D96015D71450007FC765 /* ANStreamFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D95B15D7144F007FC765 /* ANStreamFooterView.m */; };
+		CAD8D96115D71450007FC765 /* ANStreamFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD8D95C15D7144F007FC765 /* ANStreamFooterView.xib */; };
+		CAD8D96215D71450007FC765 /* ANStreamHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D95E15D7144F007FC765 /* ANStreamHeaderView.m */; };
+		CAD8D96315D71450007FC765 /* ANStreamHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD8D95F15D7144F007FC765 /* ANStreamHeaderView.xib */; };
+		CAD8D96515D71763007FC765 /* ANBaseStreamController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD8D96415D71762007FC765 /* ANBaseStreamController.xib */; };
+		CAD8D96915D71DB2007FC765 /* ANGlobalStreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D96815D71DB2007FC765 /* ANGlobalStreamController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,9 +57,6 @@
 		00B4741C15D38E3C00F767CE /* AppApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppApp-Prefix.pch"; sourceTree = "<group>"; };
 		00B4741D15D38E3C00F767CE /* snkyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = snkyAppDelegate.h; sourceTree = "<group>"; };
 		00B4741E15D38E3C00F767CE /* snkyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snkyAppDelegate.m; sourceTree = "<group>"; };
-		9229761B15D5BF440096B5D8 /* ANGlobalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGlobalViewController.h; sourceTree = "<group>"; };
-		9229761C15D5BF440096B5D8 /* ANGlobalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGlobalViewController.m; sourceTree = "<group>"; };
-		9229761D15D5BF440096B5D8 /* ANGlobalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANGlobalViewController.xib; sourceTree = "<group>"; };
 		922F80C715D58F6C0049F194 /* ANAPICall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICall.h; sourceTree = "<group>"; };
 		922F80C815D58F6C0049F194 /* ANAPICall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICall.m; sourceTree = "<group>"; };
 		922F80CB15D590400049F194 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
@@ -64,38 +67,51 @@
 		922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPostStatusViewController.xib; sourceTree = "<group>"; };
 		9253EBD315D624F90047C153 /* ANStatusViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANStatusViewCell.h; sourceTree = "<group>"; };
 		9253EBD415D624F90047C153 /* ANStatusViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStatusViewCell.m; sourceTree = "<group>"; };
-		CAD8D89415D6E39E007FC765 /* NSCachedURLResponse+LeakFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCachedURLResponse+LeakFix.h"; sourceTree = "<group>"; };
-		CAD8D89515D6E39E007FC765 /* NSCachedURLResponse+LeakFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCachedURLResponse+LeakFix.m"; sourceTree = "<group>"; };
-		CAD8D89815D6E39E007FC765 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		CAD8D89915D6E39E007FC765 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		CAD8D89C15D6E39E007FC765 /* SDURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDURLConnection.h; sourceTree = "<group>"; };
-		CAD8D89D15D6E39E007FC765 /* SDURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDURLConnection.m; sourceTree = "<group>"; };
-		CAD8D89E15D6E39E007FC765 /* SDWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebService.h; sourceTree = "<group>"; };
-		CAD8D89F15D6E39E007FC765 /* SDWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebService.m; sourceTree = "<group>"; };
 		CAD8D8AA15D6E59F007FC765 /* ANAPI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ANAPI.plist; sourceTree = "<group>"; };
-		CAD8D8AD15D6E928007FC765 /* NSArray+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SDExtensions.h"; sourceTree = "<group>"; };
-		CAD8D8AE15D6E928007FC765 /* NSArray+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SDExtensions.m"; sourceTree = "<group>"; };
-		CAD8D8AF15D6E928007FC765 /* NSDate+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SDExtensions.h"; sourceTree = "<group>"; };
-		CAD8D8B015D6E928007FC765 /* NSDate+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SDExtensions.m"; sourceTree = "<group>"; };
-		CAD8D8B115D6E928007FC765 /* NSDictionary+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SDExtensions.h"; sourceTree = "<group>"; };
-		CAD8D8B215D6E928007FC765 /* NSDictionary+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SDExtensions.m"; sourceTree = "<group>"; };
-		CAD8D8B315D6E928007FC765 /* NSString+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SDExtensions.h"; sourceTree = "<group>"; };
-		CAD8D8B415D6E928007FC765 /* NSString+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SDExtensions.m"; sourceTree = "<group>"; };
-		CAD8D8B515D6E928007FC765 /* NSUserDefaults+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SDExtensions.h"; sourceTree = "<group>"; };
-		CAD8D8B615D6E928007FC765 /* NSUserDefaults+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SDExtensions.m"; sourceTree = "<group>"; };
-		CAD8D8B715D6E928007FC765 /* SDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTimer.h; sourceTree = "<group>"; };
-		CAD8D8B815D6E928007FC765 /* SDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTimer.m; sourceTree = "<group>"; };
-		CAD8D8C015D6E935007FC765 /* SDKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKeychain.h; sourceTree = "<group>"; };
-		CAD8D8C115D6E935007FC765 /* SDKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKeychain.m; sourceTree = "<group>"; };
-		CAD8D8C315D6E974007FC765 /* NSURLCache+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLCache+SDExtensions.h"; sourceTree = "<group>"; };
-		CAD8D8C415D6E974007FC765 /* NSURLCache+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLCache+SDExtensions.m"; sourceTree = "<group>"; };
-		CAD8D8C715D6E993007FC765 /* SDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLog.h; sourceTree = "<group>"; };
 		CAD8D8C815D6E9F2007FC765 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CAD8D8CA15D6EA05007FC765 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		CAD8D8CD15D6FD84007FC765 /* NSObject+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SDExtensions.h"; sourceTree = "<group>"; };
-		CAD8D8CE15D6FD84007FC765 /* NSObject+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SDExtensions.m"; sourceTree = "<group>"; };
-		CAD8D8D015D6FDCE007FC765 /* SDImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageView.h; sourceTree = "<group>"; };
-		CAD8D8D115D6FDCE007FC765 /* SDImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageView.m; sourceTree = "<group>"; };
+		CAD8D8E315D706E7007FC765 /* NSArray+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SDExtensions.h"; sourceTree = "<group>"; };
+		CAD8D8E415D706E7007FC765 /* NSArray+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SDExtensions.m"; sourceTree = "<group>"; };
+		CAD8D8E515D706E7007FC765 /* NSDate+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SDExtensions.h"; sourceTree = "<group>"; };
+		CAD8D8E615D706E7007FC765 /* NSDate+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SDExtensions.m"; sourceTree = "<group>"; };
+		CAD8D8E715D706E7007FC765 /* NSDictionary+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SDExtensions.h"; sourceTree = "<group>"; };
+		CAD8D8E815D706E7007FC765 /* NSDictionary+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SDExtensions.m"; sourceTree = "<group>"; };
+		CAD8D8E915D706E7007FC765 /* NSString+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SDExtensions.h"; sourceTree = "<group>"; };
+		CAD8D8EA15D706E7007FC765 /* NSString+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SDExtensions.m"; sourceTree = "<group>"; };
+		CAD8D8EB15D706E7007FC765 /* NSUserDefaults+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+SDExtensions.h"; sourceTree = "<group>"; };
+		CAD8D8EC15D706E7007FC765 /* NSUserDefaults+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+SDExtensions.m"; sourceTree = "<group>"; };
+		CAD8D8ED15D706E7007FC765 /* SDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTimer.h; sourceTree = "<group>"; };
+		CAD8D8EE15D706E7007FC765 /* SDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTimer.m; sourceTree = "<group>"; };
+		CAD8D8F015D706E7007FC765 /* SDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLog.h; sourceTree = "<group>"; };
+		CAD8D8F215D706E7007FC765 /* SDKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKeychain.h; sourceTree = "<group>"; };
+		CAD8D8F315D706E7007FC765 /* SDKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKeychain.m; sourceTree = "<group>"; };
+		CAD8D8F515D706E7007FC765 /* NSObject+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SDExtensions.h"; sourceTree = "<group>"; };
+		CAD8D8F615D706E7007FC765 /* NSObject+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SDExtensions.m"; sourceTree = "<group>"; };
+		CAD8D8F715D706E7007FC765 /* SDImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageView.h; sourceTree = "<group>"; };
+		CAD8D8F815D706E7007FC765 /* SDImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageView.m; sourceTree = "<group>"; };
+		CAD8D8FA15D706E7007FC765 /* NSCachedURLResponse+LeakFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCachedURLResponse+LeakFix.h"; sourceTree = "<group>"; };
+		CAD8D8FB15D706E7007FC765 /* NSCachedURLResponse+LeakFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCachedURLResponse+LeakFix.m"; sourceTree = "<group>"; };
+		CAD8D8FC15D706E7007FC765 /* NSURLCache+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLCache+SDExtensions.h"; sourceTree = "<group>"; };
+		CAD8D8FD15D706E7007FC765 /* NSURLCache+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLCache+SDExtensions.m"; sourceTree = "<group>"; };
+		CAD8D8FE15D706E7007FC765 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		CAD8D8FF15D706E7007FC765 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		CAD8D90015D706E7007FC765 /* SDURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDURLConnection.h; sourceTree = "<group>"; };
+		CAD8D90115D706E7007FC765 /* SDURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDURLConnection.m; sourceTree = "<group>"; };
+		CAD8D90215D706E7007FC765 /* SDWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebService.h; sourceTree = "<group>"; };
+		CAD8D90315D706E7007FC765 /* SDWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebService.m; sourceTree = "<group>"; };
+		CAD8D90515D706E7007FC765 /* STableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STableViewController.h; sourceTree = "<group>"; };
+		CAD8D90615D706E7007FC765 /* STableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STableViewController.m; sourceTree = "<group>"; };
+		CAD8D95515D71063007FC765 /* ANBaseStreamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANBaseStreamController.h; sourceTree = "<group>"; };
+		CAD8D95615D71063007FC765 /* ANBaseStreamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANBaseStreamController.m; sourceTree = "<group>"; };
+		CAD8D95A15D7144F007FC765 /* ANStreamFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANStreamFooterView.h; sourceTree = "<group>"; };
+		CAD8D95B15D7144F007FC765 /* ANStreamFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStreamFooterView.m; sourceTree = "<group>"; };
+		CAD8D95C15D7144F007FC765 /* ANStreamFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANStreamFooterView.xib; sourceTree = "<group>"; };
+		CAD8D95D15D7144F007FC765 /* ANStreamHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANStreamHeaderView.h; sourceTree = "<group>"; };
+		CAD8D95E15D7144F007FC765 /* ANStreamHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStreamHeaderView.m; sourceTree = "<group>"; };
+		CAD8D95F15D7144F007FC765 /* ANStreamHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANStreamHeaderView.xib; sourceTree = "<group>"; };
+		CAD8D96415D71762007FC765 /* ANBaseStreamController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANBaseStreamController.xib; sourceTree = "<group>"; };
+		CAD8D96715D71DB2007FC765 /* ANGlobalStreamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGlobalStreamController.h; sourceTree = "<group>"; };
+		CAD8D96815D71DB2007FC765 /* ANGlobalStreamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGlobalStreamController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +133,7 @@
 		00B473FF15D38E3C00F767CE = {
 			isa = PBXGroup;
 			children = (
-				CAD8D88D15D6E2C2007FC765 /* SetDirection */,
+				CAD8D8DF15D706E7007FC765 /* Externals */,
 				922F80C015D58F360049F194 /* API */,
 				00B4741415D38E3C00F767CE /* AppApp */,
 				00B4740D15D38E3C00F767CE /* Frameworks */,
@@ -150,7 +166,8 @@
 			children = (
 				9253EBD315D624F90047C153 /* ANStatusViewCell.h */,
 				9253EBD415D624F90047C153 /* ANStatusViewCell.m */,
-				9229761915D5BF300096B5D8 /* Global */,
+				CAD8D96615D71D80007FC765 /* Stream Controllers */,
+				9229761915D5BF300096B5D8 /* Generic Stream Controller */,
 				922F80D015D5A0680049F194 /* Post Status */,
 				922F80CA15D590220049F194 /* Authentication */,
 				00B4741D15D38E3C00F767CE /* snkyAppDelegate.h */,
@@ -171,14 +188,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9229761915D5BF300096B5D8 /* Global */ = {
+		9229761915D5BF300096B5D8 /* Generic Stream Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9229761B15D5BF440096B5D8 /* ANGlobalViewController.h */,
-				9229761C15D5BF440096B5D8 /* ANGlobalViewController.m */,
-				9229761D15D5BF440096B5D8 /* ANGlobalViewController.xib */,
+				CAD8D95A15D7144F007FC765 /* ANStreamFooterView.h */,
+				CAD8D95B15D7144F007FC765 /* ANStreamFooterView.m */,
+				CAD8D95C15D7144F007FC765 /* ANStreamFooterView.xib */,
+				CAD8D95D15D7144F007FC765 /* ANStreamHeaderView.h */,
+				CAD8D95E15D7144F007FC765 /* ANStreamHeaderView.m */,
+				CAD8D95F15D7144F007FC765 /* ANStreamHeaderView.xib */,
+				CAD8D95515D71063007FC765 /* ANBaseStreamController.h */,
+				CAD8D95615D71063007FC765 /* ANBaseStreamController.m */,
+				CAD8D96415D71762007FC765 /* ANBaseStreamController.xib */,
 			);
-			name = Global;
+			name = "Generic Stream Controller";
 			sourceTree = "<group>";
 		};
 		922F80C015D58F360049F194 /* API */ = {
@@ -211,85 +234,115 @@
 			name = "Post Status";
 			sourceTree = "<group>";
 		};
-		CAD8D88D15D6E2C2007FC765 /* SetDirection */ = {
+		CAD8D8DF15D706E7007FC765 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
-				CAD8D8CC15D6FD84007FC765 /* UI */,
-				CAD8D8C615D6E993007FC765 /* Logging */,
-				CAD8D8BF15D6E935007FC765 /* Security */,
-				CAD8D8AC15D6E928007FC765 /* Foundation */,
-				CAD8D89315D6E39E007FC765 /* WebServices */,
+				CAD8D8E015D706E7007FC765 /* SetDirection */,
+				CAD8D90415D706E7007FC765 /* Shiki */,
 			);
-			name = SetDirection;
+			path = Externals;
 			sourceTree = "<group>";
 		};
-		CAD8D89315D6E39E007FC765 /* WebServices */ = {
+		CAD8D8E015D706E7007FC765 /* SetDirection */ = {
 			isa = PBXGroup;
 			children = (
-				CAD8D89415D6E39E007FC765 /* NSCachedURLResponse+LeakFix.h */,
-				CAD8D89515D6E39E007FC765 /* NSCachedURLResponse+LeakFix.m */,
-				CAD8D89815D6E39E007FC765 /* Reachability.h */,
-				CAD8D89915D6E39E007FC765 /* Reachability.m */,
-				CAD8D8C315D6E974007FC765 /* NSURLCache+SDExtensions.h */,
-				CAD8D8C415D6E974007FC765 /* NSURLCache+SDExtensions.m */,
-				CAD8D89C15D6E39E007FC765 /* SDURLConnection.h */,
-				CAD8D89D15D6E39E007FC765 /* SDURLConnection.m */,
-				CAD8D89E15D6E39E007FC765 /* SDWebService.h */,
-				CAD8D89F15D6E39E007FC765 /* SDWebService.m */,
+				CAD8D8E115D706E7007FC765 /* ios-shared */,
 			);
-			name = WebServices;
-			path = "SetDirection/ios-shared/WebServices";
+			path = SetDirection;
 			sourceTree = "<group>";
 		};
-		CAD8D8AC15D6E928007FC765 /* Foundation */ = {
+		CAD8D8E115D706E7007FC765 /* ios-shared */ = {
 			isa = PBXGroup;
 			children = (
-				CAD8D8AD15D6E928007FC765 /* NSArray+SDExtensions.h */,
-				CAD8D8AE15D6E928007FC765 /* NSArray+SDExtensions.m */,
-				CAD8D8AF15D6E928007FC765 /* NSDate+SDExtensions.h */,
-				CAD8D8B015D6E928007FC765 /* NSDate+SDExtensions.m */,
-				CAD8D8B115D6E928007FC765 /* NSDictionary+SDExtensions.h */,
-				CAD8D8B215D6E928007FC765 /* NSDictionary+SDExtensions.m */,
-				CAD8D8B315D6E928007FC765 /* NSString+SDExtensions.h */,
-				CAD8D8B415D6E928007FC765 /* NSString+SDExtensions.m */,
-				CAD8D8B515D6E928007FC765 /* NSUserDefaults+SDExtensions.h */,
-				CAD8D8B615D6E928007FC765 /* NSUserDefaults+SDExtensions.m */,
-				CAD8D8B715D6E928007FC765 /* SDTimer.h */,
-				CAD8D8B815D6E928007FC765 /* SDTimer.m */,
+				CAD8D8E215D706E7007FC765 /* Foundation */,
+				CAD8D8EF15D706E7007FC765 /* Logging */,
+				CAD8D8F115D706E7007FC765 /* Security */,
+				CAD8D8F415D706E7007FC765 /* UI */,
+				CAD8D8F915D706E7007FC765 /* WebServices */,
 			);
-			name = Foundation;
-			path = "SetDirection/ios-shared/Foundation";
+			path = "ios-shared";
 			sourceTree = "<group>";
 		};
-		CAD8D8BF15D6E935007FC765 /* Security */ = {
+		CAD8D8E215D706E7007FC765 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				CAD8D8C015D6E935007FC765 /* SDKeychain.h */,
-				CAD8D8C115D6E935007FC765 /* SDKeychain.m */,
+				CAD8D8E315D706E7007FC765 /* NSArray+SDExtensions.h */,
+				CAD8D8E415D706E7007FC765 /* NSArray+SDExtensions.m */,
+				CAD8D8E515D706E7007FC765 /* NSDate+SDExtensions.h */,
+				CAD8D8E615D706E7007FC765 /* NSDate+SDExtensions.m */,
+				CAD8D8E715D706E7007FC765 /* NSDictionary+SDExtensions.h */,
+				CAD8D8E815D706E7007FC765 /* NSDictionary+SDExtensions.m */,
+				CAD8D8E915D706E7007FC765 /* NSString+SDExtensions.h */,
+				CAD8D8EA15D706E7007FC765 /* NSString+SDExtensions.m */,
+				CAD8D8EB15D706E7007FC765 /* NSUserDefaults+SDExtensions.h */,
+				CAD8D8EC15D706E7007FC765 /* NSUserDefaults+SDExtensions.m */,
+				CAD8D8ED15D706E7007FC765 /* SDTimer.h */,
+				CAD8D8EE15D706E7007FC765 /* SDTimer.m */,
 			);
-			name = Security;
-			path = "SetDirection/ios-shared/Security";
+			path = Foundation;
 			sourceTree = "<group>";
 		};
-		CAD8D8C615D6E993007FC765 /* Logging */ = {
+		CAD8D8EF15D706E7007FC765 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
-				CAD8D8C715D6E993007FC765 /* SDLog.h */,
+				CAD8D8F015D706E7007FC765 /* SDLog.h */,
 			);
-			name = Logging;
-			path = "SetDirection/ios-shared/Logging";
+			path = Logging;
 			sourceTree = "<group>";
 		};
-		CAD8D8CC15D6FD84007FC765 /* UI */ = {
+		CAD8D8F115D706E7007FC765 /* Security */ = {
 			isa = PBXGroup;
 			children = (
-				CAD8D8CD15D6FD84007FC765 /* NSObject+SDExtensions.h */,
-				CAD8D8CE15D6FD84007FC765 /* NSObject+SDExtensions.m */,
-				CAD8D8D015D6FDCE007FC765 /* SDImageView.h */,
-				CAD8D8D115D6FDCE007FC765 /* SDImageView.m */,
+				CAD8D8F215D706E7007FC765 /* SDKeychain.h */,
+				CAD8D8F315D706E7007FC765 /* SDKeychain.m */,
 			);
-			name = UI;
-			path = "SetDirection/ios-shared/UI";
+			path = Security;
+			sourceTree = "<group>";
+		};
+		CAD8D8F415D706E7007FC765 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CAD8D8F515D706E7007FC765 /* NSObject+SDExtensions.h */,
+				CAD8D8F615D706E7007FC765 /* NSObject+SDExtensions.m */,
+				CAD8D8F715D706E7007FC765 /* SDImageView.h */,
+				CAD8D8F815D706E7007FC765 /* SDImageView.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CAD8D8F915D706E7007FC765 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				CAD8D8FA15D706E7007FC765 /* NSCachedURLResponse+LeakFix.h */,
+				CAD8D8FB15D706E7007FC765 /* NSCachedURLResponse+LeakFix.m */,
+				CAD8D8FC15D706E7007FC765 /* NSURLCache+SDExtensions.h */,
+				CAD8D8FD15D706E7007FC765 /* NSURLCache+SDExtensions.m */,
+				CAD8D8FE15D706E7007FC765 /* Reachability.h */,
+				CAD8D8FF15D706E7007FC765 /* Reachability.m */,
+				CAD8D90015D706E7007FC765 /* SDURLConnection.h */,
+				CAD8D90115D706E7007FC765 /* SDURLConnection.m */,
+				CAD8D90215D706E7007FC765 /* SDWebService.h */,
+				CAD8D90315D706E7007FC765 /* SDWebService.m */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		CAD8D90415D706E7007FC765 /* Shiki */ = {
+			isa = PBXGroup;
+			children = (
+				CAD8D90515D706E7007FC765 /* STableViewController.h */,
+				CAD8D90615D706E7007FC765 /* STableViewController.m */,
+			);
+			path = Shiki;
+			sourceTree = "<group>";
+		};
+		CAD8D96615D71D80007FC765 /* Stream Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CAD8D96715D71DB2007FC765 /* ANGlobalStreamController.h */,
+				CAD8D96815D71DB2007FC765 /* ANGlobalStreamController.m */,
+			);
+			name = "Stream Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,8 +400,10 @@
 				00B4741915D38E3C00F767CE /* InfoPlist.strings in Resources */,
 				922F80CF15D595510049F194 /* AuthViewController.xib in Resources */,
 				922F80D515D5A0890049F194 /* ANPostStatusViewController.xib in Resources */,
-				9229761F15D5BF440096B5D8 /* ANGlobalViewController.xib in Resources */,
 				CAD8D8AB15D6E59F007FC765 /* ANAPI.plist in Resources */,
+				CAD8D96115D71450007FC765 /* ANStreamFooterView.xib in Resources */,
+				CAD8D96315D71450007FC765 /* ANStreamHeaderView.xib in Resources */,
+				CAD8D96515D71763007FC765 /* ANBaseStreamController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,22 +419,26 @@
 				922F80C915D58F6C0049F194 /* ANAPICall.m in Sources */,
 				922F80CD15D590400049F194 /* AuthViewController.m in Sources */,
 				922F80D415D5A0890049F194 /* ANPostStatusViewController.m in Sources */,
-				9229761E15D5BF440096B5D8 /* ANGlobalViewController.m in Sources */,
 				9253EBD515D624F90047C153 /* ANStatusViewCell.m in Sources */,
-				CAD8D8A015D6E39E007FC765 /* NSCachedURLResponse+LeakFix.m in Sources */,
-				CAD8D8A215D6E39E007FC765 /* Reachability.m in Sources */,
-				CAD8D8A415D6E39E007FC765 /* SDURLConnection.m in Sources */,
-				CAD8D8A515D6E39E007FC765 /* SDWebService.m in Sources */,
-				CAD8D8B915D6E928007FC765 /* NSArray+SDExtensions.m in Sources */,
-				CAD8D8BA15D6E928007FC765 /* NSDate+SDExtensions.m in Sources */,
-				CAD8D8BB15D6E928007FC765 /* NSDictionary+SDExtensions.m in Sources */,
-				CAD8D8BC15D6E928007FC765 /* NSString+SDExtensions.m in Sources */,
-				CAD8D8BD15D6E928007FC765 /* NSUserDefaults+SDExtensions.m in Sources */,
-				CAD8D8BE15D6E928007FC765 /* SDTimer.m in Sources */,
-				CAD8D8C215D6E935007FC765 /* SDKeychain.m in Sources */,
-				CAD8D8C515D6E974007FC765 /* NSURLCache+SDExtensions.m in Sources */,
-				CAD8D8CF15D6FD84007FC765 /* NSObject+SDExtensions.m in Sources */,
-				CAD8D8D215D6FDCE007FC765 /* SDImageView.m in Sources */,
+				CAD8D90715D706E7007FC765 /* NSArray+SDExtensions.m in Sources */,
+				CAD8D90815D706E7007FC765 /* NSDate+SDExtensions.m in Sources */,
+				CAD8D90915D706E7007FC765 /* NSDictionary+SDExtensions.m in Sources */,
+				CAD8D90A15D706E7007FC765 /* NSString+SDExtensions.m in Sources */,
+				CAD8D90B15D706E7007FC765 /* NSUserDefaults+SDExtensions.m in Sources */,
+				CAD8D90C15D706E7007FC765 /* SDTimer.m in Sources */,
+				CAD8D90D15D706E7007FC765 /* SDKeychain.m in Sources */,
+				CAD8D90E15D706E7007FC765 /* NSObject+SDExtensions.m in Sources */,
+				CAD8D90F15D706E7007FC765 /* SDImageView.m in Sources */,
+				CAD8D91015D706E7007FC765 /* NSCachedURLResponse+LeakFix.m in Sources */,
+				CAD8D91115D706E7007FC765 /* NSURLCache+SDExtensions.m in Sources */,
+				CAD8D91215D706E7007FC765 /* Reachability.m in Sources */,
+				CAD8D91315D706E7007FC765 /* SDURLConnection.m in Sources */,
+				CAD8D91415D706E7007FC765 /* SDWebService.m in Sources */,
+				CAD8D91515D706E7007FC765 /* STableViewController.m in Sources */,
+				CAD8D95815D71063007FC765 /* ANBaseStreamController.m in Sources */,
+				CAD8D96015D71450007FC765 /* ANStreamFooterView.m in Sources */,
+				CAD8D96215D71450007FC765 /* ANStreamHeaderView.m in Sources */,
+				CAD8D96915D71DB2007FC765 /* ANGlobalStreamController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +478,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -439,7 +498,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -452,6 +511,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppApp/AppApp-Prefix.pch";
 				INFOPLIST_FILE = "AppApp/AppApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -463,6 +523,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppApp/AppApp-Prefix.pch";
 				INFOPLIST_FILE = "AppApp/AppApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
