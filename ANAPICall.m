@@ -54,6 +54,8 @@
 - (void)makePostWithText:(NSString*)text uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock
 {
     [self readTokenFromDefaults];
+    if (!accessToken)
+        return;
     
     // App.net guys (? Alex K. and Mathew Phillips) say we should put accessToken in the headers, like so:
     // "Authorization: Bearer " + access_token
@@ -67,6 +69,9 @@
 {
     [self readTokenFromDefaults];
 
+    if (!accessToken)
+        return;
+    
     NSDictionary *replacements = @{ @"accessToken" : accessToken };
     
     [self performRequestWithMethod:@"getGlobalStream" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];

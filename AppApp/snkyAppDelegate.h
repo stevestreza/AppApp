@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ANGlobalViewController.h"
 
 @interface snkyAppDelegate : UIResponder <UIApplicationDelegate> {
     
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) ANGlobalViewController *viewController;
+@property (strong, nonatomic) UITabBarController *tabBarController;
 
 @end

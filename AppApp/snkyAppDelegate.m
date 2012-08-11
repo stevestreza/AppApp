@@ -8,17 +8,24 @@
 
 #import "snkyAppDelegate.h"
 #import "AuthViewController.h"
+#import "ANGlobalStreamController.h"
+#import "NSObject+SDExtensions.h"
 
 @implementation snkyAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[ANGlobalViewController alloc] init];
     
-    //self.viewController = [[snkyViewController alloc] initWithNibName:@"snkyViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    UINavigationController *userStream = [[UINavigationController alloc] initWithRootViewController:[[ANGlobalStreamController alloc] init]];
+    UINavigationController *postsStream = [[UINavigationController alloc] initWithRootViewController:[[ANBaseStreamController alloc] init]];
+    UINavigationController *mentionsStream = [[UINavigationController alloc] initWithRootViewController:[[ANBaseStreamController alloc] init]];
+    UINavigationController *globalStream = [[UINavigationController alloc] initWithRootViewController:[[ANBaseStreamController alloc] init]];
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = @[userStream, postsStream, mentionsStream, globalStream];
+    
+    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
     if ([launchOptions objectForKey:UIApplicationLaunchOptionsURLKey]) {
@@ -30,7 +37,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(![defaults objectForKey:@"access_token"]) {
         AuthViewController *authView = [[AuthViewController alloc] init];
-        [self.viewController presentModalViewController:authView animated:YES];
+        [self.window.rootViewController presentModalViewController:authView animated:YES];
     }
     
     return YES;
