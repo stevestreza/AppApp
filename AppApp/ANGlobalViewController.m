@@ -9,6 +9,7 @@
 #import "ANGlobalViewController.h"
 #import "ANAPICall.h"
 #import "ANPostStatusViewController.h"
+#import "ANStatusViewCell.h"
 
 @interface ANGlobalViewController ()<UITableViewDelegate, UITableViewDataSource, ANAPIDelegate>
 {
@@ -67,26 +68,24 @@
     return [streamData count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return 130; //TODO: Dynamic based on cell content.
+}
+
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *TempCellTableIdentifier = @"TempCellTableIdentifier";
     
-    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:TempCellTableIdentifier];
+    ANStatusViewCell *cell = [[ANStatusViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        
+    //TODO: move data into objects.
+    NSString *statusText =[[streamData objectAtIndex: [indexPath row]] objectForKey:@"text"];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TempCellTableIdentifier];
-        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-        cell.textLabel.numberOfLines = 0;
-        cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:11.0f];
-    }
+    if(statusText == (id)[NSNull null] || statusText.length == 0 ) { statusText = @"null"; }
     
-    
-    
-    if([[streamData objectAtIndex: [indexPath row]] objectForKey:@"text"]) {
-        cell.textLabel.text = [[streamData objectAtIndex: [indexPath row]] objectForKey:@"text"];
-    } else {
-        cell.textLabel.text = @"BROKEN"; // not sure why.
-    }
+    cell.username = [[[streamData objectAtIndex: [indexPath row]] objectForKey:@"user"] objectForKey:@"username"];
+    cell.status = statusText;
+
     return cell;
 }
 

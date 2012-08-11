@@ -32,6 +32,7 @@
 		922F80CF15D595510049F194 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F80CE15D595510049F194 /* AuthViewController.xib */; };
 		922F80D415D5A0890049F194 /* ANPostStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80D215D5A0890049F194 /* ANPostStatusViewController.m */; };
 		922F80D515D5A0890049F194 /* ANPostStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */; };
+		9253EBD515D624F90047C153 /* ANStatusViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9253EBD415D624F90047C153 /* ANStatusViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,8 @@
 		922F80D115D5A0890049F194 /* ANPostStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPostStatusViewController.h; sourceTree = "<group>"; };
 		922F80D215D5A0890049F194 /* ANPostStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPostStatusViewController.m; sourceTree = "<group>"; };
 		922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPostStatusViewController.xib; sourceTree = "<group>"; };
+		9253EBD315D624F90047C153 /* ANStatusViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANStatusViewCell.h; sourceTree = "<group>"; };
+		9253EBD415D624F90047C153 /* ANStatusViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStatusViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 		00B4741415D38E3C00F767CE /* AppApp */ = {
 			isa = PBXGroup;
 			children = (
+				9253EBD315D624F90047C153 /* ANStatusViewCell.h */,
+				9253EBD415D624F90047C153 /* ANStatusViewCell.m */,
 				9229761915D5BF300096B5D8 /* Global */,
 				922F80D015D5A0680049F194 /* Post Status */,
 				922F80CA15D590220049F194 /* Authentication */,
@@ -303,6 +308,7 @@
 				922F80CD15D590400049F194 /* AuthViewController.m in Sources */,
 				922F80D415D5A0890049F194 /* ANPostStatusViewController.m in Sources */,
 				9229761E15D5BF440096B5D8 /* ANGlobalViewController.m in Sources */,
+				9253EBD515D624F90047C153 /* ANStatusViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
