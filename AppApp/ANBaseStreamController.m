@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad
 {
+    self.title = self.sideMenuTitle;
     [super viewDidLoad];
     
     [self setupSideMenuBarButtonItem];
