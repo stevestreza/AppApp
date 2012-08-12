@@ -13,6 +13,9 @@
 		00B4741915D38E3C00F767CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00B4741715D38E3C00F767CE /* InfoPlist.strings */; };
 		00B4741B15D38E3C00F767CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B4741A15D38E3C00F767CE /* main.m */; };
 		00B4741F15D38E3C00F767CE /* snkyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B4741E15D38E3C00F767CE /* snkyAppDelegate.m */; };
+		00ECA12215D7415500178F8A /* ANUserStreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECA11D15D7409200178F8A /* ANUserStreamController.m */; };
+		00ECA12315D7415500178F8A /* ANUserPostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECA11C15D7409200178F8A /* ANUserPostsController.m */; };
+		00ECA12415D7415500178F8A /* ANUserMentionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECA11B15D7409200178F8A /* ANUserMentionsController.m */; };
 		922F80C915D58F6C0049F194 /* ANAPICall.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80C815D58F6C0049F194 /* ANAPICall.m */; };
 		922F80CD15D590400049F194 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80CC15D590400049F194 /* AuthViewController.m */; };
 		922F80CF15D595510049F194 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F80CE15D595510049F194 /* AuthViewController.xib */; };
@@ -57,6 +60,12 @@
 		00B4741C15D38E3C00F767CE /* AppApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppApp-Prefix.pch"; sourceTree = "<group>"; };
 		00B4741D15D38E3C00F767CE /* snkyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = snkyAppDelegate.h; sourceTree = "<group>"; };
 		00B4741E15D38E3C00F767CE /* snkyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snkyAppDelegate.m; sourceTree = "<group>"; };
+		00ECA11B15D7409200178F8A /* ANUserMentionsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANUserMentionsController.m; sourceTree = "<group>"; };
+		00ECA11C15D7409200178F8A /* ANUserPostsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANUserPostsController.m; sourceTree = "<group>"; };
+		00ECA11D15D7409200178F8A /* ANUserStreamController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANUserStreamController.m; sourceTree = "<group>"; };
+		00ECA11E15D7409200178F8A /* ANUserMentionsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANUserMentionsController.h; sourceTree = "<group>"; };
+		00ECA11F15D7409200178F8A /* ANUserPostsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANUserPostsController.h; sourceTree = "<group>"; };
+		00ECA12015D7409200178F8A /* ANUserStreamController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANUserStreamController.h; sourceTree = "<group>"; };
 		922F80C715D58F6C0049F194 /* ANAPICall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICall.h; sourceTree = "<group>"; };
 		922F80C815D58F6C0049F194 /* ANAPICall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICall.m; sourceTree = "<group>"; };
 		922F80CB15D590400049F194 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
@@ -341,6 +350,12 @@
 			children = (
 				CAD8D96715D71DB2007FC765 /* ANGlobalStreamController.h */,
 				CAD8D96815D71DB2007FC765 /* ANGlobalStreamController.m */,
+				00ECA12015D7409200178F8A /* ANUserStreamController.h */,
+				00ECA11D15D7409200178F8A /* ANUserStreamController.m */,
+				00ECA11F15D7409200178F8A /* ANUserPostsController.h */,
+				00ECA11C15D7409200178F8A /* ANUserPostsController.m */,
+				00ECA11E15D7409200178F8A /* ANUserMentionsController.h */,
+				00ECA11B15D7409200178F8A /* ANUserMentionsController.m */,
 			);
 			name = "Stream Controllers";
 			sourceTree = "<group>";
@@ -439,6 +454,9 @@
 				CAD8D96015D71450007FC765 /* ANStreamFooterView.m in Sources */,
 				CAD8D96215D71450007FC765 /* ANStreamHeaderView.m in Sources */,
 				CAD8D96915D71DB2007FC765 /* ANGlobalStreamController.m in Sources */,
+				00ECA12215D7415500178F8A /* ANUserStreamController.m in Sources */,
+				00ECA12315D7415500178F8A /* ANUserPostsController.m in Sources */,
+				00ECA12415D7415500178F8A /* ANUserMentionsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
