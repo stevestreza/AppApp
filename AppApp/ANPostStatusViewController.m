@@ -17,7 +17,7 @@
 @end
 
 @implementation ANPostStatusViewController
-@synthesize postTextView, characterCountLabel, postButton;
+@synthesize postTextView, characterCountLabel, postButton, groupView;
 
 - (id)init
 {
@@ -32,7 +32,6 @@
 {
     [super viewDidLoad];
     [self registerForNotifications];
-    [postTextView becomeFirstResponder];
 }
 
 
@@ -53,8 +52,26 @@
 }
 
 
-
-
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(applyKeyboardSizeChange:) name:UIKeyboardWillShowNotification object:nil];
+    [notificationCenter addObserver:self selector:@selector(applyKeyboardSizeChange:) name:UIKeyboardWillHideNotification object:nil];
+    [notificationCenter addObserver:self selector:@selector(applyKeyboardSizeChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [postTextView becomeFirstResponder];
+}
+- (void) viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [notificationCenter removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [notificationCenter removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+}
 
 -(void) updateCharCountLabel: (NSNotification *) notification
 {
@@ -97,5 +114,34 @@
         [self dismissPostStatusViewController:nil];
     }
 }
+
+
+#pragma mark - UIKeyboard handling
+
+
+- (void) applyKeyboardSizeChange:(NSNotification *)notification{
+    NSDictionary *dict = [notification userInfo];
+    NSNumber *animationDuration = [dict valueForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSNumber *curve = [dict valueForKey:UIKeyboardAnimationCurveUserInfoKey];
+    
+    CGRect newFrame;
+    UIView *aViewToResize = self.groupView;
+    
+    CGRect keyboardEndFrame;
+    [[dict valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndFrame];
+    
+    keyboardEndFrame = [self.view convertRect:keyboardEndFrame fromView:nil];
+    
+    newFrame = aViewToResize.frame;
+    newFrame.size.height = keyboardEndFrame.origin.y - newFrame.origin.y;
+    [UIView animateWithDuration:[animationDuration floatValue]
+                          delay:0.0
+                        options:[curve integerValue]
+                     animations:^{
+                         aViewToResize.frame = newFrame;
+                     }
+                     completion:NULL];
+}
+
 
 @end
