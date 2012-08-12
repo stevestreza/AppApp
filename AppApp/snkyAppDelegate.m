@@ -8,11 +8,9 @@
 
 #import "snkyAppDelegate.h"
 #import "AuthViewController.h"
-#import "ANGlobalStreamController.h"
-#import "ANUserStreamController.h"
-#import "ANUserPostsController.h"
-#import "ANUserMentionsController.h"
-#import "NSObject+SDExtensions.h"
+#import "MFSideMenuManager.h"
+#import "ANSideMenuController.h"
+#import "ANAPICall.h"
 
 @implementation snkyAppDelegate
 
@@ -20,17 +18,17 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UINavigationController *userStream = [[UINavigationController alloc] initWithRootViewController:[[ANUserStreamController alloc] init]];
-    UINavigationController *mentionsStream = [[UINavigationController alloc] initWithRootViewController:[[ANUserMentionsController alloc] init]];
-    UINavigationController *postsStream = [[UINavigationController alloc] initWithRootViewController:[[ANUserPostsController alloc] init]];
-    UINavigationController *globalStream = [[UINavigationController alloc] initWithRootViewController:[[ANGlobalStreamController alloc] init]];
+    ANSideMenuController *sideMenuController = [[ANSideMenuController alloc] init];
+
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[sideMenuController.navigationArray objectAtIndex:0]];
     
-    self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[userStream, mentionsStream, postsStream, globalStream];
-    
-    self.window.rootViewController = self.tabBarController;
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     
+    // make sure to display the navigation controller before calling this
+    [MFSideMenuManager configureWithNavigationController:navigationController
+                                      sideMenuController:sideMenuController];
+
     if ([launchOptions objectForKey:UIApplicationLaunchOptionsURLKey]) {
         NSLog(@"bacon");
     }

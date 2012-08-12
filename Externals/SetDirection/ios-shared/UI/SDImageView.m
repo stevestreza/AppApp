@@ -24,7 +24,7 @@
         [urlConnection cancel];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:value]];
-    urlConnection = [SDURLConnection sendAsynchronousRequestInBackground:request shouldCache:YES withResponseHandler:^(SDURLConnection *connection, NSURLResponse *response, NSData *responseData, NSError *error) {
+    urlConnection = [SDURLConnection sendAsynchronousRequest:request shouldCache:YES withResponseHandler:^(SDURLConnection *connection, NSURLResponse *response, NSData *responseData, NSError *error) {
         UIImage *newImage = [UIImage imageWithData:responseData];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.image = newImage;

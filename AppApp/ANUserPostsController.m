@@ -14,14 +14,11 @@
 
 @implementation ANUserPostsController
 
-- (void)viewDidLoad
+- (NSString *)sideMenuTitle
 {
-    [super viewDidLoad];
-    
-    self.navigationItem.title = @"Your posts";
-    
-    [self refresh];
+    return @"User Posts";
 }
+
 
 - (void)addItemsOnTop
 {

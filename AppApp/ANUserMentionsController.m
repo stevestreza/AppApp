@@ -14,13 +14,9 @@
 
 @implementation ANUserMentionsController
 
-- (void)viewDidLoad
+- (NSString *)sideMenuTitle
 {
-    [super viewDidLoad];
-    
-    self.navigationItem.title = @"User Mentions";
-    
-    [self refresh];
+    return @"User Mentions";
 }
 
 - (void)addItemsOnTop

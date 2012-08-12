@@ -10,14 +10,11 @@
 
 @implementation ANGlobalStreamController
 
-- (void)viewDidLoad
+- (NSString *)sideMenuTitle
 {
-    [super viewDidLoad];
-    
-    self.navigationItem.title = @"Global";
-    
-    [self refresh];
+    return @"Global Stream";
 }
+
 
 - (void)addItemsOnTop
 {

@@ -16,4 +16,6 @@
     NSMutableArray *streamData;
 }
 
+@property (nonatomic, readonly) NSString *sideMenuTitle;
+
 @end

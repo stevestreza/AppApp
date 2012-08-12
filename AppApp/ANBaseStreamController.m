@@ -12,6 +12,7 @@
 #import "ANStreamFooterView.h"
 #import "ANStreamHeaderView.h"
 
+#import "MFSideMenu.h"
 #import "NSObject+SDExtensions.h"
 
 @interface ANBaseStreamController ()
@@ -23,6 +24,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self setupSideMenuBarButtonItem];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -42,8 +45,7 @@
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
     [self.tableView addGestureRecognizer:recognizer];
     
-    //[self refresh];
-
+    [self refresh];
 }
 
 - (void)viewDidUnload

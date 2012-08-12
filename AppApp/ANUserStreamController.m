@@ -14,14 +14,11 @@
 
 @implementation ANUserStreamController
 
-- (void)viewDidLoad
+- (NSString *)sideMenuTitle
 {
-    [super viewDidLoad];
-    
-    self.navigationItem.title = @"User Stream";
-    
-    [self refresh];
+    return @"User Stream";
 }
+
 
 - (void)addItemsOnTop
 {
