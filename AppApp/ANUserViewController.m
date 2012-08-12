@@ -10,6 +10,8 @@
 #import "SDImageView.h"
 #import "ANAPICall.h"
 #import "SVProgressHUD.h"
+#import "UILabel+SDExtensions.h"
+
 #import <QuartzCore/QuartzCore.h>
 
 @interface ANUserViewController ()
@@ -19,9 +21,13 @@
 @implementation ANUserViewController
 {
     NSString *userID;
+    NSDictionary *userData;
     
     __weak IBOutlet SDImageView *userImageView;
     __weak IBOutlet SDImageView *coverImageView;
+    __weak IBOutlet UILabel *nameLabel;
+    __weak IBOutlet UILabel *usernameLabel;
+    __weak IBOutlet UILabel *bioLabel;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -49,10 +55,28 @@
         [[ANAPICall sharedAppAPI] getUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
             SDLog(@"user data = %@", dataObject);
             
-            NSDictionary *userData = (NSDictionary *)dataObject;
+            userData = (NSDictionary *)dataObject;
             
             userImageView.imageURL = [userData valueForKeyPath:@"avatar_image.url"];
             coverImageView.imageURL = [userData valueForKeyPath:@"cover_image.url"];
+            
+            nameLabel.text = [userData objectForKey:@"name"];
+            usernameLabel.text = [NSString stringWithFormat:@"@%@", [userData objectForKey:@"username"]];
+            
+            // compute height of bio line.
+            bioLabel.text = [userData valueForKeyPath:@"description.text"];
+            [bioLabel adjustHeightToFit:120];
+            
+            // now get that and set the header height..
+            CGFloat defaultViewHeight = 154; // seen in the nib.
+            CGFloat defaultLabelHeight = 21; // ... i'm putting these here in case we need to change it later.
+            CGFloat newLabelHeight = bioLabel.frame.size.height;
+            
+            CGRect newHeaderFrame = self.tableView.tableHeaderView.frame;
+            newHeaderFrame.size.height = defaultViewHeight + (newLabelHeight - defaultLabelHeight);
+            self.tableView.tableHeaderView.frame = newHeaderFrame;
+            
+            [self.tableView reloadData];
             
             [SVProgressHUD dismiss];
         }];
@@ -64,9 +88,10 @@
     return userID;
 }
 
-- (void)refresh
+- (BOOL)refresh
 {
     // do nothing.
+    return NO;
 }
 
 - (void)viewDidLoad
@@ -79,24 +104,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    UIBezierPath *roundedPath = [UIBezierPath bezierPathWithRoundedRect:userImageView.layer.bounds
-                                                      byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomRight | UIRectCornerBottomLeft
-                                                            cornerRadii:CGSizeMake(6.0, 6.0)];
-    
-    maskLayer.fillColor = [[UIColor whiteColor] CGColor];
-    maskLayer.backgroundColor = [[UIColor clearColor] CGColor];
-    maskLayer.path = [roundedPath CGPath];
-    // Add mask
-    //userImageView.layer.mask = maskLayer;
-    
-    userImageView.layer.masksToBounds = NO;
     userImageView.layer.cornerRadius = 6.0;
-    userImageView.layer.shadowRadius = 5.0;
-    userImageView.layer.shadowOpacity = 0.75;
-    userImageView.layer.shadowOffset = CGSizeMake(0, 1);
-    userImageView.layer.shouldRasterize = YES;
-    userImageView.layer.shadowPath = [[UIBezierPath bezierPathWithRoundedRect:userImageView.bounds cornerRadius:6.0] CGPath];
+
+    // make the cover image darker.
+    UIView *darkView = [[UIView alloc] initWithFrame:coverImageView.bounds];
+    darkView.backgroundColor = [UIColor blackColor];
+    darkView.alpha = 0.4;
+    [coverImageView addSubview:darkView];
 
     
     self.userID = [ANAPICall sharedAppAPI].userID;
@@ -106,6 +120,9 @@
 {
     coverImageView = nil;
     userImageView = nil;
+    bioLabel = nil;
+    nameLabel = nil;
+    usernameLabel = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

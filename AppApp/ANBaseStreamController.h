@@ -19,6 +19,6 @@
 
 @property (nonatomic, readonly) NSString *sideMenuTitle;
 
-- (void)refresh;
+- (BOOL)refresh;
 
 @end
