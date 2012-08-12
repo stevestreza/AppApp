@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ANSideMenuController.h"
 
-@interface snkyAppDelegate : UIResponder <UIApplicationDelegate> {
+@interface ANAppDelegate : UIResponder <UIApplicationDelegate> {
     
 }
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) ANSideMenuController *sideMenuController;
+
++ (ANAppDelegate *)sharedInstance;
 
 @end

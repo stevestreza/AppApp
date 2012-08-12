@@ -20,7 +20,7 @@
 		00B4741315D38E3C00F767CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4741215D38E3C00F767CE /* CoreGraphics.framework */; };
 		00B4741915D38E3C00F767CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00B4741715D38E3C00F767CE /* InfoPlist.strings */; };
 		00B4741B15D38E3C00F767CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B4741A15D38E3C00F767CE /* main.m */; };
-		00B4741F15D38E3C00F767CE /* snkyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B4741E15D38E3C00F767CE /* snkyAppDelegate.m */; };
+		00B4741F15D38E3C00F767CE /* ANAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B4741E15D38E3C00F767CE /* ANAppDelegate.m */; };
 		00ECA12215D7415500178F8A /* ANUserStreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECA11D15D7409200178F8A /* ANUserStreamController.m */; };
 		00ECA12315D7415500178F8A /* ANUserPostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECA11C15D7409200178F8A /* ANUserPostsController.m */; };
 		00ECA12415D7415500178F8A /* ANUserMentionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECA11B15D7409200178F8A /* ANUserMentionsController.m */; };
@@ -84,8 +84,8 @@
 		00B4741815D38E3C00F767CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00B4741A15D38E3C00F767CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00B4741C15D38E3C00F767CE /* AppApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppApp-Prefix.pch"; sourceTree = "<group>"; };
-		00B4741D15D38E3C00F767CE /* snkyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = snkyAppDelegate.h; sourceTree = "<group>"; };
-		00B4741E15D38E3C00F767CE /* snkyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snkyAppDelegate.m; sourceTree = "<group>"; };
+		00B4741D15D38E3C00F767CE /* ANAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANAppDelegate.h; sourceTree = "<group>"; };
+		00B4741E15D38E3C00F767CE /* ANAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANAppDelegate.m; sourceTree = "<group>"; };
 		00ECA11B15D7409200178F8A /* ANUserMentionsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANUserMentionsController.m; sourceTree = "<group>"; };
 		00ECA11C15D7409200178F8A /* ANUserPostsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANUserPostsController.m; sourceTree = "<group>"; };
 		00ECA11D15D7409200178F8A /* ANUserStreamController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANUserStreamController.m; sourceTree = "<group>"; };
@@ -236,8 +236,8 @@
 				9229761915D5BF300096B5D8 /* Generic Stream Controller */,
 				922F80D015D5A0680049F194 /* Post Status */,
 				922F80CA15D590220049F194 /* Authentication */,
-				00B4741D15D38E3C00F767CE /* snkyAppDelegate.h */,
-				00B4741E15D38E3C00F767CE /* snkyAppDelegate.m */,
+				00B4741D15D38E3C00F767CE /* ANAppDelegate.h */,
+				00B4741E15D38E3C00F767CE /* ANAppDelegate.m */,
 				00B4741515D38E3C00F767CE /* Supporting Files */,
 			);
 			path = AppApp;
@@ -538,7 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00B4741B15D38E3C00F767CE /* main.m in Sources */,
-				00B4741F15D38E3C00F767CE /* snkyAppDelegate.m in Sources */,
+				00B4741F15D38E3C00F767CE /* ANAppDelegate.m in Sources */,
 				922F80C915D58F6C0049F194 /* ANAPICall.m in Sources */,
 				922F80CD15D590400049F194 /* AuthViewController.m in Sources */,
 				922F80D415D5A0890049F194 /* ANPostStatusViewController.m in Sources */,
