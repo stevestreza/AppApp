@@ -9,6 +9,7 @@
 #import "AuthViewController.h"
 #import "ANAPICall.h"
 #import "SVProgressHUD.h"
+#import "ANAppDelegate.h"
 
 @implementation AuthViewController
 @synthesize authWebView;
@@ -74,6 +75,8 @@
                 
                 [self dismissAuthenticationViewController:nil];
                 [SVProgressHUD dismiss];
+                NSArray *controllers = [ANAppDelegate sharedInstance].sideMenuController.navigationArray;
+                [controllers makeObjectsPerformSelector:@selector(refresh)];
             }];
         }
     }

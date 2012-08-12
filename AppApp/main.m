@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "snkyAppDelegate.h"
+#import "ANAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([snkyAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([ANAppDelegate class]));
     }
 }

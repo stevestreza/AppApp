@@ -48,7 +48,8 @@
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
     [self.tableView addGestureRecognizer:recognizer];
     
-    [self refresh];
+    if ([[ANAPICall sharedAppAPI] hasAccessToken])
+        [self refresh];
 }
 
 - (void)viewDidUnload

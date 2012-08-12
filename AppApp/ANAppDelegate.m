@@ -6,13 +6,27 @@
 //  Copyright (c) 2012 Sneakyness. All rights reserved.
 //
 
-#import "snkyAppDelegate.h"
+#import "ANAppDelegate.h"
 #import "AuthViewController.h"
 #import "MFSideMenuManager.h"
 #import "ANSideMenuController.h"
 #import "ANAPICall.h"
 
-@implementation snkyAppDelegate
+@implementation ANAppDelegate
+
+static ANAppDelegate *sharedInstance = nil;
+
++ (ANAppDelegate *)sharedInstance
+{
+    return sharedInstance;
+}
+
+- (id)init
+{
+    self = [super init];
+    sharedInstance = self;
+    return self;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -20,16 +34,16 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ANSideMenuController *sideMenuController = [[ANSideMenuController alloc] init];
+    _sideMenuController = [[ANSideMenuController alloc] init];
 
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[sideMenuController.navigationArray objectAtIndex:0]];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[_sideMenuController.navigationArray objectAtIndex:0]];
     
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     
     // make sure to display the navigation controller before calling this
     [MFSideMenuManager configureWithNavigationController:navigationController
-                                      sideMenuController:sideMenuController];
+                                      sideMenuController:_sideMenuController];
 
     if ([launchOptions objectForKey:UIApplicationLaunchOptionsURLKey]) {
         NSLog(@"bacon");
