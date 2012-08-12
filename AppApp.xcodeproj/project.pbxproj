@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003B7CA915D78153002F9A95 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003B7CA815D78153002F9A95 /* Default@2x.png */; };
+		003B7CAB15D78155002F9A95 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 003B7CAA15D78155002F9A95 /* Default.png */; };
+		003B7CAD15D78158002F9A95 /* icon-52.png in Resources */ = {isa = PBXBuildFile; fileRef = 003B7CAC15D78158002F9A95 /* icon-52.png */; };
+		003B7CAF15D7815B002F9A95 /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 003B7CAE15D7815B002F9A95 /* icon-114.png */; };
 		0053C6C115D76A36000F36FA /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0053C6BD15D76A36000F36FA /* libTestFlight.a */; };
 		0053C6C215D76A36000F36FA /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0053C6BE15D76A36000F36FA /* README.txt */; };
 		0053C6C315D76A36000F36FA /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0053C6BF15D76A36000F36FA /* release_notes.txt */; };
@@ -63,6 +67,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		003B7CA815D78153002F9A95 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		003B7CAA15D78155002F9A95 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		003B7CAC15D78158002F9A95 /* icon-52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-52.png"; sourceTree = "<group>"; };
+		003B7CAE15D7815B002F9A95 /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = "<group>"; };
 		0053C6BD15D76A36000F36FA /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Externals/TestFlightSDK1.0/libTestFlight.a; sourceTree = "<group>"; };
 		0053C6BE15D76A36000F36FA /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		0053C6BF15D76A36000F36FA /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
@@ -186,6 +194,10 @@
 		00B473FF15D38E3C00F767CE = {
 			isa = PBXGroup;
 			children = (
+				003B7CAE15D7815B002F9A95 /* icon-114.png */,
+				003B7CAC15D78158002F9A95 /* icon-52.png */,
+				003B7CAA15D78155002F9A95 /* Default.png */,
+				003B7CA815D78153002F9A95 /* Default@2x.png */,
 				CAD8D8DF15D706E7007FC765 /* Externals */,
 				922F80C015D58F360049F194 /* API */,
 				00B4741415D38E3C00F767CE /* AppApp */,
@@ -511,6 +523,10 @@
 				CAD8D9A215D7709C007FC765 /* menu-icon@2x.png in Resources */,
 				0053C6C215D76A36000F36FA /* README.txt in Resources */,
 				0053C6C315D76A36000F36FA /* release_notes.txt in Resources */,
+				003B7CA915D78153002F9A95 /* Default@2x.png in Resources */,
+				003B7CAB15D78155002F9A95 /* Default.png in Resources */,
+				003B7CAD15D78158002F9A95 /* icon-52.png in Resources */,
+				003B7CAF15D7815B002F9A95 /* icon-114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
