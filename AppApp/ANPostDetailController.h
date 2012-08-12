@@ -7,27 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SDImageView.h"
+#import "ANViewControllerProtocol.h"
 
-@interface ANPostDetailController : UIViewController {
-    UILabel *usernameLabel;
-    UILabel *fullnameLabel;
-    UILabel *posttimeLabel;
-    UILabel *statusLabel;
-    SDImageView *avatarView;
+
+@interface ANPostDetailController : UIViewController<ANViewControllerProtocol> {
+    
 }
 
-@property (nonatomic, strong) NSDictionary *statusDict;
-@property (nonatomic, strong) NSString *username;
-@property (nonatomic, strong) NSString *fullname;
-@property (nonatomic, strong) NSString *posttime;
-@property (nonatomic, strong) NSString *status;
-@property (nonatomic, strong) UIImage  *avatar;
-
-@property (nonatomic) IBOutlet UILabel *usernameLabel;
-@property (nonatomic) IBOutlet UILabel *fullnameLabel;
-@property (nonatomic) IBOutlet UILabel *posttimeLabel;
-@property (nonatomic) IBOutlet UILabel *statusLabel;
-@property (nonatomic) IBOutlet SDImageView *avatarView;
+@property (nonatomic, readonly) NSString *sideMenuTitle;
 
 @end

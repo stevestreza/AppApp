@@ -7,21 +7,35 @@
 //
 
 #import "ANPostDetailController.h"
+#import "SDImageView.h"
 
 @interface ANPostDetailController ()
 
 @end
 
-@implementation ANPostDetailController
+@implementation ANPostDetailController {
+    NSDictionary *postData;
+    
+    __weak IBOutlet UILabel *usernameLabel;
+    __weak IBOutlet UILabel *fullnameLabel;
+    __weak IBOutlet UILabel *posttimeLabel;
+    __weak IBOutlet UILabel *statusLabel;
+    __weak IBOutlet SDImageView *avatarView;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
+        self.title = @"Post";
     }
     return self;
+}
+
+- (NSString *)sideMenuTitle
+{
+    return @"Post";
 }
 
 - (void)viewDidLoad
