@@ -41,6 +41,8 @@
     self.headerView = [ANStreamHeaderView loadFromNib];
     self.footerView = [ANStreamFooterView loadFromNib];
     
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.011 green:0.486 blue:0.682 alpha:1];
+    
     // add gestures
     UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToDetails:)];
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
