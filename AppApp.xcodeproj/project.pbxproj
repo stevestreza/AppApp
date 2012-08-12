@@ -15,6 +15,11 @@
 		0053C6C215D76A36000F36FA /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0053C6BE15D76A36000F36FA /* README.txt */; };
 		0053C6C315D76A36000F36FA /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0053C6BF15D76A36000F36FA /* release_notes.txt */; };
 		0053C6C615D76A56000F36FA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0053C6C515D76A56000F36FA /* libz.dylib */; };
+		0067483715D8473100065DFF /* App Icon Template [2.0].psd in Resources */ = {isa = PBXBuildFile; fileRef = 0067483215D8473100065DFF /* App Icon Template [2.0].psd */; };
+		0067483815D8473100065DFF /* grayline.png in Resources */ = {isa = PBXBuildFile; fileRef = 0067483315D8473100065DFF /* grayline.png */; };
+		0067483915D8473100065DFF /* grayline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0067483415D8473100065DFF /* grayline@2x.png */; };
+		0067483A15D8473100065DFF /* postarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0067483515D8473100065DFF /* postarrow.png */; };
+		0067483B15D8473100065DFF /* postarrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0067483615D8473100065DFF /* postarrow@2x.png */; };
 		00B4740F15D38E3C00F767CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4740E15D38E3C00F767CE /* UIKit.framework */; };
 		00B4741115D38E3C00F767CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4741015D38E3C00F767CE /* Foundation.framework */; };
 		00B4741315D38E3C00F767CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4741215D38E3C00F767CE /* CoreGraphics.framework */; };
@@ -82,6 +87,14 @@
 		0053C6BF15D76A36000F36FA /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
 		0053C6C015D76A36000F36FA /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		0053C6C515D76A56000F36FA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0067482A15D8407600065DFF /* ANPostDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANPostDetailController.h; sourceTree = "<group>"; };
+		0067482B15D8407600065DFF /* ANPostDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANPostDetailController.m; sourceTree = "<group>"; };
+		0067482C15D8407600065DFF /* ANPostDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANPostDetailController.xib; sourceTree = "<group>"; };
+		0067483215D8473100065DFF /* App Icon Template [2.0].psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "App Icon Template [2.0].psd"; sourceTree = "<group>"; };
+		0067483315D8473100065DFF /* grayline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayline.png; sourceTree = "<group>"; };
+		0067483415D8473100065DFF /* grayline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayline@2x.png"; sourceTree = "<group>"; };
+		0067483515D8473100065DFF /* postarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postarrow.png; sourceTree = "<group>"; };
+		0067483615D8473100065DFF /* postarrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postarrow@2x.png"; sourceTree = "<group>"; };
 		00B4740A15D38E3C00F767CE /* AppApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B4740E15D38E3C00F767CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00B4741015D38E3C00F767CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -209,9 +222,32 @@
 			path = TestFlightSDK1.0;
 			sourceTree = "<group>";
 		};
+		0067482815D8406C00065DFF /* Post Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0067482A15D8407600065DFF /* ANPostDetailController.h */,
+				0067482B15D8407600065DFF /* ANPostDetailController.m */,
+				0067482C15D8407600065DFF /* ANPostDetailController.xib */,
+			);
+			name = "Post Detail";
+			sourceTree = "<group>";
+		};
+		0067483115D8473100065DFF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0067483215D8473100065DFF /* App Icon Template [2.0].psd */,
+				0067483315D8473100065DFF /* grayline.png */,
+				0067483415D8473100065DFF /* grayline@2x.png */,
+				0067483515D8473100065DFF /* postarrow.png */,
+				0067483615D8473100065DFF /* postarrow@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		00B473FF15D38E3C00F767CE = {
 			isa = PBXGroup;
 			children = (
+				0067483115D8473100065DFF /* Images */,
 				003B7CAE15D7815B002F9A95 /* icon-114.png */,
 				003B7CAC15D78158002F9A95 /* icon-52.png */,
 				003B7CAA15D78155002F9A95 /* Default.png */,
@@ -251,6 +287,7 @@
 		00B4741415D38E3C00F767CE /* AppApp */ = {
 			isa = PBXGroup;
 			children = (
+				0067482815D8406C00065DFF /* Post Detail */,
 				CACA6BCC15D7831D00AE5D40 /* User Information */,
 				CAD8D9A515D770ED007FC765 /* Side Menu */,
 				CAD8D96615D71D80007FC765 /* Stream Controllers */,
@@ -564,6 +601,11 @@
 				003B7CAB15D78155002F9A95 /* Default.png in Resources */,
 				003B7CAD15D78158002F9A95 /* icon-52.png in Resources */,
 				003B7CAF15D7815B002F9A95 /* icon-114.png in Resources */,
+				0067483715D8473100065DFF /* App Icon Template [2.0].psd in Resources */,
+				0067483815D8473100065DFF /* grayline.png in Resources */,
+				0067483915D8473100065DFF /* grayline@2x.png in Resources */,
+				0067483A15D8473100065DFF /* postarrow.png in Resources */,
+				0067483B15D8473100065DFF /* postarrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
