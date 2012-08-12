@@ -25,6 +25,8 @@
 {
     NSString *userID;
     NSDictionary *userData;
+    NSArray *followersList;
+    NSArray *followingList;
     
     __weak IBOutlet SDImageView *userImageView;
     __weak IBOutlet SDImageView *coverImageView;
@@ -84,6 +86,16 @@
             [self.tableView reloadData];
             
             [SVProgressHUD dismiss];
+        }];
+        
+        [[ANAPICall sharedAppAPI] getUserFollowers:userID uiCompletionBlock:^(id dataObject, NSError *error) {
+            followersList = (NSArray *)dataObject;
+            [self.tableView reloadData];
+        }];
+
+        [[ANAPICall sharedAppAPI] getUserFollowers:userID uiCompletionBlock:^(id dataObject, NSError *error) {
+            followingList = (NSArray *)dataObject;
+            [self.tableView reloadData];
         }];
     }
 }
