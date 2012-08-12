@@ -112,7 +112,7 @@
     static NSString *CellIdentifier = @"ANStatusViewCell";
     ANStatusViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[ANStatusViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        cell = [[ANStatusViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }    
     //TODO: move data into objects.
     NSDictionary *statusDict = [streamData objectAtIndex:[indexPath row]];
