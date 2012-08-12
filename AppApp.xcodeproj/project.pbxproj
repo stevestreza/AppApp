@@ -35,6 +35,7 @@
 		CACA6BD415D7978F00AE5D40 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACA6BD315D7978F00AE5D40 /* QuartzCore.framework */; };
 		CACA6BDB15D8152E00AE5D40 /* UILabel+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CACA6BDA15D8152E00AE5D40 /* UILabel+SDExtensions.m */; };
 		CACA6BDE15D8244A00AE5D40 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACA6BDD15D8244A00AE5D40 /* CoreImage.framework */; };
+		CACA6BE115D841EE00AE5D40 /* UIAlertView+SDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CACA6BE015D841EE00AE5D40 /* UIAlertView+SDExtensions.m */; };
 		CAD8D8AB15D6E59F007FC765 /* ANAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAD8D8AA15D6E59F007FC765 /* ANAPI.plist */; };
 		CAD8D8C915D6E9F2007FC765 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD8D8C815D6E9F2007FC765 /* SystemConfiguration.framework */; };
 		CAD8D8CB15D6EA05007FC765 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD8D8CA15D6EA05007FC765 /* Security.framework */; };
@@ -115,6 +116,8 @@
 		CACA6BD915D8152E00AE5D40 /* UILabel+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+SDExtensions.h"; sourceTree = "<group>"; };
 		CACA6BDA15D8152E00AE5D40 /* UILabel+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+SDExtensions.m"; sourceTree = "<group>"; };
 		CACA6BDD15D8244A00AE5D40 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		CACA6BDF15D841EE00AE5D40 /* UIAlertView+SDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+SDExtensions.h"; sourceTree = "<group>"; };
+		CACA6BE015D841EE00AE5D40 /* UIAlertView+SDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+SDExtensions.m"; sourceTree = "<group>"; };
 		CAD8D8AA15D6E59F007FC765 /* ANAPI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ANAPI.plist; sourceTree = "<group>"; };
 		CAD8D8C815D6E9F2007FC765 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CAD8D8CA15D6EA05007FC765 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -402,6 +405,8 @@
 		CAD8D8F415D706E7007FC765 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CACA6BDF15D841EE00AE5D40 /* UIAlertView+SDExtensions.h */,
+				CACA6BE015D841EE00AE5D40 /* UIAlertView+SDExtensions.m */,
 				CAD8D8F515D706E7007FC765 /* NSObject+SDExtensions.h */,
 				CAD8D8F615D706E7007FC765 /* NSObject+SDExtensions.m */,
 				CAD8D8F715D706E7007FC765 /* SDImageView.h */,
@@ -603,6 +608,7 @@
 				CAD8D9A815D77113007FC765 /* ANSideMenuController.m in Sources */,
 				CACA6BD015D7842F00AE5D40 /* ANUserViewController.m in Sources */,
 				CACA6BDB15D8152E00AE5D40 /* UILabel+SDExtensions.m in Sources */,
+				CACA6BE115D841EE00AE5D40 /* UIAlertView+SDExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

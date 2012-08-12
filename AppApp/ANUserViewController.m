@@ -11,6 +11,9 @@
 #import "ANAPICall.h"
 #import "SVProgressHUD.h"
 #import "UILabel+SDExtensions.h"
+#import "NSDictionary+SDExtensions.h"
+#import "UIAlertView+SDExtensions.h"
+#import "ANUserPostsController.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -99,7 +102,7 @@
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -139,22 +142,51 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+    if (!cell)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     // Configure the cell...
+    
+    switch (indexPath.row) {
+        case 0:
+        {
+            cell.textLabel.text = @"Posts";
+            cell.detailTextLabel.text = [userData stringForKeyPath:@"counts.posts"];// api always returns 0.
+        }
+            break;
+            
+        case 1:
+        {
+            cell.textLabel.text = @"Followers";
+            cell.detailTextLabel.text = [userData stringForKeyPath:@"counts.followed_by"];// api always returns 0.
+        }
+            break;
+
+        case 2:
+        {
+            cell.textLabel.text = @"Following";
+            cell.detailTextLabel.text = [userData stringForKeyPath:@"counts.follows"];// api always returns 0.
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -168,7 +200,7 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -180,7 +212,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -203,12 +235,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
+    UIViewController *controller = nil;
+    
+    switch (indexPath.row) {
+        case 0:
+            controller = [[ANUserPostsController alloc] init];
+            break;
+            
+        default:
+            break;
+    }
+
+    if (controller)
+        [self.navigationController pushViewController:controller animated:YES];
+    else
+    {
+        UIAlertView *alert = [UIAlertView alertViewWithTitle:@"Unimplemented" message:@"We're still waiting on app.net to implement the api's for this.  Please bear with us."];
+        [alert show];
+        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
 
 @end
