@@ -13,6 +13,7 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *postButton;
 @property (nonatomic, retain) IBOutlet UILabel *characterCountLabel;
 @property (nonatomic, retain) IBOutlet UITextView *postTextView;
+@property (nonatomic, retain) IBOutlet UIView *groupView;
 
 -(IBAction)dismissPostStatusViewController:(id)sender;
 
