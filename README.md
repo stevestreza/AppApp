@@ -8,6 +8,7 @@ There is a real UI coming, along with a much more flexiable API client, I'm wait
 ##### Get @us #####
 
 Nick Pannuto (@sneakyness on app.net, @ataraxia_status on twitter, [email](mailto:sneakyness@sneakyness.com))
+  
 Brandon Sneed (@bsneed on app.net and twitter, [email](mailto:brandon@redf.net))
 
 You can find us in the [App.net hipchat](https://www.hipchat.com/garqCaGOZ), on irc.freenode.net in #appnet. You can also buy us beer in person, if you come to Seattle or Portland.
