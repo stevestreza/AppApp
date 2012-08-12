@@ -36,8 +36,8 @@
     
     // if we don't have an access token - display auth.
     // probably should move back to calling Safari.
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if(![defaults objectForKey:@"access_token"]) {
+    if (![[ANAPICall sharedAppAPI] hasAccessToken])
+    {
         AuthViewController *authView = [[AuthViewController alloc] init];
         [self.window.rootViewController presentModalViewController:authView animated:YES];
     }

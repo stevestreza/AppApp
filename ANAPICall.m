@@ -12,6 +12,7 @@
 {
     id delegate;
     NSString *accessToken;
+    NSString *userID;
 }
 -(void)readTokenFromDefaults;
 
@@ -27,6 +28,23 @@
         sharedInstance = [[[self class] alloc] initWithSpecification:@"ANAPI"];
     });
     return sharedInstance;
+}
+
+- (id)initWithSpecification:(NSString *)specificationName
+{
+    self = [super initWithSpecification:specificationName];
+    
+    // do some stuff here later.
+    
+    return self;
+}
+
+- (BOOL)hasAccessToken
+{
+    [self readTokenFromDefaults];
+    if (accessToken && self.userID)
+        return YES;
+    return NO;
 }
 
 // TODO: redo these later..
@@ -105,6 +123,11 @@
     NSDictionary *replacements = @{ @"accessToken" : accessToken, @"user_id" : ID };
     
     [self performRequestWithMethod:@"getUserPosts" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
+}
+
+- (void)getUserPosts:(SDWebServiceUICompletionBlock)uiCompletionBlock
+{
+    [self getUserPosts:self.userID uiCompletionBlock:uiCompletionBlock];
 }
 
 - (void)getUserMentions:(SDWebServiceUICompletionBlock)uiCompletionBlock
