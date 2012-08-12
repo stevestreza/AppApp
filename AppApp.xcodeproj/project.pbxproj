@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0053C6C115D76A36000F36FA /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0053C6BD15D76A36000F36FA /* libTestFlight.a */; };
+		0053C6C215D76A36000F36FA /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0053C6BE15D76A36000F36FA /* README.txt */; };
+		0053C6C315D76A36000F36FA /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0053C6BF15D76A36000F36FA /* release_notes.txt */; };
+		0053C6C615D76A56000F36FA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0053C6C515D76A56000F36FA /* libz.dylib */; };
 		00B4740F15D38E3C00F767CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4740E15D38E3C00F767CE /* UIKit.framework */; };
 		00B4741115D38E3C00F767CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4741015D38E3C00F767CE /* Foundation.framework */; };
 		00B4741315D38E3C00F767CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4741215D38E3C00F767CE /* CoreGraphics.framework */; };
@@ -59,6 +63,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0053C6BD15D76A36000F36FA /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Externals/TestFlightSDK1.0/libTestFlight.a; sourceTree = "<group>"; };
+		0053C6BE15D76A36000F36FA /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		0053C6BF15D76A36000F36FA /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
+		0053C6C015D76A36000F36FA /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		0053C6C515D76A56000F36FA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		00B4740A15D38E3C00F767CE /* AppApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B4740E15D38E3C00F767CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00B4741015D38E3C00F767CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,17 +160,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0053C6C615D76A56000F36FA /* libz.dylib in Frameworks */,
 				CAD8D8CB15D6EA05007FC765 /* Security.framework in Frameworks */,
 				CAD8D8C915D6E9F2007FC765 /* SystemConfiguration.framework in Frameworks */,
 				00B4740F15D38E3C00F767CE /* UIKit.framework in Frameworks */,
 				00B4741115D38E3C00F767CE /* Foundation.framework in Frameworks */,
 				00B4741315D38E3C00F767CE /* CoreGraphics.framework in Frameworks */,
+				0053C6C115D76A36000F36FA /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0053C6BC15D76A36000F36FA /* TestFlightSDK1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				0053C6BE15D76A36000F36FA /* README.txt */,
+				0053C6BF15D76A36000F36FA /* release_notes.txt */,
+				0053C6C015D76A36000F36FA /* TestFlight.h */,
+			);
+			path = TestFlightSDK1.0;
+			sourceTree = "<group>";
+		};
 		00B473FF15D38E3C00F767CE = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +205,8 @@
 		00B4740D15D38E3C00F767CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0053C6BD15D76A36000F36FA /* libTestFlight.a */,
+				0053C6C515D76A56000F36FA /* libz.dylib */,
 				CAD8D8C815D6E9F2007FC765 /* SystemConfiguration.framework */,
 				CAD8D8CA15D6EA05007FC765 /* Security.framework */,
 				00B4740E15D38E3C00F767CE /* UIKit.framework */,
@@ -271,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				CAD8D99515D7709C007FC765 /* MFSideMenu */,
+				0053C6BC15D76A36000F36FA /* TestFlightSDK1.0 */,
 				CAD8D98615D7579F007FC765 /* SVProgressHUD */,
 				CAD8D8E015D706E7007FC765 /* SetDirection */,
 				CAD8D90415D706E7007FC765 /* Shiki */,
@@ -485,6 +509,8 @@
 				CAD8D9A015D7709C007FC765 /* back-arrow@2x.png in Resources */,
 				CAD8D9A115D7709C007FC765 /* menu-icon.png in Resources */,
 				CAD8D9A215D7709C007FC765 /* menu-icon@2x.png in Resources */,
+				0053C6C215D76A36000F36FA /* README.txt in Resources */,
+				0053C6C315D76A36000F36FA /* release_notes.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,11 +622,17 @@
 		00B4742915D38E3C00F767CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppApp/AppApp-Prefix.pch";
 				INFOPLIST_FILE = "AppApp/AppApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals/TestFlightSDK1.0\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -612,6 +644,10 @@
 				GCC_PREFIX_HEADER = "AppApp/AppApp-Prefix.pch";
 				INFOPLIST_FILE = "AppApp/AppApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals/TestFlightSDK1.0\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
