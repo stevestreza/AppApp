@@ -35,6 +35,7 @@
 		922F80D415D5A0890049F194 /* ANPostStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80D215D5A0890049F194 /* ANPostStatusViewController.m */; };
 		922F80D515D5A0890049F194 /* ANPostStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */; };
 		9253EBD515D624F90047C153 /* ANStatusViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9253EBD415D624F90047C153 /* ANStatusViewCell.m */; };
+		CA7052BD15D8572A009A3011 /* ANPostDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7052BC15D8572A009A3011 /* ANPostDetailHeaderView.m */; };
 		CACA6BD015D7842F00AE5D40 /* ANUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACA6BCE15D7842F00AE5D40 /* ANUserViewController.m */; };
 		CACA6BD115D7842F00AE5D40 /* ANUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CACA6BCF15D7842F00AE5D40 /* ANUserViewController.xib */; };
 		CACA6BD415D7978F00AE5D40 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACA6BD315D7978F00AE5D40 /* QuartzCore.framework */; };
@@ -89,7 +90,7 @@
 		0053C6C515D76A56000F36FA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0067482A15D8407600065DFF /* ANPostDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANPostDetailController.h; sourceTree = "<group>"; };
 		0067482B15D8407600065DFF /* ANPostDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANPostDetailController.m; sourceTree = "<group>"; };
-		0067482C15D8407600065DFF /* ANPostDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANPostDetailController.xib; sourceTree = "<group>"; };
+		0067482C15D8407600065DFF /* ANPostDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANPostDetailHeaderView.xib; sourceTree = "<group>"; };
 		0067483215D8473100065DFF /* App Icon Template [2.0].psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "App Icon Template [2.0].psd"; sourceTree = "<group>"; };
 		0067483315D8473100065DFF /* grayline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayline.png; sourceTree = "<group>"; };
 		0067483415D8473100065DFF /* grayline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayline@2x.png"; sourceTree = "<group>"; };
@@ -121,6 +122,8 @@
 		922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPostStatusViewController.xib; sourceTree = "<group>"; };
 		9253EBD315D624F90047C153 /* ANStatusViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANStatusViewCell.h; sourceTree = "<group>"; };
 		9253EBD415D624F90047C153 /* ANStatusViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStatusViewCell.m; sourceTree = "<group>"; };
+		CA7052BB15D8572A009A3011 /* ANPostDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPostDetailHeaderView.h; sourceTree = "<group>"; };
+		CA7052BC15D8572A009A3011 /* ANPostDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPostDetailHeaderView.m; sourceTree = "<group>"; };
 		CACA6BCD15D7842F00AE5D40 /* ANUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUserViewController.h; sourceTree = "<group>"; };
 		CACA6BCE15D7842F00AE5D40 /* ANUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANUserViewController.m; sourceTree = "<group>"; };
 		CACA6BCF15D7842F00AE5D40 /* ANUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANUserViewController.xib; sourceTree = "<group>"; };
@@ -227,7 +230,9 @@
 			children = (
 				0067482A15D8407600065DFF /* ANPostDetailController.h */,
 				0067482B15D8407600065DFF /* ANPostDetailController.m */,
-				0067482C15D8407600065DFF /* ANPostDetailController.xib */,
+				0067482C15D8407600065DFF /* ANPostDetailHeaderView.xib */,
+				CA7052BB15D8572A009A3011 /* ANPostDetailHeaderView.h */,
+				CA7052BC15D8572A009A3011 /* ANPostDetailHeaderView.m */,
 			);
 			name = "Post Detail";
 			sourceTree = "<group>";
@@ -651,6 +656,7 @@
 				CACA6BD015D7842F00AE5D40 /* ANUserViewController.m in Sources */,
 				CACA6BDB15D8152E00AE5D40 /* UILabel+SDExtensions.m in Sources */,
 				CACA6BE115D841EE00AE5D40 /* UIAlertView+SDExtensions.m in Sources */,
+				CA7052BD15D8572A009A3011 /* ANPostDetailHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
