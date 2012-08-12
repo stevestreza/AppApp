@@ -11,6 +11,7 @@
 #import "ANGlobalStreamController.h"
 #import "ANUserStreamController.h"
 #import "ANUserPostsController.h"
+#import "ANUserMentionsController.h"
 #import "NSObject+SDExtensions.h"
 
 @implementation snkyAppDelegate
@@ -20,7 +21,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     UINavigationController *userStream = [[UINavigationController alloc] initWithRootViewController:[[ANUserStreamController alloc] init]];
-    UINavigationController *mentionsStream = [[UINavigationController alloc] initWithRootViewController:[[ANBaseStreamController alloc] init]];
+    UINavigationController *mentionsStream = [[UINavigationController alloc] initWithRootViewController:[[ANUserMentionsController alloc] init]];
     UINavigationController *postsStream = [[UINavigationController alloc] initWithRootViewController:[[ANUserPostsController alloc] init]];
     UINavigationController *globalStream = [[UINavigationController alloc] initWithRootViewController:[[ANGlobalStreamController alloc] init]];
     

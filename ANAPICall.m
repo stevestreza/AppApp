@@ -130,16 +130,21 @@
     [self getUserPosts:self.userID uiCompletionBlock:uiCompletionBlock];
 }
 
-- (void)getUserMentions:(SDWebServiceUICompletionBlock)uiCompletionBlock
+- (void)getUserMentions:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock
 {
     [self readTokenFromDefaults];
     
     if (!accessToken)
         return;
     
-    //NSDictionary *replacements = @{ @"accessToken" : accessToken, @"user_id" : [currentUser objectForKey:@"id"] };
+    NSDictionary *replacements = @{ @"accessToken" : accessToken, @"user_id" : ID };
     
-    //[self performRequestWithMethod:@"getUserMentions" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
+    [self performRequestWithMethod:@"getUserMentions" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
+}
+
+- (void)getUserMentions:(SDWebServiceUICompletionBlock)uiCompletionBlock
+{
+    [self getUserMentions:self.userID uiCompletionBlock:uiCompletionBlock];
 }
 
 - (void)getCurrentUser:(SDWebServiceUICompletionBlock)uiCompletionBlock

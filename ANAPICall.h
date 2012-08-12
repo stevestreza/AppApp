@@ -23,6 +23,7 @@
 - (void)getUserPosts:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUserPosts:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUserMentions:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+- (void)getUserMentions:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getCurrentUser:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 
 @end
