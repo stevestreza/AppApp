@@ -54,7 +54,7 @@
     
     if (![value isEqualToString:userID])
     {
-        userID = @"631";//value;
+        userID = value;
         [[ANAPICall sharedAppAPI] getUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
             SDLog(@"user data = %@", dataObject);
             
@@ -81,6 +81,7 @@
             headerView.frame = newHeaderFrame;
             
             self.tableView.tableHeaderView = headerView;
+            [self.tableView reloadData];
             
             [SVProgressHUD dismiss];
         }];
