@@ -47,6 +47,8 @@
 		CAD8D96315D71450007FC765 /* ANStreamHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD8D95F15D7144F007FC765 /* ANStreamHeaderView.xib */; };
 		CAD8D96515D71763007FC765 /* ANBaseStreamController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD8D96415D71762007FC765 /* ANBaseStreamController.xib */; };
 		CAD8D96915D71DB2007FC765 /* ANGlobalStreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D96815D71DB2007FC765 /* ANGlobalStreamController.m */; };
+		CAD8D98A15D7579F007FC765 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CAD8D98715D7579F007FC765 /* SVProgressHUD.bundle */; };
+		CAD8D98B15D7579F007FC765 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D98915D7579F007FC765 /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +123,9 @@
 		CAD8D96415D71762007FC765 /* ANBaseStreamController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANBaseStreamController.xib; sourceTree = "<group>"; };
 		CAD8D96715D71DB2007FC765 /* ANGlobalStreamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGlobalStreamController.h; sourceTree = "<group>"; };
 		CAD8D96815D71DB2007FC765 /* ANGlobalStreamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGlobalStreamController.m; sourceTree = "<group>"; };
+		CAD8D98715D7579F007FC765 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		CAD8D98815D7579F007FC765 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		CAD8D98915D7579F007FC765 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +251,7 @@
 		CAD8D8DF15D706E7007FC765 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				CAD8D98615D7579F007FC765 /* SVProgressHUD */,
 				CAD8D8E015D706E7007FC765 /* SetDirection */,
 				CAD8D90415D706E7007FC765 /* Shiki */,
 			);
@@ -360,6 +366,16 @@
 			name = "Stream Controllers";
 			sourceTree = "<group>";
 		};
+		CAD8D98615D7579F007FC765 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CAD8D98715D7579F007FC765 /* SVProgressHUD.bundle */,
+				CAD8D98815D7579F007FC765 /* SVProgressHUD.h */,
+				CAD8D98915D7579F007FC765 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -419,6 +435,7 @@
 				CAD8D96115D71450007FC765 /* ANStreamFooterView.xib in Resources */,
 				CAD8D96315D71450007FC765 /* ANStreamHeaderView.xib in Resources */,
 				CAD8D96515D71763007FC765 /* ANBaseStreamController.xib in Resources */,
+				CAD8D98A15D7579F007FC765 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +474,7 @@
 				00ECA12215D7415500178F8A /* ANUserStreamController.m in Sources */,
 				00ECA12315D7415500178F8A /* ANUserPostsController.m in Sources */,
 				00ECA12415D7415500178F8A /* ANUserMentionsController.m in Sources */,
+				CAD8D98B15D7579F007FC765 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,8 @@
 //
 
 #import "AuthViewController.h"
+#import "ANAPICall.h"
+#import "SVProgressHUD.h"
 
 @implementation AuthViewController
 @synthesize authWebView;
@@ -50,16 +52,29 @@
             }
         }
         
-        if([parameters objectForKey:@"access_token"]) {
-            
-            //TODO: move me.
+        if([parameters objectForKey:@"access_token"])
+        {
             NSString *token = [parameters objectForKey:@"access_token"];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:token forKey:@"access_token"];
             [defaults synchronize];
             
+            [SVProgressHUD showWithStatus:@"Getting user information"];
             
-            [self dismissAuthenticationViewController:nil];
+            [[ANAPICall sharedAppAPI] getCurrentUser:^(id dataObject, NSError *error) {
+                SDLog(@"currentUser = %@", dataObject);
+                
+                // all we need right now is userID, but there may be more stuff later.
+                
+                NSString *userID = [(NSDictionary *)dataObject objectForKey:@"id"];
+                
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:userID forKey:@"userID"];
+                [defaults synchronize];
+                
+                [self dismissAuthenticationViewController:nil];
+                [SVProgressHUD dismiss];
+            }];
         }
     }
 

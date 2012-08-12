@@ -12,14 +12,12 @@
 {
     id delegate;
     NSString *accessToken;
-    
 }
 -(void)readTokenFromDefaults;
 
 @end
 
 @implementation ANAPICall
-
 
 + (ANAPICall *)sharedAppAPI
 {
@@ -31,11 +29,19 @@
     return sharedInstance;
 }
 
+// TODO: redo these later..
 - (void)readTokenFromDefaults
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"access_token"];
     accessToken = token;
+}
+
+- (NSString *)userID
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *idValue = [defaults objectForKey:@"userID"];
+    return idValue;
 }
 
 - (SDWebServiceDataCompletionBlock)defaultJSONProcessingBlock
@@ -89,16 +95,16 @@
     [self performRequestWithMethod:@"getUserStream" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
 }
 
-- (void)getUserPosts:(SDWebServiceUICompletionBlock)uiCompletionBlock
+- (void)getUserPosts:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock
 {
     [self readTokenFromDefaults];
     
     if (!accessToken)
         return;
     
-    //NSDictionary *replacements = @{ @"accessToken" : accessToken, @"user_id" : [currentUser objectForKey:@"id"] };
+    NSDictionary *replacements = @{ @"accessToken" : accessToken, @"user_id" : ID };
     
-    //[self performRequestWithMethod:@"getUserPosts" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
+    [self performRequestWithMethod:@"getUserPosts" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
 }
 
 - (void)getUserMentions:(SDWebServiceUICompletionBlock)uiCompletionBlock

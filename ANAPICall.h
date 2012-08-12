@@ -11,12 +11,14 @@
 
 @interface ANAPICall : SDWebService
 
+@property (nonatomic, readonly) NSString *userID;
+
 + (ANAPICall *)sharedAppAPI;
 
 - (void)makePostWithText:(NSString*)text uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getGlobalStream:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUserStream:(SDWebServiceUICompletionBlock)uiCompletionBlock;
-- (void)getUserPosts:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+- (void)getUserPosts:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUserMentions:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getCurrentUser:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 

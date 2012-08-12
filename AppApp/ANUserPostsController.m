@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"User Posts";
+    self.navigationItem.title = @"Your posts";
     
     [self refresh];
 }
@@ -27,7 +27,10 @@
 {
     // Call this to indicate that we have finished "refreshing".
     // This will then result in the headerView being unpinned (-unpinHeaderView will be called).
-    [[ANAPICall sharedAppAPI] getUserPosts:^(id dataObject, NSError *error) {
+    
+    NSString *userID = [ANAPICall sharedAppAPI].userID;
+    
+    [[ANAPICall sharedAppAPI] getUserPosts:userID uiCompletionBlock:^(id dataObject, NSError *error) {
         streamData = [NSMutableArray arrayWithArray:dataObject];
         [self.tableView reloadData];
         [self refreshCompleted];

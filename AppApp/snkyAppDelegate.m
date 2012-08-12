@@ -10,6 +10,7 @@
 #import "AuthViewController.h"
 #import "ANGlobalStreamController.h"
 #import "ANUserStreamController.h"
+#import "ANUserPostsController.h"
 #import "NSObject+SDExtensions.h"
 
 @implementation snkyAppDelegate
@@ -18,13 +19,13 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UINavigationController *globalStream = [[UINavigationController alloc] initWithRootViewController:[[ANGlobalStreamController alloc] init]];
     UINavigationController *userStream = [[UINavigationController alloc] initWithRootViewController:[[ANUserStreamController alloc] init]];
     UINavigationController *mentionsStream = [[UINavigationController alloc] initWithRootViewController:[[ANBaseStreamController alloc] init]];
-    UINavigationController *postsStream = [[UINavigationController alloc] initWithRootViewController:[[ANBaseStreamController alloc] init]];
+    UINavigationController *postsStream = [[UINavigationController alloc] initWithRootViewController:[[ANUserPostsController alloc] init]];
+    UINavigationController *globalStream = [[UINavigationController alloc] initWithRootViewController:[[ANGlobalStreamController alloc] init]];
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[globalStream, userStream, mentionsStream, globalStream];
+    self.tabBarController.viewControllers = @[userStream, mentionsStream, postsStream, globalStream];
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
