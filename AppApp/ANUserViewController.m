@@ -54,7 +54,7 @@
     
     if (![value isEqualToString:userID])
     {
-        userID = value;
+        userID = @"631";//value;
         [[ANAPICall sharedAppAPI] getUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
             SDLog(@"user data = %@", dataObject);
             
@@ -75,11 +75,12 @@
             CGFloat defaultLabelHeight = 21; // ... i'm putting these here in case we need to change it later.
             CGFloat newLabelHeight = bioLabel.frame.size.height;
             
-            CGRect newHeaderFrame = self.tableView.tableHeaderView.frame;
+            UIView *headerView = self.tableView.tableHeaderView;
+            CGRect newHeaderFrame = headerView.frame;
             newHeaderFrame.size.height = defaultViewHeight + (newLabelHeight - defaultLabelHeight);
-            self.tableView.tableHeaderView.frame = newHeaderFrame;
+            headerView.frame = newHeaderFrame;
             
-            [self.tableView reloadData];
+            self.tableView.tableHeaderView = headerView;
             
             [SVProgressHUD dismiss];
         }];
