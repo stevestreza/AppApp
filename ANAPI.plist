@@ -6,6 +6,13 @@
 	<string>https://alpha-api.app.net/</string>
 	<key>requests</key>
 	<dict>
+		<key>getUser</key>
+		<dict>
+			<key>method</key>
+			<string>GET</string>
+			<key>routeFormat</key>
+			<string>/stream/0/users/{user_id}?access_token={accessToken}</string>
+		</dict>
 		<key>postToStream</key>
 		<dict>
 			<key>method</key>

@@ -26,6 +26,9 @@
 		922F80D415D5A0890049F194 /* ANPostStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80D215D5A0890049F194 /* ANPostStatusViewController.m */; };
 		922F80D515D5A0890049F194 /* ANPostStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */; };
 		9253EBD515D624F90047C153 /* ANStatusViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9253EBD415D624F90047C153 /* ANStatusViewCell.m */; };
+		CACA6BD015D7842F00AE5D40 /* ANUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACA6BCE15D7842F00AE5D40 /* ANUserViewController.m */; };
+		CACA6BD115D7842F00AE5D40 /* ANUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CACA6BCF15D7842F00AE5D40 /* ANUserViewController.xib */; };
+		CACA6BD415D7978F00AE5D40 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACA6BD315D7978F00AE5D40 /* QuartzCore.framework */; };
 		CAD8D8AB15D6E59F007FC765 /* ANAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAD8D8AA15D6E59F007FC765 /* ANAPI.plist */; };
 		CAD8D8C915D6E9F2007FC765 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD8D8C815D6E9F2007FC765 /* SystemConfiguration.framework */; };
 		CAD8D8CB15D6EA05007FC765 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD8D8CA15D6EA05007FC765 /* Security.framework */; };
@@ -94,6 +97,11 @@
 		922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPostStatusViewController.xib; sourceTree = "<group>"; };
 		9253EBD315D624F90047C153 /* ANStatusViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANStatusViewCell.h; sourceTree = "<group>"; };
 		9253EBD415D624F90047C153 /* ANStatusViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStatusViewCell.m; sourceTree = "<group>"; };
+		CACA6BCD15D7842F00AE5D40 /* ANUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUserViewController.h; sourceTree = "<group>"; };
+		CACA6BCE15D7842F00AE5D40 /* ANUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANUserViewController.m; sourceTree = "<group>"; };
+		CACA6BCF15D7842F00AE5D40 /* ANUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANUserViewController.xib; sourceTree = "<group>"; };
+		CACA6BD215D788F400AE5D40 /* ANViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANViewControllerProtocol.h; sourceTree = "<group>"; };
+		CACA6BD315D7978F00AE5D40 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CAD8D8AA15D6E59F007FC765 /* ANAPI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ANAPI.plist; sourceTree = "<group>"; };
 		CAD8D8C815D6E9F2007FC765 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CAD8D8CA15D6EA05007FC765 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -160,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACA6BD415D7978F00AE5D40 /* QuartzCore.framework in Frameworks */,
 				0053C6C615D76A56000F36FA /* libz.dylib in Frameworks */,
 				CAD8D8CB15D6EA05007FC765 /* Security.framework in Frameworks */,
 				CAD8D8C915D6E9F2007FC765 /* SystemConfiguration.framework in Frameworks */,
@@ -207,6 +216,7 @@
 			children = (
 				0053C6BD15D76A36000F36FA /* libTestFlight.a */,
 				0053C6C515D76A56000F36FA /* libz.dylib */,
+				CACA6BD315D7978F00AE5D40 /* QuartzCore.framework */,
 				CAD8D8C815D6E9F2007FC765 /* SystemConfiguration.framework */,
 				CAD8D8CA15D6EA05007FC765 /* Security.framework */,
 				00B4740E15D38E3C00F767CE /* UIKit.framework */,
@@ -219,6 +229,7 @@
 		00B4741415D38E3C00F767CE /* AppApp */ = {
 			isa = PBXGroup;
 			children = (
+				CACA6BCC15D7831D00AE5D40 /* User Information */,
 				CAD8D9A515D770ED007FC765 /* Side Menu */,
 				CAD8D96615D71D80007FC765 /* Stream Controllers */,
 				9229761915D5BF300096B5D8 /* Generic Stream Controller */,
@@ -227,6 +238,7 @@
 				00B4741D15D38E3C00F767CE /* ANAppDelegate.h */,
 				00B4741E15D38E3C00F767CE /* ANAppDelegate.m */,
 				00B4741515D38E3C00F767CE /* Supporting Files */,
+				CACA6BD215D788F400AE5D40 /* ANViewControllerProtocol.h */,
 			);
 			path = AppApp;
 			sourceTree = "<group>";
@@ -288,6 +300,16 @@
 				922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */,
 			);
 			name = "Post Status";
+			sourceTree = "<group>";
+		};
+		CACA6BCC15D7831D00AE5D40 /* User Information */ = {
+			isa = PBXGroup;
+			children = (
+				CACA6BCD15D7842F00AE5D40 /* ANUserViewController.h */,
+				CACA6BCE15D7842F00AE5D40 /* ANUserViewController.m */,
+				CACA6BCF15D7842F00AE5D40 /* ANUserViewController.xib */,
+			);
+			name = "User Information";
 			sourceTree = "<group>";
 		};
 		CAD8D8DF15D706E7007FC765 /* Externals */ = {
@@ -511,6 +533,7 @@
 				CAD8D9A215D7709C007FC765 /* menu-icon@2x.png in Resources */,
 				0053C6C215D76A36000F36FA /* README.txt in Resources */,
 				0053C6C315D76A36000F36FA /* release_notes.txt in Resources */,
+				CACA6BD115D7842F00AE5D40 /* ANUserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +576,7 @@
 				CAD8D9A315D7709C007FC765 /* MFSideMenuManager.m in Sources */,
 				CAD8D9A415D7709C007FC765 /* UIViewController+MFSideMenu.m in Sources */,
 				CAD8D9A815D77113007FC765 /* ANSideMenuController.m in Sources */,
+				CACA6BD015D7842F00AE5D40 /* ANUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

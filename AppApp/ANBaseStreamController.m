@@ -11,6 +11,7 @@
 #import "ANStatusViewCell.h"
 #import "ANStreamFooterView.h"
 #import "ANStreamHeaderView.h"
+#import "ANUserViewController.h"
 
 #import "MFSideMenu.h"
 #import "NSObject+SDExtensions.h"
@@ -116,7 +117,6 @@
     
     return cell;*/
     
-    
     ANStatusViewCell *cell = [[ANStatusViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
     //TODO: move data into objects.
@@ -176,8 +176,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    
+     /*<#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];

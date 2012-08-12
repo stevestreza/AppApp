@@ -25,7 +25,7 @@
 - (void)getUserMentions:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUserMentions:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getCurrentUser:(SDWebServiceUICompletionBlock)uiCompletionBlock;
-
+- (void)getUser:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 @end
 
 @protocol ANAPIDelegate <NSObject>

@@ -1,5 +1,5 @@
 //
-//  ANBaseStreamController.h
+//  ANUserViewController.h
 //  AppApp
 //
 //  Created by brandon on 8/11/12.
@@ -7,18 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "STableViewController.h"
-#import "ANAPICall.h"
 #import "ANViewControllerProtocol.h"
 
-@interface ANBaseStreamController : STableViewController<ANViewControllerProtocol>
-{
-@protected
-    NSMutableArray *streamData;
-}
+@interface ANUserViewController : UITableViewController<ANViewControllerProtocol>
 
 @property (nonatomic, readonly) NSString *sideMenuTitle;
-
-- (void)refresh;
+@property (nonatomic, assign) NSString *userID;
 
 @end
