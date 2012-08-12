@@ -22,6 +22,34 @@
 			<key>method</key>
 			<string>GET</string>
 		</dict>
+		<key>getUserStream</key>
+		<dict>
+			<key>routeFormat</key>
+			<string>/stream/0/posts/stream?access_token={accessToken}</string>
+			<key>method</key>
+			<string>GET</string>
+		</dict>
+		<key>getUserMentions</key>
+		<dict>
+			<key>routeFormat</key>
+			<string>/stream/0/users/{user_id}/mentions?access_token={accessToken}</string>
+			<key>method</key>
+			<string>GET</string>
+		</dict>
+		<key>getUserPosts</key>
+		<dict>
+			<key>routeFormat</key>
+			<string>/stream/0/users/{user_id}/posts?access_token={accessToken}</string>
+			<key>method</key>
+			<string>GET</string>
+		</dict>
+		<key>getCurrentUser</key>
+		<dict>
+			<key>routeFormat</key>
+			<string>/stream/0/users/me?access_token={accessToken}</string>
+			<key>method</key>
+			<string>GET</string>
+		</dict>
 	</dict>
 </dict>
 </plist>
