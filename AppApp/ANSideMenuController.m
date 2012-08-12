@@ -8,7 +8,6 @@
 #import "MFSideMenu.h"
 #import "ANGlobalStreamController.h"
 #import "ANUserStreamController.h"
-#import "ANUserPostsController.h"
 #import "ANUserMentionsController.h"
 #import "ANUserViewController.h"
 
@@ -16,7 +15,6 @@
 {
     ANUserStreamController *userStream;
     ANUserMentionsController *mentionsStream;
-    ANUserPostsController *postsStream;
     ANGlobalStreamController *globalStream;
     ANUserViewController *userInfo;
 }
@@ -27,11 +25,10 @@
     
     userStream = [[ANUserStreamController alloc] init];
     mentionsStream = [[ANUserMentionsController alloc] init];
-    postsStream = [[ANUserPostsController alloc] init];
     globalStream = [[ANGlobalStreamController alloc] init];
     userInfo = [[ANUserViewController alloc] initWithNibName:nil bundle:nil];
     
-    _navigationArray = @[userStream, mentionsStream, postsStream, globalStream, userInfo];
+    _navigationArray = @[userStream, mentionsStream, globalStream, userInfo];
 
     return self;
 }
@@ -50,7 +47,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
