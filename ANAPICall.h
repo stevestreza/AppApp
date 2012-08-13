@@ -19,6 +19,7 @@
 
 - (void)makePostWithText:(NSString*)text uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)makePostWithText:(NSString*)text replyToPostID:(NSString *)postID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+
 - (void)getGlobalStream:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUserStream:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUserPosts:(SDWebServiceUICompletionBlock)uiCompletionBlock;
@@ -30,6 +31,9 @@
 - (void)getUserFollowers:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUserFollowing:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getPostReplies:(NSString *)postID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+
+- (void)followUser:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+- (void)unfollowUser:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 
 @end
 
