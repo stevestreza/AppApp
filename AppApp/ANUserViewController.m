@@ -74,8 +74,14 @@
     nameLabel.text = [userData objectForKey:@"name"];
     usernameLabel.text = [NSString stringWithFormat:@"@%@", [userData objectForKey:@"username"]];
     
+    // Check for empty descriptions to avoid crashing by passing NSNull into label
+    NSString *bioText = [userData valueForKeyPath:@"description.text"];
+    if (bioText == (id)[NSNull null] || bioText.length == 0) {
+        bioLabel.text = @"";
+    } else {
+        bioLabel.text = bioText;
+    }
     // compute height of bio line.
-    bioLabel.text = [userData valueForKeyPath:@"description.text"];
     [bioLabel adjustHeightToFit:120];
     
     // now get that and set the header height..
