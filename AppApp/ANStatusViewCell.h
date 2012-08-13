@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "SDImageView.h"
 
+extern CGFloat const ANStatusViewCellTopMargin;
+extern CGFloat const ANStatusViewCellBottomMargin;
+extern CGFloat const ANStatusViewCellLeftMargin;
+extern CGFloat const ANStatusViewCellUsernameTextHeight;
+extern CGFloat const ANStatusViewCellAvatarHeight;
+extern CGFloat const ANStatusViewCellAvatarWidth;
+
 @interface ANStatusViewCell : UITableViewCell
 
 @property (nonatomic, strong) NSString *username;
