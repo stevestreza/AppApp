@@ -95,7 +95,10 @@
 - (void)fetchDataFromUserID
 {
     [SVProgressHUD showWithStatus:@"Fetching user info"];
-        
+    
+    if (!userID)
+        userID = [ANAPICall sharedAppAPI].userID;
+    
     [[ANAPICall sharedAppAPI] getUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
         SDLog(@"user data = %@", dataObject);
         

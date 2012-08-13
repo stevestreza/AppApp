@@ -20,7 +20,7 @@
 			<key>method</key>
 			<string>DELETE</string>
 			<key>routeFormat</key>
-			<string>stream/0/users/{user_id}/follow?access_token={access_token}</string>
+			<string>stream/0/users/{user_id}/follow?access_token={accessToken}</string>
 		</dict>
 		<key>getUserFollowers</key>
 		<dict>
