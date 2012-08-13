@@ -95,7 +95,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    // TODO: clean this up.
     NSString *statusText =[[streamData objectAtIndex: [indexPath row]] objectForKey:@"text"];
     if(statusText == (id)[NSNull null] || statusText.length == 0 ) { statusText = @"null"; }
     
@@ -104,8 +103,9 @@
                                     constrainedToSize:maxStatusLabelSize
                                         lineBreakMode: UILineBreakModeWordWrap];
     
-    CGFloat height = MAX(statusLabelSize.height, 60.0f);
-    return height + 37;
+    CGFloat height = MAX(ANStatusViewCellUsernameTextHeight + statusLabelSize.height, ANStatusViewCellAvatarHeight)
+            + ANStatusViewCellTopMargin + ANStatusViewCellBottomMargin;
+    return height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
