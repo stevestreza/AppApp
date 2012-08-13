@@ -183,4 +183,16 @@
     [self performRequestWithMethod:@"getUserFollowers" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];    
 }
 
+- (void)getUserFollowing:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock
+{
+    [self readTokenFromDefaults];
+    
+    if (!accessToken)
+        return;
+    
+    NSDictionary *replacements = @{ @"accessToken" : accessToken, @"user_id" : ID };
+    
+    [self performRequestWithMethod:@"getUserFollowing" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
+}
+
 @end
