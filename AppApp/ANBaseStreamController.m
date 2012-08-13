@@ -15,6 +15,7 @@
 
 #import "MFSideMenu.h"
 #import "NSObject+SDExtensions.h"
+#import "NSDictionary+SDExtensions.h"
 
 @interface ANBaseStreamController ()
 
@@ -79,6 +80,15 @@
     [self presentModalViewController:postView animated:YES];
 }
 
+- (void)showUserAction:(id)sender
+{
+    NSUInteger index = [(UIControl *)sender tag];
+    NSDictionary *postDict = [streamData objectAtIndex:index];
+    NSDictionary *userDict = [postDict objectForKey:@"user"];
+    ANUserViewController *userController = [[ANUserViewController alloc] initWithUserDictionary:userDict];
+    [self.navigationController pushViewController:userController animated:YES];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -122,6 +132,10 @@
     cell.username = [[[streamData objectAtIndex: [indexPath row]] objectForKey:@"user"] objectForKey:@"username"];
     cell.status = statusText;
     cell.avatarView.imageURL = avatarURL;
+    // TODO: i know this is janky.  fix it.
+    cell.showUserButton.tag = indexPath.row;
+    // END JANKY.
+    [cell.showUserButton addTarget:self action:@selector(showUserAction:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }

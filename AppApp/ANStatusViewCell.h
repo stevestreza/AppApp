@@ -23,5 +23,6 @@ extern CGFloat const ANStatusViewCellAvatarWidth;
 @property (nonatomic, strong) UIImage  *avatar;
 
 @property (nonatomic, readonly) SDImageView *avatarView;
+@property (nonatomic, readonly) UIButton *showUserButton;
 
 @end

@@ -17,18 +17,19 @@ CGFloat const ANStatusViewCellAvatarWidth = 50.0;
 
 @interface ANStatusViewCell()
 {
+    UIButton *showUserButton;
     SDImageView *avatarView;
     UILabel *statusTextLabel;
     UILabel *usernameTextLabel;
-
 }
+
 - (void)registerObservers;
 - (void)unregisterObservers;
 
 @end
 
 @implementation ANStatusViewCell
-@synthesize status, avatar, username, avatarView;
+@synthesize status, avatar, username, showUserButton, avatarView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -39,6 +40,10 @@ CGFloat const ANStatusViewCellAvatarWidth = 50.0;
         avatarView = [[SDImageView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
         avatarView.backgroundColor = [UIColor grayColor];
         [self.contentView addSubview: avatarView];
+
+        showUserButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
+        showUserButton.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview: showUserButton];
         
         // username
         usernameTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 10, 240, 15)];
