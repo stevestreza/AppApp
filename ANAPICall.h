@@ -26,6 +26,12 @@
 - (void)getUserMentions:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getCurrentUser:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUser:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+- (void)getUserFollowers:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+- (void)getUserFollowing:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+//- (void)getFollowing:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+//- (void)getMe:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+//- (void)getTeamFollowback:(SDWebServiceUICompletionBlock)uiCompletionBlock; // oh god no!
+
 @end
 
 @protocol ANAPIDelegate <NSObject>

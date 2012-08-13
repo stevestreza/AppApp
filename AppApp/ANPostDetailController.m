@@ -7,30 +7,32 @@
 //
 
 #import "ANPostDetailController.h"
+#import "ANAPICall.h"
 #import "SDImageView.h"
 
-@interface ANPostDetailController ()
+@interface ANUserStreamController ()
 
 @end
 
-@implementation ANPostDetailController {
-    NSDictionary *postData;
-    
-    __weak IBOutlet UILabel *usernameLabel;
-    __weak IBOutlet UILabel *fullnameLabel;
-    __weak IBOutlet UILabel *posttimeLabel;
-    __weak IBOutlet UILabel *statusLabel;
-    __weak IBOutlet SDImageView *avatarView;
+@implementation ANUserStreamController
+{
+    NSDictionary *postDictionary;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithPostDictionary:(NSDictionary *)aPostDictionary
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        self.title = @"Post";
-    }
+    self = [super init];
+    
+    postDictionary = aPostDictionary;
+    
     return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.tableView.tableHeaderView = nil;
 }
 
 - (NSString *)sideMenuTitle
@@ -38,23 +40,33 @@
     return @"Post";
 }
 
-- (void)viewDidLoad
+
+- (void)addItemsOnTop
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Call this to indicate that we have finished "refreshing".
+    // This will then result in the headerView being unpinned (-unpinHeaderView will be called).
     
+    // do nothing for now.  Replies isn't implemented by the API yet.
+    
+    /*[[ANAPICall sharedAppAPI] getUserStream:^(id dataObject, NSError *error) {
+        streamData = [NSMutableArray arrayWithArray:dataObject];
+        [self.tableView reloadData];
+        [self refreshCompleted];
+    }];*/
+    [self refreshCompleted];
 }
 
-- (void)viewDidUnload
+- (void)addItemsOnBottom
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //    [self.tableView reloadData];
+    //
+    //    if (items.count > 50)
+    //        self.canLoadMore = NO; // signal that there won't be any more items to load
+    //    else
+    //        self.canLoadMore = YES;
+    
+    // Inform STableViewController that we have finished loading more items
+    [self loadMoreCompleted];
 }
 
 @end

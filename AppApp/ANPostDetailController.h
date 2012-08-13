@@ -7,13 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ANViewControllerProtocol.h"
+#import "ANBaseStreamController.h"
 
-
-@interface ANPostDetailController : UIViewController<ANViewControllerProtocol> {
-    
-}
-
-@property (nonatomic, readonly) NSString *sideMenuTitle;
+@interface ANPostDetailController : ANBaseStreamController
 
 @end

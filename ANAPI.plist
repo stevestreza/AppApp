@@ -6,6 +6,20 @@
 	<string>https://alpha-api.app.net/</string>
 	<key>requests</key>
 	<dict>
+		<key>getUserFollowers</key>
+		<dict>
+			<key>method</key>
+			<string>GET</string>
+			<key>routeFormat</key>
+			<string>/stream/0/users/{user_id}/followers?access_token={accessToken}</string>
+		</dict>
+		<key>getUserFollowing</key>
+		<dict>
+			<key>method</key>
+			<string>GET</string>
+			<key>routeFormat</key>
+			<string>/stream/0/users/{user_id}/following?access_token={accessToken}</string>
+		</dict>
 		<key>getUser</key>
 		<dict>
 			<key>method</key>
