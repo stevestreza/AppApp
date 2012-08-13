@@ -11,5 +11,5 @@
 @interface SDImageView : UIImageView
 
 @property (nonatomic, strong) NSString *imageURL;
-
+- (void) setImageURL:(NSString *)value withPlaceholderImage:(UIImage*)placeholder;
 @end
