@@ -15,6 +15,9 @@
 @property (nonatomic, retain) IBOutlet UITextView *postTextView;
 @property (nonatomic, retain) IBOutlet UIView *groupView;
 
--(IBAction)dismissPostStatusViewController:(id)sender;
+- (id)init;
+- (id)initWithReplyToID:(NSString *)aReplyToID;
+
+- (IBAction)dismissPostStatusViewController:(id)sender;
 
 @end

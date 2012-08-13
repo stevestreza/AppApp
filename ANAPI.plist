@@ -36,6 +36,15 @@
 			<key>postFormat</key>
 			<string>text={text}&amp;access_token={accessToken}</string>
 		</dict>
+		<key>postToStreamAsReply</key>
+		<dict>
+			<key>method</key>
+			<string>POST</string>
+			<key>routeFormat</key>
+			<string>stream/0/posts</string>
+			<key>postFormat</key>
+			<string>text={text}&amp;access_token={accessToken}&amp;reply_to={post_id}</string>
+		</dict>
 		<key>getGlobalStream</key>
 		<dict>
 			<key>routeFormat</key>
@@ -61,6 +70,13 @@
 		<dict>
 			<key>routeFormat</key>
 			<string>/stream/0/users/{user_id}/posts?access_token={accessToken}</string>
+			<key>method</key>
+			<string>GET</string>
+		</dict>
+		<key>getPostReplies</key>
+		<dict>
+			<key>routeFormat</key>
+			<string>/stream/0/posts/{post_id}/replies?access_token={accessToken}</string>
 			<key>method</key>
 			<string>GET</string>
 		</dict>

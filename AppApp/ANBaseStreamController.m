@@ -8,10 +8,10 @@
 
 #import "ANBaseStreamController.h"
 #import "ANPostStatusViewController.h"
-#import "ANStatusViewCell.h"
 #import "ANStreamFooterView.h"
 #import "ANStreamHeaderView.h"
 #import "ANUserViewController.h"
+#import "ANPostDetailController.h"
 
 #import "MFSideMenu.h"
 #import "NSObject+SDExtensions.h"
@@ -172,6 +172,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
+    
+    NSDictionary *postData = [streamData objectAtIndex:indexPath.row];
+    ANPostDetailController *detailController = [[ANPostDetailController alloc] initWithPostData:postData];
+    [self.navigationController pushViewController:detailController animated:YES];
     
      /*<#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...

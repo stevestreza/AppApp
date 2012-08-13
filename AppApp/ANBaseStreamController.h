@@ -10,6 +10,7 @@
 #import "STableViewController.h"
 #import "ANAPICall.h"
 #import "ANViewControllerProtocol.h"
+#import "ANStatusViewCell.h"
 
 @interface ANBaseStreamController : STableViewController<ANViewControllerProtocol>
 {
