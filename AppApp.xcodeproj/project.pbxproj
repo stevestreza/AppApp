@@ -35,11 +35,17 @@
 		922F80D415D5A0890049F194 /* ANPostStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80D215D5A0890049F194 /* ANPostStatusViewController.m */; };
 		922F80D515D5A0890049F194 /* ANPostStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */; };
 		9253EBD515D624F90047C153 /* ANStatusViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9253EBD415D624F90047C153 /* ANStatusViewCell.m */; };
-		CA7052BD15D8572A009A3011 /* ANPostDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7052BC15D8572A009A3011 /* ANPostDetailHeaderView.m */; };
+		CA5863CA15D8B2210044BA4A /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5863C815D8B2210044BA4A /* reply.png */; };
+		CA5863CB15D8B2210044BA4A /* reply@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5863C915D8B2210044BA4A /* reply@2x.png */; };
+		CA5863CF15D8BF5C0044BA4A /* repost.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5863CD15D8BF5C0044BA4A /* repost.png */; };
+		CA5863D015D8BF5C0044BA4A /* repost@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5863CE15D8BF5C0044BA4A /* repost@2x.png */; };
+		CA7052BD15D8572A009A3011 /* ANPostDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7052BC15D8572A009A3011 /* ANPostDetailCell.m */; };
 		CA7052C715D87DB6009A3011 /* ANUserListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7052C515D87DB6009A3011 /* ANUserListController.m */; };
 		CA7052C815D87DB6009A3011 /* ANUserListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA7052C615D87DB6009A3011 /* ANUserListController.xib */; };
 		CA7052CB15D8830F009A3011 /* ANUserListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7052CA15D8830E009A3011 /* ANUserListCell.m */; };
 		CA7052CD15D8848A009A3011 /* ANUserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA7052CC15D8848A009A3011 /* ANUserListCell.xib */; };
+		CA7052CE15D89A87009A3011 /* ANPostDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0067482B15D8407600065DFF /* ANPostDetailController.m */; };
+		CA7052CF15D89BEE009A3011 /* ANPostDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0067482C15D8407600065DFF /* ANPostDetailCell.xib */; };
 		CACA6BD015D7842F00AE5D40 /* ANUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACA6BCE15D7842F00AE5D40 /* ANUserViewController.m */; };
 		CACA6BD115D7842F00AE5D40 /* ANUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CACA6BCF15D7842F00AE5D40 /* ANUserViewController.xib */; };
 		CACA6BD415D7978F00AE5D40 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACA6BD315D7978F00AE5D40 /* QuartzCore.framework */; };
@@ -94,7 +100,7 @@
 		0053C6C515D76A56000F36FA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0067482A15D8407600065DFF /* ANPostDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANPostDetailController.h; sourceTree = "<group>"; };
 		0067482B15D8407600065DFF /* ANPostDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANPostDetailController.m; sourceTree = "<group>"; };
-		0067482C15D8407600065DFF /* ANPostDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANPostDetailHeaderView.xib; sourceTree = "<group>"; };
+		0067482C15D8407600065DFF /* ANPostDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ANPostDetailCell.xib; sourceTree = "<group>"; };
 		0067483215D8473100065DFF /* App Icon Template [2.0].psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "App Icon Template [2.0].psd"; sourceTree = "<group>"; };
 		0067483315D8473100065DFF /* grayline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayline.png; sourceTree = "<group>"; };
 		0067483415D8473100065DFF /* grayline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayline@2x.png"; sourceTree = "<group>"; };
@@ -126,8 +132,12 @@
 		922F80D315D5A0890049F194 /* ANPostStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPostStatusViewController.xib; sourceTree = "<group>"; };
 		9253EBD315D624F90047C153 /* ANStatusViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANStatusViewCell.h; sourceTree = "<group>"; };
 		9253EBD415D624F90047C153 /* ANStatusViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStatusViewCell.m; sourceTree = "<group>"; };
-		CA7052BB15D8572A009A3011 /* ANPostDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPostDetailHeaderView.h; sourceTree = "<group>"; };
-		CA7052BC15D8572A009A3011 /* ANPostDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPostDetailHeaderView.m; sourceTree = "<group>"; };
+		CA5863C815D8B2210044BA4A /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reply.png; path = Images/reply.png; sourceTree = "<group>"; };
+		CA5863C915D8B2210044BA4A /* reply@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reply@2x.png"; path = "Images/reply@2x.png"; sourceTree = "<group>"; };
+		CA5863CD15D8BF5C0044BA4A /* repost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = repost.png; path = Images/repost.png; sourceTree = "<group>"; };
+		CA5863CE15D8BF5C0044BA4A /* repost@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "repost@2x.png"; path = "Images/repost@2x.png"; sourceTree = "<group>"; };
+		CA7052BB15D8572A009A3011 /* ANPostDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPostDetailCell.h; sourceTree = "<group>"; };
+		CA7052BC15D8572A009A3011 /* ANPostDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPostDetailCell.m; sourceTree = "<group>"; };
 		CA7052C415D87DB6009A3011 /* ANUserListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUserListController.h; sourceTree = "<group>"; };
 		CA7052C515D87DB6009A3011 /* ANUserListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANUserListController.m; sourceTree = "<group>"; };
 		CA7052C615D87DB6009A3011 /* ANUserListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANUserListController.xib; sourceTree = "<group>"; };
@@ -240,9 +250,9 @@
 			children = (
 				0067482A15D8407600065DFF /* ANPostDetailController.h */,
 				0067482B15D8407600065DFF /* ANPostDetailController.m */,
-				0067482C15D8407600065DFF /* ANPostDetailHeaderView.xib */,
-				CA7052BB15D8572A009A3011 /* ANPostDetailHeaderView.h */,
-				CA7052BC15D8572A009A3011 /* ANPostDetailHeaderView.m */,
+				0067482C15D8407600065DFF /* ANPostDetailCell.xib */,
+				CA7052BB15D8572A009A3011 /* ANPostDetailCell.h */,
+				CA7052BC15D8572A009A3011 /* ANPostDetailCell.m */,
 			);
 			name = "Post Detail";
 			sourceTree = "<group>";
@@ -267,6 +277,10 @@
 				003B7CAC15D78158002F9A95 /* icon-52.png */,
 				003B7CAA15D78155002F9A95 /* Default.png */,
 				003B7CA815D78153002F9A95 /* Default@2x.png */,
+				CA5863C815D8B2210044BA4A /* reply.png */,
+				CA5863C915D8B2210044BA4A /* reply@2x.png */,
+				CA5863CD15D8BF5C0044BA4A /* repost.png */,
+				CA5863CE15D8BF5C0044BA4A /* repost@2x.png */,
 				CAD8D8DF15D706E7007FC765 /* Externals */,
 				922F80C015D58F360049F194 /* API */,
 				00B4741415D38E3C00F767CE /* AppApp */,
@@ -629,6 +643,11 @@
 				0067483B15D8473100065DFF /* postarrow@2x.png in Resources */,
 				CA7052C815D87DB6009A3011 /* ANUserListController.xib in Resources */,
 				CA7052CD15D8848A009A3011 /* ANUserListCell.xib in Resources */,
+				CA7052CF15D89BEE009A3011 /* ANPostDetailCell.xib in Resources */,
+				CA5863CA15D8B2210044BA4A /* reply.png in Resources */,
+				CA5863CB15D8B2210044BA4A /* reply@2x.png in Resources */,
+				CA5863CF15D8BF5C0044BA4A /* repost.png in Resources */,
+				CA5863D015D8BF5C0044BA4A /* repost@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,9 +693,10 @@
 				CACA6BD015D7842F00AE5D40 /* ANUserViewController.m in Sources */,
 				CACA6BDB15D8152E00AE5D40 /* UILabel+SDExtensions.m in Sources */,
 				CACA6BE115D841EE00AE5D40 /* UIAlertView+SDExtensions.m in Sources */,
-				CA7052BD15D8572A009A3011 /* ANPostDetailHeaderView.m in Sources */,
+				CA7052BD15D8572A009A3011 /* ANPostDetailCell.m in Sources */,
 				CA7052C715D87DB6009A3011 /* ANUserListController.m in Sources */,
 				CA7052CB15D8830F009A3011 /* ANUserListCell.m in Sources */,
+				CA7052CE15D89A87009A3011 /* ANPostDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +766,7 @@
 		00B4742915D38E3C00F767CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppApp/AppApp-Prefix.pch";
@@ -756,6 +777,7 @@
 					"\"$(SRCROOT)/Externals/TestFlightSDK1.0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -764,6 +786,7 @@
 		00B4742A15D38E3C00F767CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppApp/AppApp-Prefix.pch";
 				INFOPLIST_FILE = "AppApp/AppApp-Info.plist";
@@ -773,6 +796,7 @@
 					"\"$(SRCROOT)/Externals/TestFlightSDK1.0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

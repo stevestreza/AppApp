@@ -28,7 +28,9 @@
     NSDictionary *userData;
     NSArray *followersList;
     NSArray *followingList;
-    
+
+    NSArray *myFollowingList;
+
     __weak IBOutlet SDImageView *userImageView;
     __weak IBOutlet SDImageView *coverImageView;
     __weak IBOutlet UILabel *nameLabel;
@@ -72,8 +74,14 @@
     nameLabel.text = [userData objectForKey:@"name"];
     usernameLabel.text = [NSString stringWithFormat:@"@%@", [userData objectForKey:@"username"]];
     
+    // Check for empty descriptions to avoid crashing by passing NSNull into label
+    NSString *bioText = [userData valueForKeyPath:@"description.text"];
+    if (bioText == (id)[NSNull null] || bioText.length == 0) {
+        bioLabel.text = @"";
+    } else {
+        bioLabel.text = bioText;
+    }
     // compute height of bio line.
-    bioLabel.text = [userData valueForKeyPath:@"description.text"];
     [bioLabel adjustHeightToFit:120];
     
     // now get that and set the header height..
@@ -93,7 +101,10 @@
 - (void)fetchDataFromUserID
 {
     [SVProgressHUD showWithStatus:@"Fetching user info"];
-        
+    
+    if (!userID)
+        userID = [ANAPICall sharedAppAPI].userID;
+    
     [[ANAPICall sharedAppAPI] getUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
         SDLog(@"user data = %@", dataObject);
         
@@ -105,20 +116,84 @@
     }];
 }
 
+- (BOOL)isThisUserMe:(NSString *)thisUsersID
+{
+    if ([thisUsersID isEqualToString:[ANAPICall sharedAppAPI].userID])
+        return YES;
+    return NO;
+}
+
+- (BOOL)doIFollowThisUser:(NSString *)thisUsersID
+{
+    BOOL result = NO;
+    for (NSDictionary *userDict in myFollowingList)
+    {
+        NSString *tmpID = [userDict stringForKey:@"id"];
+        if ([thisUsersID isEqualToString:tmpID])
+        {
+            result = YES;
+            break;
+        }
+    }
+    return result;
+}
+
 - (void)fetchFollowData
 {
     // TODO: we're doing this here so we can get a users followers/following count.
     
     [[ANAPICall sharedAppAPI] getUserFollowers:userID uiCompletionBlock:^(id dataObject, NSError *error) {
         followersList = (NSArray *)dataObject;
+        
         [self.tableView reloadData];
     }];
     
     [[ANAPICall sharedAppAPI] getUserFollowing:userID uiCompletionBlock:^(id dataObject, NSError *error) {
         followingList = (NSArray *)dataObject;
+
+        // temp attempt at doing follow-a-user working from here until the api returns flags for it.
+        if ([userID isEqualToString:[ANAPICall sharedAppAPI].userID])
+            myFollowingList = followingList;
+        
         [self.tableView reloadData];
     }];
     
+    // temp attempt at doing follow-a-user working from here until the api returns flags for it.
+    if (![userID isEqualToString:[ANAPICall sharedAppAPI].userID])
+    {
+        [[ANAPICall sharedAppAPI] getUserFollowing:[ANAPICall sharedAppAPI].userID uiCompletionBlock:^(id dataObject, NSError *error) {
+            myFollowingList = (NSArray *)dataObject;
+            
+            if ([self doIFollowThisUser:userID])
+            {
+                self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Unfollow" style:UIBarButtonItemStyleBordered target:self action:@selector(unfollowAction:)];
+            }
+            else
+            {
+                self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Follow" style:UIBarButtonItemStyleBordered target:self action:@selector(followAction:)];
+            }
+        }];
+    }
+}
+
+- (void)followAction:(id)sender
+{
+    UIBarButtonItem *button = sender;
+    button.enabled = NO;
+    [[ANAPICall sharedAppAPI] followUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
+        // TODO: check the return here to make sure ther wasn't an error before we change the button.
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Unfollow" style:UIBarButtonItemStyleBordered target:self action:@selector(unfollowAction:)];
+    }];
+}
+
+- (void)unfollowAction:(id)sender
+{
+    UIBarButtonItem *button = sender;
+    button.enabled = NO;
+    [[ANAPICall sharedAppAPI] unfollowUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
+        // TODO: check the return here to make sure ther wasn't an error before we change the button.
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Follow" style:UIBarButtonItemStyleBordered target:self action:@selector(followAction:)];        
+    }];
 }
 
 - (NSString *)userID
@@ -279,7 +354,7 @@
     
     switch (indexPath.row) {
         case 0:
-            controller = [[ANUserPostsController alloc] init];
+            controller = [[ANUserPostsController alloc] initWithUserID:userID];
             break;
             
         case 1:

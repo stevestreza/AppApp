@@ -11,4 +11,6 @@
 
 @interface ANPostDetailController : ANBaseStreamController
 
+- (id)initWithPostData:(NSDictionary *)aPostData;
+
 @end

@@ -17,6 +17,10 @@
 @end
 
 @implementation ANPostStatusViewController
+{
+    NSString *replyToID;
+}
+
 @synthesize postTextView, characterCountLabel, postButton, groupView;
 
 - (id)init
@@ -24,6 +28,15 @@
     self = [super initWithNibName:@"ANPostStatusViewController" bundle:nil];
     if (self) {
         
+    }
+    return self;
+}
+
+- (id)initWithReplyToID:(NSString *)aReplyToID
+{
+    self = [super initWithNibName:@"ANPostStatusViewController" bundle:nil];
+    if (self) {
+        replyToID = aReplyToID;
     }
     return self;
 }
@@ -108,9 +121,19 @@
         
         // TODO: Add delegate to API, make sure to dismiss *only* when post goes through.
         //       ... and add the post to the status listing -- BKS.
-        [[ANAPICall sharedAppAPI] makePostWithText:postTextView.text uiCompletionBlock:^(id dataObject, NSError *error) {
-            SDLog(@"post response = %@", dataObject);
-        }];
+        
+        if (replyToID)
+        {
+            [[ANAPICall sharedAppAPI] makePostWithText:postTextView.text replyToPostID:replyToID uiCompletionBlock:^(id dataObject, NSError *error) {
+                SDLog(@"post response = %@", dataObject);
+            }];        
+        }
+        else
+        {
+            [[ANAPICall sharedAppAPI] makePostWithText:postTextView.text uiCompletionBlock:^(id dataObject, NSError *error) {
+                SDLog(@"post response = %@", dataObject);
+            }];
+        }
         [self dismissPostStatusViewController:nil];
     }
 }
