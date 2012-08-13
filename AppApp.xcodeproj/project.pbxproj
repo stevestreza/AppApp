@@ -37,6 +37,8 @@
 		9253EBD515D624F90047C153 /* ANStatusViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9253EBD415D624F90047C153 /* ANStatusViewCell.m */; };
 		CA5863CA15D8B2210044BA4A /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5863C815D8B2210044BA4A /* reply.png */; };
 		CA5863CB15D8B2210044BA4A /* reply@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5863C915D8B2210044BA4A /* reply@2x.png */; };
+		CA5863CF15D8BF5C0044BA4A /* repost.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5863CD15D8BF5C0044BA4A /* repost.png */; };
+		CA5863D015D8BF5C0044BA4A /* repost@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5863CE15D8BF5C0044BA4A /* repost@2x.png */; };
 		CA7052BD15D8572A009A3011 /* ANPostDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7052BC15D8572A009A3011 /* ANPostDetailCell.m */; };
 		CA7052C715D87DB6009A3011 /* ANUserListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7052C515D87DB6009A3011 /* ANUserListController.m */; };
 		CA7052C815D87DB6009A3011 /* ANUserListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA7052C615D87DB6009A3011 /* ANUserListController.xib */; };
@@ -132,6 +134,8 @@
 		9253EBD415D624F90047C153 /* ANStatusViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStatusViewCell.m; sourceTree = "<group>"; };
 		CA5863C815D8B2210044BA4A /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reply.png; path = Images/reply.png; sourceTree = "<group>"; };
 		CA5863C915D8B2210044BA4A /* reply@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reply@2x.png"; path = "Images/reply@2x.png"; sourceTree = "<group>"; };
+		CA5863CD15D8BF5C0044BA4A /* repost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = repost.png; path = Images/repost.png; sourceTree = "<group>"; };
+		CA5863CE15D8BF5C0044BA4A /* repost@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "repost@2x.png"; path = "Images/repost@2x.png"; sourceTree = "<group>"; };
 		CA7052BB15D8572A009A3011 /* ANPostDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPostDetailCell.h; sourceTree = "<group>"; };
 		CA7052BC15D8572A009A3011 /* ANPostDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPostDetailCell.m; sourceTree = "<group>"; };
 		CA7052C415D87DB6009A3011 /* ANUserListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUserListController.h; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 				003B7CA815D78153002F9A95 /* Default@2x.png */,
 				CA5863C815D8B2210044BA4A /* reply.png */,
 				CA5863C915D8B2210044BA4A /* reply@2x.png */,
+				CA5863CD15D8BF5C0044BA4A /* repost.png */,
+				CA5863CE15D8BF5C0044BA4A /* repost@2x.png */,
 				CAD8D8DF15D706E7007FC765 /* Externals */,
 				922F80C015D58F360049F194 /* API */,
 				00B4741415D38E3C00F767CE /* AppApp */,
@@ -640,6 +646,8 @@
 				CA7052CF15D89BEE009A3011 /* ANPostDetailCell.xib in Resources */,
 				CA5863CA15D8B2210044BA4A /* reply.png in Resources */,
 				CA5863CB15D8B2210044BA4A /* reply@2x.png in Resources */,
+				CA5863CF15D8BF5C0044BA4A /* repost.png in Resources */,
+				CA5863D015D8BF5C0044BA4A /* repost@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

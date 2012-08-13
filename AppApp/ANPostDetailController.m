@@ -47,15 +47,17 @@
     detailCell.nameLabel.text = [postData stringForKeyPath:@"user.name"];
     detailCell.usernameLabel.text = [NSString stringWithFormat:@"@%@", [postData stringForKeyPath:@"user.username"]];
     detailCell.userImageView.imageURL = [postData stringForKeyPath:@"user.avatar_image.url"];
-    [detailCell.replyButton addTarget:self action:@selector(newPostAction:) forControlEvents:UIControlEventTouchUpInside];
     [detailCell.postLabel adjustHeightToFit:9999.0]; // hopefully unlimited in height...
-    
+
     // now get that and set the header height..
     CGFloat defaultViewHeight = 221; // seen in the nib.
     CGFloat defaultLabelHeight = 21; // ... i'm putting these here in case we need to change it later.
     CGFloat newLabelHeight = detailCell.postLabel.frame.size.height;
     
     detailCellHeight = defaultViewHeight + (newLabelHeight - defaultLabelHeight);
+
+    [detailCell.replyButton addTarget:self action:@selector(newPostAction:) forControlEvents:UIControlEventTouchUpInside];
+    [detailCell.repostButton addTarget:self action:@selector(repostAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (NSString *)usersMentioned
@@ -85,7 +87,17 @@
     ANPostStatusViewController *postView = [[ANPostStatusViewController alloc] initWithReplyToID:replyToID];
     [self presentModalViewController:postView animated:YES];
     postView.postTextView.text = [self usersMentioned];
-    
+}
+
+- (IBAction)repostAction:(id)sender
+{
+    NSString *replyToID = [postData stringForKey:@"id"];
+    NSString *originalText = [postData stringForKey:@"text"];
+    NSString *posterUsername = [postData stringForKeyPath:@"user.username"];
+
+    ANPostStatusViewController *postView = [[ANPostStatusViewController alloc] initWithReplyToID:replyToID];
+    [self presentModalViewController:postView animated:YES];
+    postView.postTextView.text = [NSString stringWithFormat:@"RP @%@: %@", posterUsername, originalText];
 }
 
 - (NSString *)sideMenuTitle
