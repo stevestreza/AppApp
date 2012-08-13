@@ -42,6 +42,7 @@
     
     detailCell = [ANPostDetailCell loadFromNib];
     detailCell.contentView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+    detailCell.selectionStyle = UITableViewCellSelectionStyleNone;
     detailCell.postLabel.text = [postData stringForKey:@"text"];
     detailCell.nameLabel.text = [postData stringForKeyPath:@"user.name"];
     detailCell.usernameLabel.text = [NSString stringWithFormat:@"@%@", [postData stringForKeyPath:@"user.username"]];
