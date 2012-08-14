@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SDImageView.h"
+#import "TTTAttributedLabel.h"
 
 extern CGFloat const ANStatusViewCellTopMargin;
 extern CGFloat const ANStatusViewCellBottomMargin;
@@ -16,7 +17,7 @@ extern CGFloat const ANStatusViewCellUsernameTextHeight;
 extern CGFloat const ANStatusViewCellAvatarHeight;
 extern CGFloat const ANStatusViewCellAvatarWidth;
 
-@interface ANStatusViewCell : UITableViewCell
+@interface ANStatusViewCell : UITableViewCell <TTTAttributedLabelDelegate>
 
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *status;

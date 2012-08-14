@@ -11,8 +11,9 @@
 #import "ANAPICall.h"
 #import "ANViewControllerProtocol.h"
 #import "ANStatusViewCell.h"
+#import "TTTAttributedLabel.h"
 
-@interface ANBaseStreamController : STableViewController<ANViewControllerProtocol>
+@interface ANBaseStreamController : STableViewController<ANViewControllerProtocol,TTTAttributedLabelDelegate>
 {
 @protected
     NSMutableArray *streamData;

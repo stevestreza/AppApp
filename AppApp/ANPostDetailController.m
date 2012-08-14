@@ -43,12 +43,9 @@
     detailCell = [ANPostDetailCell loadFromNib];
     detailCell.contentView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     detailCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    detailCell.postLabel.text = [postData stringForKey:@"text"];
     detailCell.postLabel.dataDetectorTypes = UIDataDetectorTypeAll;
     detailCell.postLabel.delegate = self;
-    for (NSTextCheckingResult* result in detailCell.postLabel.links){
-        NSLog(@"%@", result);
-    }
+    detailCell.postLabel.text = [postData stringForKey:@"text"];
     detailCell.nameLabel.text = [postData stringForKeyPath:@"user.name"];
     detailCell.usernameLabel.text = [NSString stringWithFormat:@"@%@", [postData stringForKeyPath:@"user.username"]];
     detailCell.userImageView.imageURL = [postData stringForKeyPath:@"user.avatar_image.url"];
@@ -203,6 +200,13 @@
     
     // Inform STableViewController that we have finished loading more items
     [self loadMoreCompleted];
+}
+
+- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url
+{
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    }
 }
 
 @end

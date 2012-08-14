@@ -19,7 +19,7 @@ CGFloat const ANStatusViewCellAvatarWidth = 50.0;
 {
     UIButton *showUserButton;
     SDImageView *avatarView;
-    UILabel *statusTextLabel;
+    TTTAttributedLabel *statusTextLabel;
     UILabel *usernameTextLabel;
 }
 
@@ -51,7 +51,10 @@ CGFloat const ANStatusViewCellAvatarWidth = 50.0;
         [self.contentView addSubview: usernameTextLabel];
         
         // status label
-        statusTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 27, 240, 100)];
+        statusTextLabel = [[TTTAttributedLabel alloc] initWithFrame:CGRectMake(70, 27, 240, 100)];
+        statusTextLabel.dataDetectorTypes = UIDataDetectorTypeAll;
+        //this delegate should maybe go somewhere else? :X
+        statusTextLabel.delegate = self;
         statusTextLabel.lineBreakMode = UILineBreakModeWordWrap;
         statusTextLabel.numberOfLines = 0;
         statusTextLabel.font = [UIFont fontWithName:@"Helvetica" size:12.0f];
@@ -112,6 +115,13 @@ CGFloat const ANStatusViewCellAvatarWidth = 50.0;
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url
+{
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    }
 }
 
 @end
