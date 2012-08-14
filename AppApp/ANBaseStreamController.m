@@ -137,6 +137,22 @@
     if(statusText == (id)[NSNull null] || statusText.length == 0 ) { statusText = @"null"; }
     cell.username = [[[streamData objectAtIndex: [indexPath row]] objectForKey:@"user"] objectForKey:@"username"];
     cell.status = statusText;
+    cell.statusTextLabel.delegate = self;
+    
+    //detect usernames
+    NSArray* mentions = [[[streamData objectAtIndex: [indexPath row]]
+                          objectForKey:@"entities"] objectForKey:@"mentions"];
+    for(NSDictionary* mention in mentions) {
+        NSRange indicies = NSMakeRange([[mention objectForKey:@"pos"] integerValue],
+                                       [[mention objectForKey:@"len"] integerValue]);
+        [cell.statusTextLabel addLinkToURL:[NSURL URLWithString:
+                                            [NSString stringWithFormat:@"username://%@",
+                                             [mention objectForKey:@"id"]]] withRange:indicies];
+        
+        
+    }
+
+    
     [cell.avatarView  setImageURL:avatarURL
                     withPlaceholderImage:[UIImage imageNamed:@"placeholderAvatar.png"]];
     // TODO: i know this is janky.  fix it.
@@ -333,6 +349,22 @@
     
     // Inform STableViewController that we have finished loading more items
     //[self loadMoreCompleted];
+}
+
+#pragma mark - TTTAttributedLabel delgate
+- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url
+{
+    if([[url scheme]isEqualToString:@"username"]) {
+        NSString *userID = [url host];
+        [[ANAPICall sharedAppAPI] getUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
+            NSDictionary *userData = dataObject;
+            ANUserViewController* userViewController = [[ANUserViewController alloc] initWithUserDictionary:userData];
+            [self.navigationController pushViewController:userViewController animated:YES];
+        }];
+        
+    } else if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    }
 }
 
 

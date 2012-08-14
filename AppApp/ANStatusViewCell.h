@@ -25,5 +25,6 @@ extern CGFloat const ANStatusViewCellAvatarWidth;
 
 @property (nonatomic, readonly) SDImageView *avatarView;
 @property (nonatomic, readonly) UIButton *showUserButton;
+@property (nonatomic, readonly) TTTAttributedLabel *statusTextLabel;
 
 @end

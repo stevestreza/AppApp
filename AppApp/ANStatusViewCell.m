@@ -19,7 +19,6 @@ CGFloat const ANStatusViewCellAvatarWidth = 50.0;
 {
     UIButton *showUserButton;
     SDImageView *avatarView;
-    TTTAttributedLabel *statusTextLabel;
     UILabel *usernameTextLabel;
 }
 
@@ -29,7 +28,7 @@ CGFloat const ANStatusViewCellAvatarWidth = 50.0;
 @end
 
 @implementation ANStatusViewCell
-@synthesize status, avatar, username, showUserButton, avatarView;
+@synthesize status, avatar, username, showUserButton, avatarView, statusTextLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -54,8 +53,6 @@ CGFloat const ANStatusViewCellAvatarWidth = 50.0;
         // status label
         statusTextLabel = [[TTTAttributedLabel alloc] initWithFrame:CGRectMake(70, 27, 240, 100)];
         statusTextLabel.dataDetectorTypes = UIDataDetectorTypeAll;
-        //this delegate should maybe go somewhere else? :X
-        statusTextLabel.delegate = self;
         statusTextLabel.lineBreakMode = UILineBreakModeWordWrap;
         statusTextLabel.highlightedTextColor = [UIColor whiteColor];
         statusTextLabel.numberOfLines = 0;
