@@ -21,18 +21,8 @@
 		0067483A15D8473100065DFF /* postarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0067483515D8473100065DFF /* postarrow.png */; };
 		0067483B15D8473100065DFF /* postarrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0067483615D8473100065DFF /* postarrow@2x.png */; };
 		0067486E15D9E9CF00065DFF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0067485215D9E9CF00065DFF /* .gitignore */; };
-		0067486F15D9E9CF00065DFF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0067485315D9E9CF00065DFF /* LICENSE */; };
-		0067487015D9E9CF00065DFF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0067485415D9E9CF00065DFF /* README.md */; };
 		0067487115D9E9CF00065DFF /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0067485615D9E9CF00065DFF /* TTTAttributedLabel.m */; };
-		0067487215D9E9CF00065DFF /* TTTAttributedLabel.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0067485715D9E9CF00065DFF /* TTTAttributedLabel.podspec */; };
-		0067487315D9E9CF00065DFF /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 0067485915D9E9CF00065DFF /* screenshot.png */; };
-		0067487415D9E9CF00065DFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0067485C15D9E9CF00065DFF /* AppDelegate.m */; };
-		0067487515D9E9CF00065DFF /* AttributedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0067485E15D9E9CF00065DFF /* AttributedTableViewCell.m */; };
-		0067487615D9E9CF00065DFF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0067486015D9E9CF00065DFF /* DetailViewController.m */; };
-		0067487715D9E9CF00065DFF /* espressos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0067486115D9E9CF00065DFF /* espressos.txt */; };
-		0067487815D9E9CF00065DFF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0067486215D9E9CF00065DFF /* Info.plist */; };
-		0067487915D9E9CF00065DFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0067486315D9E9CF00065DFF /* main.m */; };
-		0067487A15D9E9CF00065DFF /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0067486615D9E9CF00065DFF /* RootViewController.m */; };
+		0067488015D9EACC00065DFF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0067487F15D9EACC00065DFF /* CoreText.framework */; };
 		00B4740F15D38E3C00F767CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4740E15D38E3C00F767CE /* UIKit.framework */; };
 		00B4741115D38E3C00F767CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4741015D38E3C00F767CE /* Foundation.framework */; };
 		00B4741315D38E3C00F767CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4741215D38E3C00F767CE /* CoreGraphics.framework */; };
@@ -101,16 +91,6 @@
 		CAD8D9A815D77113007FC765 /* ANSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D9A715D77113007FC765 /* ANSideMenuController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0067487C15D9E9CF00065DFF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0067486715D9E9CF00065DFF /* TTTAttributedLabelExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F877A35C13782AF10022A8AB;
-			remoteInfo = Espressos;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		003B7CA815D78153002F9A95 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		003B7CAA15D78155002F9A95 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -130,25 +110,9 @@
 		0067483515D8473100065DFF /* postarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postarrow.png; sourceTree = "<group>"; };
 		0067483615D8473100065DFF /* postarrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postarrow@2x.png"; sourceTree = "<group>"; };
 		0067485215D9E9CF00065DFF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		0067485315D9E9CF00065DFF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		0067485415D9E9CF00065DFF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0067485515D9E9CF00065DFF /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		0067485615D9E9CF00065DFF /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
-		0067485715D9E9CF00065DFF /* TTTAttributedLabel.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TTTAttributedLabel.podspec; sourceTree = "<group>"; };
-		0067485915D9E9CF00065DFF /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
-		0067485B15D9E9CF00065DFF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0067485C15D9E9CF00065DFF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0067485D15D9E9CF00065DFF /* AttributedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedTableViewCell.h; sourceTree = "<group>"; };
-		0067485E15D9E9CF00065DFF /* AttributedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedTableViewCell.m; sourceTree = "<group>"; };
-		0067485F15D9E9CF00065DFF /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		0067486015D9E9CF00065DFF /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		0067486115D9E9CF00065DFF /* espressos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = espressos.txt; sourceTree = "<group>"; };
-		0067486215D9E9CF00065DFF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0067486315D9E9CF00065DFF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0067486415D9E9CF00065DFF /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		0067486515D9E9CF00065DFF /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		0067486615D9E9CF00065DFF /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		0067486715D9E9CF00065DFF /* TTTAttributedLabelExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TTTAttributedLabelExample.xcodeproj; sourceTree = "<group>"; };
+		0067487F15D9EACC00065DFF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		00B4740A15D38E3C00F767CE /* AppApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B4740E15D38E3C00F767CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00B4741015D38E3C00F767CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -263,6 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0067488015D9EACC00065DFF /* CoreText.framework in Frameworks */,
 				CACA6BDE15D8244A00AE5D40 /* CoreImage.framework in Frameworks */,
 				CACA6BD415D7978F00AE5D40 /* QuartzCore.framework in Frameworks */,
 				0053C6C615D76A56000F36FA /* libz.dylib in Frameworks */,
@@ -316,51 +281,10 @@
 			isa = PBXGroup;
 			children = (
 				0067485215D9E9CF00065DFF /* .gitignore */,
-				0067485315D9E9CF00065DFF /* LICENSE */,
-				0067485415D9E9CF00065DFF /* README.md */,
 				0067485515D9E9CF00065DFF /* TTTAttributedLabel.h */,
 				0067485615D9E9CF00065DFF /* TTTAttributedLabel.m */,
-				0067485715D9E9CF00065DFF /* TTTAttributedLabel.podspec */,
-				0067485815D9E9CF00065DFF /* TTTAttributedLabelExample */,
 			);
 			path = TTTAttributedLabel;
-			sourceTree = "<group>";
-		};
-		0067485815D9E9CF00065DFF /* TTTAttributedLabelExample */ = {
-			isa = PBXGroup;
-			children = (
-				0067485915D9E9CF00065DFF /* screenshot.png */,
-				0067485A15D9E9CF00065DFF /* TTTAttributedLabelExample */,
-				0067486715D9E9CF00065DFF /* TTTAttributedLabelExample.xcodeproj */,
-			);
-			path = TTTAttributedLabelExample;
-			sourceTree = "<group>";
-		};
-		0067485A15D9E9CF00065DFF /* TTTAttributedLabelExample */ = {
-			isa = PBXGroup;
-			children = (
-				0067485B15D9E9CF00065DFF /* AppDelegate.h */,
-				0067485C15D9E9CF00065DFF /* AppDelegate.m */,
-				0067485D15D9E9CF00065DFF /* AttributedTableViewCell.h */,
-				0067485E15D9E9CF00065DFF /* AttributedTableViewCell.m */,
-				0067485F15D9E9CF00065DFF /* DetailViewController.h */,
-				0067486015D9E9CF00065DFF /* DetailViewController.m */,
-				0067486115D9E9CF00065DFF /* espressos.txt */,
-				0067486215D9E9CF00065DFF /* Info.plist */,
-				0067486315D9E9CF00065DFF /* main.m */,
-				0067486415D9E9CF00065DFF /* Prefix.pch */,
-				0067486515D9E9CF00065DFF /* RootViewController.h */,
-				0067486615D9E9CF00065DFF /* RootViewController.m */,
-			);
-			path = TTTAttributedLabelExample;
-			sourceTree = "<group>";
-		};
-		0067486815D9E9CF00065DFF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0067487D15D9E9CF00065DFF /* Espressos.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		00B473FF15D38E3C00F767CE = {
@@ -394,9 +318,10 @@
 		00B4740D15D38E3C00F767CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CACA6BDD15D8244A00AE5D40 /* CoreImage.framework */,
 				0053C6BD15D76A36000F36FA /* libTestFlight.a */,
 				0053C6C515D76A56000F36FA /* libz.dylib */,
+				0067487F15D9EACC00065DFF /* CoreText.framework */,
+				CACA6BDD15D8244A00AE5D40 /* CoreImage.framework */,
 				CACA6BD315D7978F00AE5D40 /* QuartzCore.framework */,
 				CAD8D8C815D6E9F2007FC765 /* SystemConfiguration.framework */,
 				CAD8D8CA15D6EA05007FC765 /* Security.framework */,
@@ -700,28 +625,12 @@
 			mainGroup = 00B473FF15D38E3C00F767CE;
 			productRefGroup = 00B4740B15D38E3C00F767CE /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 0067486815D9E9CF00065DFF /* Products */;
-					ProjectRef = 0067486715D9E9CF00065DFF /* TTTAttributedLabelExample.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				00B4740915D38E3C00F767CE /* AppApp */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0067487D15D9E9CF00065DFF /* Espressos.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = Espressos.app;
-			remoteRef = 0067487C15D9E9CF00065DFF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00B4740815D38E3C00F767CE /* Resources */ = {
@@ -760,12 +669,6 @@
 				CA5863CF15D8BF5C0044BA4A /* repost.png in Resources */,
 				CA5863D015D8BF5C0044BA4A /* repost@2x.png in Resources */,
 				0067486E15D9E9CF00065DFF /* .gitignore in Resources */,
-				0067486F15D9E9CF00065DFF /* LICENSE in Resources */,
-				0067487015D9E9CF00065DFF /* README.md in Resources */,
-				0067487215D9E9CF00065DFF /* TTTAttributedLabel.podspec in Resources */,
-				0067487315D9E9CF00065DFF /* screenshot.png in Resources */,
-				0067487715D9E9CF00065DFF /* espressos.txt in Resources */,
-				0067487815D9E9CF00065DFF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,11 +719,6 @@
 				CA7052CB15D8830F009A3011 /* ANUserListCell.m in Sources */,
 				CA7052CE15D89A87009A3011 /* ANPostDetailController.m in Sources */,
 				0067487115D9E9CF00065DFF /* TTTAttributedLabel.m in Sources */,
-				0067487415D9E9CF00065DFF /* AppDelegate.m in Sources */,
-				0067487515D9E9CF00065DFF /* AttributedTableViewCell.m in Sources */,
-				0067487615D9E9CF00065DFF /* DetailViewController.m in Sources */,
-				0067487915D9E9CF00065DFF /* main.m in Sources */,
-				0067487A15D9E9CF00065DFF /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
