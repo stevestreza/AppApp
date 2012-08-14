@@ -46,9 +46,14 @@
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.011 green:0.486 blue:0.682 alpha:1];
     
     // add gestures
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToDetails:)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
-    [self.tableView addGestureRecognizer:recognizer];
+    UISwipeGestureRecognizer *detailsRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToDetails:)];
+    [detailsRecognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    
+    UISwipeGestureRecognizer *menuRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToSideMenu:)];
+    [menuRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    
+    [self.tableView addGestureRecognizer:detailsRecognizer];
+    [self.tableView addGestureRecognizer:menuRecognizer];
     
     if ([[ANAPICall sharedAppAPI] hasAccessToken])
         [self refresh];
@@ -206,6 +211,14 @@
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:swipeLocation];
     
     NSLog(@"SWIPE TO DETAILS %@!", [streamData objectAtIndex: [indexPath row]]);
+}
+
+- (void)swipeToSideMenu:(UISwipeGestureRecognizer *)gestureRecognizer
+{
+    //CGPoint swipeLocation = [gestureRecognizer locationInView:self.tableView];
+    //NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:swipeLocation];
+    
+    [self.navigationController setMenuState:MFSideMenuStateVisible];
 }
 
 #pragma mark - Pull to Refresh
