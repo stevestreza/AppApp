@@ -28,11 +28,10 @@
     [super viewDidLoad];
     
     //TODO: MOVE OUT OF HERE
-    NSString *clientID = @"RG2Brqye96rLZQtjwRenVZsBrMtpYXYP";
     NSString *redirectURI = @"appapp://callmemaybe";
     
     NSString *scopes = @"stream write_post follow messages";
-    NSString *authURLstring = [NSString stringWithFormat:@"https://alpha.app.net/oauth/authenticate?client_id=%@&response_type=token&redirect_uri=%@&scope=%@",clientID, redirectURI, scopes];
+    NSString *authURLstring = [NSString stringWithFormat:@"https://alpha.app.net/oauth/authenticate?client_id=%@&response_type=token&redirect_uri=%@&scope=%@", kANAPIClientID, redirectURI, scopes];
     NSURL *authURL = [NSURL URLWithString:[authURLstring stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:authURL];

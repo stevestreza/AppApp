@@ -92,6 +92,7 @@
 		CAD8D9A315D7709C007FC765 /* MFSideMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D99C15D7709C007FC765 /* MFSideMenuManager.m */; };
 		CAD8D9A415D7709C007FC765 /* UIViewController+MFSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D99E15D7709C007FC765 /* UIViewController+MFSideMenu.m */; };
 		CAD8D9A815D77113007FC765 /* ANSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8D9A715D77113007FC765 /* ANSideMenuController.m */; };
+		FD3EB0D515DA341C005BF189 /* ANConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3EB0D415DA341C005BF189 /* ANConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -226,6 +227,8 @@
 		CAD8D99E15D7709C007FC765 /* UIViewController+MFSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MFSideMenu.m"; sourceTree = "<group>"; };
 		CAD8D9A615D77113007FC765 /* ANSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSideMenuController.h; sourceTree = "<group>"; };
 		CAD8D9A715D77113007FC765 /* ANSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSideMenuController.m; sourceTree = "<group>"; };
+		FD3EB0D315DA341C005BF189 /* ANConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANConstants.h; sourceTree = "<group>"; };
+		FD3EB0D415DA341C005BF189 /* ANConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +357,8 @@
 				00B4741D15D38E3C00F767CE /* ANAppDelegate.h */,
 				00B4741E15D38E3C00F767CE /* ANAppDelegate.m */,
 				CACA6BD215D788F400AE5D40 /* ANViewControllerProtocol.h */,
+				FD3EB0D315DA341C005BF189 /* ANConstants.h */,
+				FD3EB0D415DA341C005BF189 /* ANConstants.m */,
 				00B4741515D38E3C00F767CE /* Supporting Files */,
 			);
 			path = AppApp;
@@ -731,6 +736,7 @@
 				CA7052CB15D8830F009A3011 /* ANUserListCell.m in Sources */,
 				CA7052CE15D89A87009A3011 /* ANPostDetailController.m in Sources */,
 				0067488D15D9F79100065DFF /* TTTAttributedLabel.m in Sources */,
+				FD3EB0D515DA341C005BF189 /* ANConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
