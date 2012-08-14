@@ -48,6 +48,7 @@ CGFloat const ANStatusViewCellAvatarWidth = 50.0;
         // username
         usernameTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 10, 240, 15)];
         usernameTextLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0f];
+        usernameTextLabel.highlightedTextColor = [UIColor whiteColor];
         [self.contentView addSubview: usernameTextLabel];
         
         // status label
@@ -56,6 +57,7 @@ CGFloat const ANStatusViewCellAvatarWidth = 50.0;
         //this delegate should maybe go somewhere else? :X
         statusTextLabel.delegate = self;
         statusTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+        statusTextLabel.highlightedTextColor = [UIColor whiteColor];
         statusTextLabel.numberOfLines = 0;
         statusTextLabel.font = [UIFont fontWithName:@"Helvetica" size:12.0f];
         [self.contentView addSubview: statusTextLabel];
