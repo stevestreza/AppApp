@@ -8,13 +8,14 @@
 
 #import "ANBaseStreamController.h"
 #import "ANPostStatusViewController.h"
-#import "ANStatusViewCell.h"
 #import "ANStreamFooterView.h"
 #import "ANStreamHeaderView.h"
 #import "ANUserViewController.h"
+#import "ANPostDetailController.h"
 
 #import "MFSideMenu.h"
 #import "NSObject+SDExtensions.h"
+#import "NSDictionary+SDExtensions.h"
 
 @interface ANBaseStreamController ()
 
@@ -79,12 +80,19 @@
     [self presentModalViewController:postView animated:YES];
 }
 
+- (void)showUserAction:(id)sender
+{
+    NSUInteger index = [(UIControl *)sender tag];
+    NSDictionary *postDict = [streamData objectAtIndex:index];
+    NSDictionary *userDict = [postDict objectForKey:@"user"];
+    ANUserViewController *userController = [[ANUserViewController alloc] initWithUserDictionary:userDict];
+    [self.navigationController pushViewController:userController animated:YES];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
@@ -125,6 +133,10 @@
     cell.status = statusText;
     [cell.avatarView  setImageURL:avatarURL
                     withPlaceholderImage:[UIImage imageNamed:@"placeholderAvatar.png"]];
+    // TODO: i know this is janky.  fix it.
+    cell.showUserButton.tag = indexPath.row;
+    // END JANKY.
+    [cell.showUserButton addTarget:self action:@selector(showUserAction:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -173,6 +185,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
+    
+    NSDictionary *postData = [streamData objectAtIndex:indexPath.row];
+    ANPostDetailController *detailController = [[ANPostDetailController alloc] initWithPostData:postData];
+    [self.navigationController pushViewController:detailController animated:YES];
     
      /*<#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...

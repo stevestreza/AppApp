@@ -12,6 +12,8 @@
 @interface ANUserViewController : UITableViewController<ANViewControllerProtocol>
 
 @property (nonatomic, readonly) NSString *sideMenuTitle;
-@property (nonatomic, assign) NSString *userID;
+@property (nonatomic, readonly) NSString *userID;
+
+- (id)initWithUserDictionary:(NSDictionary *)userDictionary;
 
 @end

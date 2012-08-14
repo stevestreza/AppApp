@@ -26,7 +26,7 @@
     userStream = [[ANUserStreamController alloc] init];
     mentionsStream = [[ANUserMentionsController alloc] init];
     globalStream = [[ANGlobalStreamController alloc] init];
-    userInfo = [[ANUserViewController alloc] initWithNibName:nil bundle:nil];
+    userInfo = [[ANUserViewController alloc] init];
     
     _navigationArray = @[userStream, mentionsStream, globalStream, userInfo];
 

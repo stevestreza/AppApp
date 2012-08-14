@@ -14,6 +14,7 @@
 #import "NSDictionary+SDExtensions.h"
 #import "UIAlertView+SDExtensions.h"
 #import "ANUserPostsController.h"
+#import "ANUserListController.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -27,7 +28,7 @@
     NSDictionary *userData;
     NSArray *followersList;
     NSArray *followingList;
-    
+
     __weak IBOutlet SDImageView *userImageView;
     __weak IBOutlet SDImageView *coverImageView;
     __weak IBOutlet UILabel *nameLabel;
@@ -35,13 +36,26 @@
     __weak IBOutlet UILabel *bioLabel;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:@"ANUserViewController" bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"ANUserViewController" bundle:nil];
     if (self) {
         // Custom initialization
         self.title = @"Me";
+        
+        userID = [ANAPICall sharedAppAPI].userID;
     }
+    return self;
+}
+
+- (id)initWithUserDictionary:(NSDictionary *)userDictionary
+{
+    self = [super initWithNibName:@"ANUserViewController" bundle:nil];
+    
+    userData = userDictionary;
+    userID = [userData stringForKey:@"id"];
+    self.title = [userData objectForKey:@"username"];
+
     return self;
 }
 
@@ -50,54 +64,109 @@
     return @"Me";
 }
 
-- (void)setUserID:(NSString *)value
+- (void)configureFromUserData
+{
+    userImageView.imageURL = [userData valueForKeyPath:@"avatar_image.url"];
+    coverImageView.imageURL = [userData valueForKeyPath:@"cover_image.url"];
+    
+    nameLabel.text = [userData objectForKey:@"name"];
+    usernameLabel.text = [NSString stringWithFormat:@"@%@", [userData objectForKey:@"username"]];
+    
+    // Check for empty descriptions to avoid crashing by passing NSNull into label
+    NSString *bioText = [userData valueForKeyPath:@"description.text"];
+    if (bioText == (id)[NSNull null] || bioText.length == 0) {
+        bioLabel.text = @"";
+    } else {
+        bioLabel.text = bioText;
+    }
+    // compute height of bio line.
+    [bioLabel adjustHeightToFit:120];
+    
+    // now get that and set the header height..
+    CGFloat defaultViewHeight = 154; // seen in the nib.
+    CGFloat defaultLabelHeight = 21; // ... i'm putting these here in case we need to change it later.
+    CGFloat newLabelHeight = bioLabel.frame.size.height;
+    
+    UIView *headerView = self.tableView.tableHeaderView;
+    CGRect newHeaderFrame = headerView.frame;
+    newHeaderFrame.size.height = defaultViewHeight + (newLabelHeight - defaultLabelHeight);
+    headerView.frame = newHeaderFrame;
+    
+    if ([self doIFollowThisUser])
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Unfollow" style:UIBarButtonItemStyleBordered target:self action:@selector(unfollowAction:)];
+    else
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Follow" style:UIBarButtonItemStyleBordered target:self action:@selector(followAction:)];
+
+    self.tableView.tableHeaderView = headerView;
+    [self.tableView reloadData];
+}
+
+- (void)fetchDataFromUserID
 {
     [SVProgressHUD showWithStatus:@"Fetching user info"];
     
-    if (![value isEqualToString:userID])
-    {
-        userID = value;
-        [[ANAPICall sharedAppAPI] getUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
-            SDLog(@"user data = %@", dataObject);
-            
-            userData = (NSDictionary *)dataObject;
-            
-            userImageView.imageURL = [userData valueForKeyPath:@"avatar_image.url"];
-            coverImageView.imageURL = [userData valueForKeyPath:@"cover_image.url"];
-            
-            nameLabel.text = [userData objectForKey:@"name"];
-            usernameLabel.text = [NSString stringWithFormat:@"@%@", [userData objectForKey:@"username"]];
-            
-            // compute height of bio line.
-            bioLabel.text = [userData valueForKeyPath:@"description.text"];
-            [bioLabel adjustHeightToFit:120];
-            
-            // now get that and set the header height..
-            CGFloat defaultViewHeight = 154; // seen in the nib.
-            CGFloat defaultLabelHeight = 21; // ... i'm putting these here in case we need to change it later.
-            CGFloat newLabelHeight = bioLabel.frame.size.height;
-            
-            UIView *headerView = self.tableView.tableHeaderView;
-            CGRect newHeaderFrame = headerView.frame;
-            newHeaderFrame.size.height = defaultViewHeight + (newLabelHeight - defaultLabelHeight);
-            headerView.frame = newHeaderFrame;
-            
-            self.tableView.tableHeaderView = headerView;
-            [self.tableView reloadData];
-            
-            [SVProgressHUD dismiss];
-        }];
+    if (!userID)
+        userID = [ANAPICall sharedAppAPI].userID;
+    
+    [[ANAPICall sharedAppAPI] getUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
+        SDLog(@"user data = %@", dataObject);
         
-        [[ANAPICall sharedAppAPI] getUserFollowers:userID uiCompletionBlock:^(id dataObject, NSError *error) {
-            followersList = (NSArray *)dataObject;
-            [self.tableView reloadData];
-        }];
+        userData = (NSDictionary *)dataObject;
+        [self configureFromUserData];
+        [self fetchFollowData];
+        
+        [SVProgressHUD dismiss];
+    }];
+}
 
-        [[ANAPICall sharedAppAPI] getUserFollowers:userID uiCompletionBlock:^(id dataObject, NSError *error) {
-            followingList = (NSArray *)dataObject;
-            [self.tableView reloadData];
-        }];
-    }
+- (BOOL)isThisUserMe:(NSString *)thisUsersID
+{
+    if ([thisUsersID isEqualToString:[ANAPICall sharedAppAPI].userID])
+        return YES;
+    return NO;
+}
+
+- (BOOL)doIFollowThisUser
+{
+    BOOL result = [userData boolForKey:@"is_follower"];
+    return result;
+}
+
+- (void)fetchFollowData
+{
+    // TODO: we're doing this here so we can get a users followers/following count.
+    
+    [[ANAPICall sharedAppAPI] getUserFollowers:userID uiCompletionBlock:^(id dataObject, NSError *error) {
+        followersList = (NSArray *)dataObject;
+        
+        [self.tableView reloadData];
+    }];
+    
+    [[ANAPICall sharedAppAPI] getUserFollowing:userID uiCompletionBlock:^(id dataObject, NSError *error) {
+        followingList = (NSArray *)dataObject;
+
+        [self.tableView reloadData];
+    }];
+}
+
+- (void)followAction:(id)sender
+{
+    UIBarButtonItem *button = sender;
+    button.enabled = NO;
+    [[ANAPICall sharedAppAPI] followUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
+        // TODO: check the return here to make sure ther wasn't an error before we change the button.
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Unfollow" style:UIBarButtonItemStyleBordered target:self action:@selector(unfollowAction:)];
+    }];
+}
+
+- (void)unfollowAction:(id)sender
+{
+    UIBarButtonItem *button = sender;
+    button.enabled = NO;
+    [[ANAPICall sharedAppAPI] unfollowUser:userID uiCompletionBlock:^(id dataObject, NSError *error) {
+        // TODO: check the return here to make sure ther wasn't an error before we change the button.
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Follow" style:UIBarButtonItemStyleBordered target:self action:@selector(followAction:)];        
+    }];
 }
 
 - (NSString *)userID
@@ -115,11 +184,15 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = YES;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    if (!userData)
+        [self fetchDataFromUserID];
+    else
+    {
+        [self configureFromUserData];
+        [self fetchFollowData];
+    }
     
     userImageView.layer.cornerRadius = 6.0;
 
@@ -128,9 +201,6 @@
     darkView.backgroundColor = [UIColor blackColor];
     darkView.alpha = 0.4;
     [coverImageView addSubview:darkView];
-
-    
-    self.userID = [ANAPICall sharedAppAPI].userID;
 }
 
 - (void)viewDidUnload
@@ -159,14 +229,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 3;
 }
@@ -190,14 +258,14 @@
         case 1:
         {
             cell.textLabel.text = @"Followers";
-            cell.detailTextLabel.text = [userData stringForKeyPath:@"counts.followed_by"];// api always returns 0.
+            cell.detailTextLabel.text = [userData stringForKeyPath:@"counts.followers"];// api always returns 0.
         }
             break;
 
         case 2:
         {
             cell.textLabel.text = @"Following";
-            cell.detailTextLabel.text = [userData stringForKeyPath:@"counts.follows"];// api always returns 0.
+            cell.detailTextLabel.text = [userData stringForKeyPath:@"counts.following"];// api always returns 0.
         }
             break;
             
@@ -259,7 +327,17 @@
     
     switch (indexPath.row) {
         case 0:
-            controller = [[ANUserPostsController alloc] init];
+            controller = [[ANUserPostsController alloc] initWithUserID:userID];
+            break;
+            
+        case 1:
+            controller = [[ANUserListController alloc] initWithUserArray:followersList];
+            controller.title = @"Followers";
+            break;
+            
+        case 2:
+            controller = [[ANUserListController alloc] initWithUserArray:followingList];
+            controller.title = @"Following";
             break;
             
         default:

@@ -18,6 +18,8 @@
 - (BOOL)hasAccessToken;
 
 - (void)makePostWithText:(NSString*)text uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+- (void)makePostWithText:(NSString*)text replyToPostID:(NSString *)postID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+
 - (void)getGlobalStream:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUserStream:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUserPosts:(SDWebServiceUICompletionBlock)uiCompletionBlock;
@@ -27,10 +29,11 @@
 - (void)getCurrentUser:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUser:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 - (void)getUserFollowers:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
-//- (void)getUserFollowers:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
-//- (void)getFollowing:(SDWebServiceUICompletionBlock)uiCompletionBlock;
-//- (void)getMe:(SDWebServiceUICompletionBlock)uiCompletionBlock;
-//- (void)getTeamFollowback:(SDWebServiceUICompletionBlock)uiCompletionBlock; // oh god no!
+- (void)getUserFollowing:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+- (void)getPostReplies:(NSString *)postID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+
+- (void)followUser:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
+- (void)unfollowUser:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock;
 
 @end
 

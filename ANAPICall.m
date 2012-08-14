@@ -89,6 +89,20 @@
     [self performRequestWithMethod:@"postToStream" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
 }
 
+- (void)makePostWithText:(NSString*)text replyToPostID:(NSString *)postID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock
+{
+    [self readTokenFromDefaults];
+    if (!accessToken)
+        return;
+    
+    // App.net guys (? Alex K. and Mathew Phillips) say we should put accessToken in the headers, like so:
+    // "Authorization: Bearer " + access_token
+    
+    NSDictionary *replacements = @{ @"accessToken" : accessToken, @"text" : text, @"post_id" : postID };
+    
+    [self performRequestWithMethod:@"postToStreamAsReply" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];    
+}
+
 - (void)getGlobalStream:(SDWebServiceUICompletionBlock)uiCompletionBlock
 {
     [self readTokenFromDefaults];
@@ -181,6 +195,55 @@
     NSDictionary *replacements = @{ @"accessToken" : accessToken, @"user_id" : ID };
     
     [self performRequestWithMethod:@"getUserFollowers" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];    
+}
+
+- (void)getUserFollowing:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock
+{
+    [self readTokenFromDefaults];
+    
+    if (!accessToken)
+        return;
+    
+    NSDictionary *replacements = @{ @"accessToken" : accessToken, @"user_id" : ID };
+    
+    [self performRequestWithMethod:@"getUserFollowing" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
+}
+
+- (void)getPostReplies:(NSString *)postID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock
+{
+    [self readTokenFromDefaults];
+    
+    if (!accessToken)
+        return;
+    
+    NSDictionary *replacements = @{ @"accessToken" : accessToken, @"post_id" : postID };
+    
+    [self performRequestWithMethod:@"getPostReplies" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
+}
+
+- (void)followUser:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock
+{
+    [self readTokenFromDefaults];
+    if (!accessToken)
+        return;
+    
+    // App.net guys (? Alex K. and Mathew Phillips) say we should put accessToken in the headers, like so:
+    // "Authorization: Bearer " + access_token
+    
+    NSDictionary *replacements = @{ @"accessToken" : accessToken, @"user_id" : ID };
+    
+    [self performRequestWithMethod:@"followUser" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
+}
+
+- (void)unfollowUser:(NSString *)ID uiCompletionBlock:(SDWebServiceUICompletionBlock)uiCompletionBlock
+{
+    [self readTokenFromDefaults];
+    if (!accessToken)
+        return;
+    
+    NSDictionary *replacements = @{ @"accessToken" : accessToken, @"user_id" : ID };
+    
+    [self performRequestWithMethod:@"unfollowUser" routeReplacements:replacements dataProcessingBlock:[self defaultJSONProcessingBlock] uiUpdateBlock:uiCompletionBlock shouldRetry:YES];
 }
 
 @end

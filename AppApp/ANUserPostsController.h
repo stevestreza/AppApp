@@ -10,4 +10,7 @@
 
 @interface ANUserPostsController : ANBaseStreamController
 
+- (id)init;
+- (id)initWithUserID:(NSString *)aUserID;
+
 @end

@@ -13,6 +13,18 @@
 @end
 
 @implementation ANUserPostsController
+{
+    NSString *userID;
+}
+
+- (id)initWithUserID:(NSString *)aUserID
+{
+    self = [super init];
+    
+    userID = aUserID;
+    
+    return self;
+}
 
 - (NSString *)sideMenuTitle
 {
@@ -25,11 +37,22 @@
     // Call this to indicate that we have finished "refreshing".
     // This will then result in the headerView being unpinned (-unpinHeaderView will be called).
     
-    [[ANAPICall sharedAppAPI] getUserPosts:^(id dataObject, NSError *error) {
-        streamData = [NSMutableArray arrayWithArray:dataObject];
-        [self.tableView reloadData];
-        [self refreshCompleted];
-    }];
+    if (userID)
+    {
+        [[ANAPICall sharedAppAPI] getUserPosts:userID uiCompletionBlock:^(id dataObject, NSError *error) {
+            streamData = [NSMutableArray arrayWithArray:dataObject];
+            [self.tableView reloadData];
+            [self refreshCompleted];
+        }];
+    }
+    else
+    {
+        [[ANAPICall sharedAppAPI] getUserPosts:^(id dataObject, NSError *error) {
+            streamData = [NSMutableArray arrayWithArray:dataObject];
+            [self.tableView reloadData];
+            [self refreshCompleted];
+        }];
+    }
 }
 
 - (void)addItemsOnBottom

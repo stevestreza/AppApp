@@ -1,5 +1,5 @@
 //
-//  ANPostDetailHeaderView.h
+//  ANUserListController.h
 //  AppApp
 //
 //  Created by brandon on 8/12/12.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ANPostDetailHeaderView : UIView
+@interface ANUserListController : UITableViewController
+
+- (id)initWithUserArray:(NSArray *)aUserArray;
 
 @end

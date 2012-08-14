@@ -31,7 +31,7 @@
     NSString *clientID = @"RG2Brqye96rLZQtjwRenVZsBrMtpYXYP";
     NSString *redirectURI = @"appapp://callmemaybe";
     
-    NSString *scopes = @"stream write_post";
+    NSString *scopes = @"stream write_post follow messages";
     NSString *authURLstring = [NSString stringWithFormat:@"https://alpha.app.net/oauth/authenticate?client_id=%@&response_type=token&redirect_uri=%@&scope=%@",clientID, redirectURI, scopes];
     NSURL *authURL = [NSURL URLWithString:[authURLstring stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
