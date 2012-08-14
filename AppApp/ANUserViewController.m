@@ -92,11 +92,13 @@
     newHeaderFrame.size.height = defaultViewHeight + (newLabelHeight - defaultLabelHeight);
     headerView.frame = newHeaderFrame;
     
-    if ([self doIFollowThisUser])
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Unfollow" style:UIBarButtonItemStyleBordered target:self action:@selector(unfollowAction:)];
-    else
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Follow" style:UIBarButtonItemStyleBordered target:self action:@selector(followAction:)];
-
+    if (![self isThisUserMe:userID])
+    {
+        if ([self doIFollowThisUser])
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Unfollow" style:UIBarButtonItemStyleBordered target:self action:@selector(unfollowAction:)];
+        else
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Follow" style:UIBarButtonItemStyleBordered target:self action:@selector(followAction:)];
+    }
     self.tableView.tableHeaderView = headerView;
     [self.tableView reloadData];
 }
