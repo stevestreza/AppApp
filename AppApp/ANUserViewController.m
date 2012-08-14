@@ -285,14 +285,14 @@
         case 1:
         {
             cell.textLabel.text = @"Followers";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%u", followersList.count];//[userData stringForKeyPath:@"counts.followed_by"];// api always returns 0.
+            cell.detailTextLabel.text = [userData stringForKeyPath:@"counts.followers"];// api always returns 0.
         }
             break;
 
         case 2:
         {
             cell.textLabel.text = @"Following";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%u", followingList.count];//[userData stringForKeyPath:@"counts.follows"];// api always returns 0.
+            cell.detailTextLabel.text = [userData stringForKeyPath:@"counts.following"];// api always returns 0.
         }
             break;
             
