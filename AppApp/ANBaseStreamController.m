@@ -132,7 +132,8 @@
     if(statusText == (id)[NSNull null] || statusText.length == 0 ) { statusText = @"null"; }
     cell.username = [[[streamData objectAtIndex: [indexPath row]] objectForKey:@"user"] objectForKey:@"username"];
     cell.status = statusText;
-    cell.avatarView.imageURL = avatarURL;
+    [cell.avatarView  setImageURL:avatarURL
+                    withPlaceholderImage:[UIImage imageNamed:@"placeholderAvatar.png"]];
     // TODO: i know this is janky.  fix it.
     cell.showUserButton.tag = indexPath.row;
     // END JANKY.
