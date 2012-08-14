@@ -31,6 +31,8 @@
 		00ECA12215D7415500178F8A /* ANUserStreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECA11D15D7409200178F8A /* ANUserStreamController.m */; };
 		00ECA12315D7415500178F8A /* ANUserPostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECA11C15D7409200178F8A /* ANUserPostsController.m */; };
 		00ECA12415D7415500178F8A /* ANUserMentionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECA11B15D7409200178F8A /* ANUserMentionsController.m */; };
+		1FADC98F15D88B8600CFD1F8 /* avatarPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FADC98D15D88B8600CFD1F8 /* avatarPlaceholder.png */; };
+		1FADC99015D88B8600CFD1F8 /* avatarPlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FADC98E15D88B8600CFD1F8 /* avatarPlaceholder@2x.png */; };
 		922F80C915D58F6C0049F194 /* ANAPICall.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80C815D58F6C0049F194 /* ANAPICall.m */; };
 		922F80CD15D590400049F194 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922F80CC15D590400049F194 /* AuthViewController.m */; };
 		922F80CF15D595510049F194 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922F80CE15D595510049F194 /* AuthViewController.xib */; };
@@ -129,6 +131,8 @@
 		00ECA11E15D7409200178F8A /* ANUserMentionsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANUserMentionsController.h; sourceTree = "<group>"; };
 		00ECA11F15D7409200178F8A /* ANUserPostsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANUserPostsController.h; sourceTree = "<group>"; };
 		00ECA12015D7409200178F8A /* ANUserStreamController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANUserStreamController.h; sourceTree = "<group>"; };
+		1FADC98D15D88B8600CFD1F8 /* avatarPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatarPlaceholder.png; sourceTree = "<group>"; };
+		1FADC98E15D88B8600CFD1F8 /* avatarPlaceholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatarPlaceholder@2x.png"; sourceTree = "<group>"; };
 		922F80C715D58F6C0049F194 /* ANAPICall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAPICall.h; sourceTree = "<group>"; };
 		922F80C815D58F6C0049F194 /* ANAPICall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAPICall.m; sourceTree = "<group>"; };
 		922F80CB15D590400049F194 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 		0067483115D8473100065DFF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1FADC98D15D88B8600CFD1F8 /* avatarPlaceholder.png */,
+				1FADC98E15D88B8600CFD1F8 /* avatarPlaceholder@2x.png */,
 				003B7CAE15D7815B002F9A95 /* icon-114.png */,
 				003B7CAC15D78158002F9A95 /* icon-52.png */,
 				003B7CAA15D78155002F9A95 /* Default.png */,
@@ -664,6 +670,8 @@
 				0067483915D8473100065DFF /* grayline@2x.png in Resources */,
 				0067483A15D8473100065DFF /* postarrow.png in Resources */,
 				0067483B15D8473100065DFF /* postarrow@2x.png in Resources */,
+				1FADC98F15D88B8600CFD1F8 /* avatarPlaceholder.png in Resources */,
+				1FADC99015D88B8600CFD1F8 /* avatarPlaceholder@2x.png in Resources */,
 				CA7052C815D87DB6009A3011 /* ANUserListController.xib in Resources */,
 				CA7052CD15D8848A009A3011 /* ANUserListCell.xib in Resources */,
 				CA7052CF15D89BEE009A3011 /* ANPostDetailCell.xib in Resources */,

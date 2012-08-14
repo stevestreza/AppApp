@@ -17,6 +17,11 @@
 
 @synthesize imageURL;
 
+- (void) setImageURL:(NSString *)value withPlaceholderImage:(UIImage*)placeholder
+{
+    self.image = placeholder;
+    [self setImageURL:value];
+}
 - (void)setImageURL:(NSString *)value
 {
     imageURL = value;
