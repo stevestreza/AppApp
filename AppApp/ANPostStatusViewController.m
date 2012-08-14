@@ -86,6 +86,14 @@
     
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    // support orientation change for writing a new post. 
+    return (toInterfaceOrientation==UIInterfaceOrientationPortrait ||
+            toInterfaceOrientation==UIInterfaceOrientationLandscapeLeft ||
+            toInterfaceOrientation==UIInterfaceOrientationLandscapeRight);
+}
+
 -(void) updateCharCountLabel: (NSNotification *) notification
 {
     NSInteger textLength = 256 - [postTextView.text length];
