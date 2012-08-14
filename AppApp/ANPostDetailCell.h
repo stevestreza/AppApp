@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SDImageView.h"
+#import "TTTAttributedLabel.h"
 
 @interface ANPostDetailCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *postLabel;
+@property (weak, nonatomic) IBOutlet TTTAttributedLabel *postLabel;
 @property (weak, nonatomic) IBOutlet SDImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
