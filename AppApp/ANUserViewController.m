@@ -28,12 +28,15 @@
     NSDictionary *userData;
     NSArray *followersList;
     NSArray *followingList;
+    
+    CGFloat initialCoverImageYOffset;
 
     __weak IBOutlet SDImageView *userImageView;
     __weak IBOutlet SDImageView *coverImageView;
     __weak IBOutlet UILabel *nameLabel;
     __weak IBOutlet UILabel *usernameLabel;
     __weak IBOutlet UILabel *bioLabel;
+    __weak IBOutlet UIView *topCoverView;
 }
 
 - (id)init
@@ -196,6 +199,18 @@
     
     userImageView.layer.cornerRadius = 6.0;
 
+    // Setup shadow for cover image view
+    topCoverView.layer.shadowRadius = 10.0f;
+    topCoverView.layer.shadowOpacity = 0.4f;
+    topCoverView.layer.shadowOffset = CGSizeMake(0.0f, -5.0f);
+    
+    CGRect shadowRect = topCoverView.bounds;
+    shadowRect.size.height /= 4;
+    topCoverView.layer.shadowPath = [UIBezierPath bezierPathWithRect:shadowRect].CGPath;
+    
+    // Set the initial 
+    initialCoverImageYOffset = CGRectGetMinY(coverImageView.frame);
+    
     // make the cover image darker.
     UIView *darkView = [[UIView alloc] initWithFrame:coverImageView.bounds];
     darkView.backgroundColor = [UIColor blackColor];
@@ -210,9 +225,9 @@
     bioLabel = nil;
     nameLabel = nil;
     usernameLabel = nil;
+    topCoverView = nil;
+
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -278,45 +293,6 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-// Override to support editing the table view.
-/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -352,6 +328,30 @@
         [alert show];
         
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+}
+
+#pragma mark - 
+#pragma mark UIScrollview Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // Figure out the percent to parallax based on initial image offset
+    CGFloat percent = -scrollView.contentOffset.y / (-initialCoverImageYOffset*2);
+    
+    // Round down down if over 1
+    percent = percent > 1 ? 1 : percent;
+    
+    // if less than eq 0, we're scrolling up. original frame.
+    if (percent <= 0) {
+        coverImageView.frame = CGRectMake(0.0f, initialCoverImageYOffset, CGRectGetWidth(coverImageView.frame), CGRectGetHeight(coverImageView.frame));
+    } else if (percent < 1) {
+        
+        // calculate target y based on percent
+        CGFloat targY = initialCoverImageYOffset + (-initialCoverImageYOffset * percent) + scrollView.contentOffset.y;
+        
+        // update cover image frame
+        coverImageView.frame = CGRectMake(0.0f, targY, CGRectGetWidth(coverImageView.frame), CGRectGetHeight(coverImageView.frame));
     }
 }
 
