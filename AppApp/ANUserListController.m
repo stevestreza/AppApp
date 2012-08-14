@@ -85,6 +85,10 @@
     cell.usernameLabel.text = [NSString stringWithFormat:@"@%@", [userObject stringForKeyPath:@"username"]];
     cell.userImageView.imageURL = [userObject stringForKeyPath:@"avatar_image.url"];
     
+    // seems like we should use is_following here instead, but this one shows the correct results.
+    BOOL following = [userObject boolForKey:@"is_follower"];
+    cell.checkImage.hidden = !following;
+    
     return cell;
 }
 
