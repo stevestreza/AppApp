@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ANBaseStreamController.h"
+#import "TTTAttributedLabel.h"
 
-@interface ANPostDetailController : ANBaseStreamController
+@interface ANPostDetailController : ANBaseStreamController <TTTAttributedLabelDelegate>
 
 - (id)initWithPostData:(NSDictionary *)aPostData;
 

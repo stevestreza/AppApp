@@ -20,9 +20,8 @@
 		0067483915D8473100065DFF /* grayline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0067483415D8473100065DFF /* grayline@2x.png */; };
 		0067483A15D8473100065DFF /* postarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0067483515D8473100065DFF /* postarrow.png */; };
 		0067483B15D8473100065DFF /* postarrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0067483615D8473100065DFF /* postarrow@2x.png */; };
-		0067486E15D9E9CF00065DFF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0067485215D9E9CF00065DFF /* .gitignore */; };
-		0067487115D9E9CF00065DFF /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0067485615D9E9CF00065DFF /* TTTAttributedLabel.m */; };
 		0067488015D9EACC00065DFF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0067487F15D9EACC00065DFF /* CoreText.framework */; };
+		0067488D15D9F79100065DFF /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0067488C15D9F79100065DFF /* TTTAttributedLabel.m */; };
 		00B4740F15D38E3C00F767CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4740E15D38E3C00F767CE /* UIKit.framework */; };
 		00B4741115D38E3C00F767CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4741015D38E3C00F767CE /* Foundation.framework */; };
 		00B4741315D38E3C00F767CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B4741215D38E3C00F767CE /* CoreGraphics.framework */; };
@@ -111,10 +110,9 @@
 		0067483415D8473100065DFF /* grayline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayline@2x.png"; sourceTree = "<group>"; };
 		0067483515D8473100065DFF /* postarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postarrow.png; sourceTree = "<group>"; };
 		0067483615D8473100065DFF /* postarrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postarrow@2x.png"; sourceTree = "<group>"; };
-		0067485215D9E9CF00065DFF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		0067485515D9E9CF00065DFF /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
-		0067485615D9E9CF00065DFF /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		0067487F15D9EACC00065DFF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		0067488B15D9F79100065DFF /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		0067488C15D9F79100065DFF /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		00B4740A15D38E3C00F767CE /* AppApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B4740E15D38E3C00F767CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00B4741015D38E3C00F767CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -291,12 +289,11 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		0067485115D9E9CF00065DFF /* TTTAttributedLabel */ = {
+		0067488A15D9F79100065DFF /* TTTAttributedLabel */ = {
 			isa = PBXGroup;
 			children = (
-				0067485215D9E9CF00065DFF /* .gitignore */,
-				0067485515D9E9CF00065DFF /* TTTAttributedLabel.h */,
-				0067485615D9E9CF00065DFF /* TTTAttributedLabel.m */,
+				0067488B15D9F79100065DFF /* TTTAttributedLabel.h */,
+				0067488C15D9F79100065DFF /* TTTAttributedLabel.m */,
 			);
 			path = TTTAttributedLabel;
 			sourceTree = "<group>";
@@ -434,7 +431,7 @@
 		CAD8D8DF15D706E7007FC765 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
-				0067485115D9E9CF00065DFF /* TTTAttributedLabel */,
+				0067488A15D9F79100065DFF /* TTTAttributedLabel */,
 				CAD8D99515D7709C007FC765 /* MFSideMenu */,
 				0053C6BC15D76A36000F36FA /* TestFlightSDK1.0 */,
 				CAD8D98615D7579F007FC765 /* SVProgressHUD */,
@@ -676,7 +673,6 @@
 				CA5863D015D8BF5C0044BA4A /* repost@2x.png in Resources */,
 				CA13EF1B15D9EFF6005359E3 /* check.png in Resources */,
 				CA13EF1C15D9EFF6005359E3 /* check@2x.png in Resources */,
-				0067486E15D9E9CF00065DFF /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,7 +722,7 @@
 				CA7052C715D87DB6009A3011 /* ANUserListController.m in Sources */,
 				CA7052CB15D8830F009A3011 /* ANUserListCell.m in Sources */,
 				CA7052CE15D89A87009A3011 /* ANPostDetailController.m in Sources */,
-				0067487115D9E9CF00065DFF /* TTTAttributedLabel.m in Sources */,
+				0067488D15D9F79100065DFF /* TTTAttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
