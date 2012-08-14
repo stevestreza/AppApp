@@ -36,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.tableView setScrollsToTop:NO];
 }
 
 #pragma mark - UITableViewDataSource
@@ -71,11 +73,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *controller = [_navigationArray objectAtIndex:indexPath.row];
+    UITableViewController *controller = [_navigationArray objectAtIndex:indexPath.row];
     
     NSArray *controllers = [NSArray arrayWithObject:controller];
+    [self updateOnlyCurrentTableViewToScrollToTop:controller];
     [MFSideMenuManager sharedManager].navigationController.viewControllers = controllers;
     [MFSideMenuManager sharedManager].navigationController.menuState = MFSideMenuStateHidden;
+}
+
+- (void)updateOnlyCurrentTableViewToScrollToTop:(UITableViewController *)current {
+	for (UITableViewController *c in _navigationArray) {
+		if ([c isViewLoaded]) {
+			c.tableView.scrollsToTop = (current==c);
+		}
+	}
 }
 
 @end

@@ -353,8 +353,8 @@
 				922F80CA15D590220049F194 /* Authentication */,
 				00B4741D15D38E3C00F767CE /* ANAppDelegate.h */,
 				00B4741E15D38E3C00F767CE /* ANAppDelegate.m */,
-				00B4741515D38E3C00F767CE /* Supporting Files */,
 				CACA6BD215D788F400AE5D40 /* ANViewControllerProtocol.h */,
+				00B4741515D38E3C00F767CE /* Supporting Files */,
 			);
 			path = AppApp;
 			sourceTree = "<group>";
